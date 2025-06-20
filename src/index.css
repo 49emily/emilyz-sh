@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* Tid-book font declaration */
+@font-face {
+  font-family: "Tid-Book";
+  src: url("./assets/tid-book/Tid-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Signifier font declarations */
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-Regular-BF663d8462c4c0b.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-RegularItalic-BF663d8462d189e.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-Light-BF663d8462b5549.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-LightItalic-BF663d8462b3681.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-Medium-BF663d8462c7c04.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-MediumItalic-BF663d846296820.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-Bold-BF663d84626293d.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-BoldItalic-BF663d84627c436.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-Black-BF663d8461d0303.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("./assets/fonts/signifier/TestSignifier-BlackItalic-BF663d8461e2e0e.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Set base font and global typography adjustments */
+body {
+  font-family: "Signifier", serif;
+  font-weight: 300;
+}
+
+/* Link styling */
+.link {
+  text-decoration: underline;
+  text-decoration-color: #dc2626;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  color: #dc2626;
+}
