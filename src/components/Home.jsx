@@ -1,15 +1,8 @@
 import { useState } from "react";
-import nanjingImage from "../assets/nanjing.jpg";
-import sfImage from "../assets/sf.JPG";
-import stanfordImage from "../assets/stanford.JPG";
-import meImage from "../assets/me.jpg";
+import ExternalLink from "./ExternalLink";
+import { showImage, hideImage } from "../utils";
 
 function Home() {
-  const [showNanjingImage, setShowNanjingImage] = useState(false);
-  const [showSfImage, setShowSfImage] = useState(false);
-  const [showStanfordImage, setShowStanfordImage] = useState(false);
-  const [showMeImage, setShowMeImage] = useState(false);
-
   // Topics for dice roll
   const topics = [
     "machine understandings of love",
@@ -32,54 +25,13 @@ function Home() {
 
   return (
     <div className="mt-20 mx-auto max-w-2xl relative">
-      {/* Large centered image overlays */}
-      {showMeImage && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center pointer-events-none">
-          <img
-            src={meImage}
-            alt="Emily Zhang"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
-        </div>
-      )}
-
-      {showNanjingImage && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center pointer-events-none">
-          <img
-            src={nanjingImage}
-            alt="Nanjing, China"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
-        </div>
-      )}
-
-      {showSfImage && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center pointer-events-none">
-          <img
-            src={sfImage}
-            alt="San Francisco"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
-        </div>
-      )}
-
-      {showStanfordImage && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center pointer-events-none">
-          <img
-            src={stanfordImage}
-            alt="Stanford University"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
-        </div>
-      )}
-
       <div className="text-2xl tracking-tight">
         <p className="mb-6">
           Hi! My name is{" "}
           <span
             className="link cursor-pointer"
-            onMouseEnter={() => setShowMeImage(true)}
-            onMouseLeave={() => setShowMeImage(false)}
+            onMouseEnter={() => showImage("me")}
+            onMouseLeave={() => hideImage("me")}
           >
             Emily Zhang.
           </span>
@@ -88,24 +40,24 @@ function Home() {
           I'm an engineer, artist, and creative technologist born in{" "}
           <span
             className="link cursor-pointer"
-            onMouseEnter={() => setShowNanjingImage(true)}
-            onMouseLeave={() => setShowNanjingImage(false)}
+            onMouseEnter={() => showImage("nanjing")}
+            onMouseLeave={() => hideImage("nanjing")}
           >
             Nanjing, China
           </span>
           , currently residing in the liminal space between{" "}
           <span
             className="link cursor-pointer"
-            onMouseEnter={() => setShowStanfordImage(true)}
-            onMouseLeave={() => setShowStanfordImage(false)}
+            onMouseEnter={() => showImage("stanford")}
+            onMouseLeave={() => hideImage("stanford")}
           >
             Stanford University
           </span>{" "}
           and{" "}
           <span
             className="link cursor-pointer"
-            onMouseEnter={() => setShowSfImage(true)}
-            onMouseLeave={() => setShowSfImage(false)}
+            onMouseEnter={() => showImage("sf")}
+            onMouseLeave={() => hideImage("sf")}
           >
             San Francisco
           </span>
@@ -135,9 +87,9 @@ function Home() {
         </p>
         <p>
           If my work resonates with you, feel free to reach out anytime at{" "}
-          <a href="mailto:emily49@stanford.edu" className="link">
+          <ExternalLink href="mailto:emily49@stanford.edu">
             emily49 at stanford dot edu
-          </a>
+          </ExternalLink>
           .
         </p>
       </div>
