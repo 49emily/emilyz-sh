@@ -1,0 +1,17 @@
+.link {
+  color: #760646;
+
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #df1186;
+}
+
+.zsh {
+  color: #760646;
+}
+.zsh:hover {
+  color: #df1186;
+}
