@@ -37,7 +37,8 @@ const About = () => {
             helped me find myself and find wonderful friends.
           </li>
           <li>
-            Helped run <span className="link">Friends and Family</span>,{" "}
+            Helped run{" "}
+            <ExternalLink href="https://friendsandfam.xyz/">Friends and Family</ExternalLink>,{" "}
             <span className="link">Stanford AKPsi</span>, and the{" "}
             <span className="link">largest pitch competition for Stanford startups</span>.
           </li>
