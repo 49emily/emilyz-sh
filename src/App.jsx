@@ -152,7 +152,6 @@ function ScrollableContent() {
     { component: <PrlMobile />, path: "/work/prl-mobile" },
     { component: <Tangent />, path: "/work/tangent" },
     { component: <StyleScape />, path: "/work/stylescape" },
-    { component: <Experience />, path: "/experience" },
     { component: <VisualArt />, path: "/art" },
   ];
 
@@ -247,7 +246,7 @@ function ScrollableContent() {
   }, [currentSection, isScrolling, sections]);
 
   return (
-    <main ref={containerRef} className="col-span-2 lg:col-span-4 h-screen overflow-hidden relative">
+    <main ref={containerRef} className="col-span-2 lg:col-span-5 h-screen overflow-hidden relative">
       <div
         className="transition-transform duration-700 ease-in-out"
         style={{
@@ -275,9 +274,9 @@ function App() {
       <div className="min-h-screen">
         <GlobalImageOverlay />
         <div className="mx-auto px-8">
-          <div className="grid grid-cols-3 lg:grid-cols-5 gap-12 h-screen">
+          <div className="grid grid-cols-3 lg:grid-cols-7 gap-12 h-screen">
             {/* Left Sidebar */}
-            <aside className="lg:col-span-1">
+            <aside className="lg:col-span-2">
               <div className="sticky top-12">
                 <Navigation />
               </div>
