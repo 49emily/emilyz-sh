@@ -13,10 +13,7 @@ function Navigation() {
     { path: "/work/stylescape", label: "StyleScape", year: "2024" },
   ];
 
-  const otherNavItems = [
-    { path: "/experience", label: "Experience" },
-    { path: "/art", label: "Visual Art" },
-  ];
+  const otherNavItems = [{ path: "/art", label: "Visual Art Portfolio" }];
 
   // Handle navigation clicks
   const handleNavClick = (path) => {
@@ -26,18 +23,15 @@ function Navigation() {
 
   return (
     <nav>
-      <div className="space-y-4">
-        <h1 className="text-xl mb-8">
-          <button
-            onClick={() => handleNavClick("/")}
-            className="zsh transition-colors hover:opacity-80"
-          >
-            张思涵
+      <div className="space-y-2">
+        <div>
+          <button onClick={() => handleNavClick("/")}>
+            <h3 className="text-2xl">Home</h3>
           </button>
-        </h1>
+        </div>
         <div>
           <button onClick={() => handleNavClick("/about")}>
-            <h3 className="text-2xl">About Me</h3>
+            <h3 className="text-2xl">About</h3>
           </button>
         </div>
         {/* Selected Work Header */}

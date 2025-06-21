@@ -6,8 +6,8 @@ const ExternalLink = ({ href, children, className = "link", showIcon = true }) =
   const [isHovered, setIsHovered] = useState(false);
 
   // Don't show icon for mailto links
-  const isMailto = href?.startsWith("mailto:");
-  const shouldShowIcon = showIcon && !isMailto;
+
+  const shouldShowIcon = showIcon;
 
   return (
     <a
