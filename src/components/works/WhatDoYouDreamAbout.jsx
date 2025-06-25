@@ -1,3 +1,5 @@
+import whatDoYouDreamVideo from "../../assets/projects/whatdoyoudream.mp4";
+
 function WhatDoYouDreamAbout() {
   return (
     <div className="space-y-6 max-w-4xl">
@@ -7,15 +9,28 @@ function WhatDoYouDreamAbout() {
       </div>
 
       <div className="space-y-4">
-        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-          <iframe
-            className="absolute top-0 left-0 w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/J32KjOcauFQ"
-            title="what do you dream about? - Interactive Media Installation"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/J32KjOcauFQ"
+              title="what do you dream about? - Interactive Media Installation"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+            <video
+              className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
+              controls
+              src={whatDoYouDreamVideo}
+              title="what do you dream about? - Local Video"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         <p className="text-gray-700 ">

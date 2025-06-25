@@ -1,10 +1,11 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import VisualArt from "./components/VisualArt";
 import Experience from "./components/Experience";
 import About from "./components/About";
+import SelectedWork from "./components/SelectedWork";
 
 // Individual work components
 import WhatDoYouDreamAbout from "./components/works/WhatDoYouDreamAbout";
@@ -133,157 +134,60 @@ function GlobalImageOverlay() {
   );
 }
 
-// ScrollableContent component for smooth scrolling between sections
-function ScrollableContent() {
-  const [currentSection, setCurrentSection] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const [immediateOffset, setImmediateOffset] = useState(0);
-  const containerRef = useRef(null);
-  const lastScrollTime = useRef(0);
-
-  // All sections in order
-  const sections = [
-    { component: <Home />, path: "/" },
-    { component: <About />, path: "/about" },
-    { component: <WhatDoYouDreamAbout />, path: "/work/what-do-you-dream-about" },
-    { component: <LettersToMyMom />, path: "/work/letters-to-my-mom" },
-    { component: <DiffusionMe />, path: "/work/diffusion-me" },
-    { component: <Prl />, path: "/work/prl" },
-    { component: <PrlMobile />, path: "/work/prl-mobile" },
-    { component: <Tangent />, path: "/work/tangent" },
-    { component: <StyleScape />, path: "/work/stylescape" },
-    { component: <VisualArt />, path: "/art" },
-  ];
-
-  // Function to get section index from path
-  const getSectionIndexFromPath = (path) => {
-    return sections.findIndex((section) => section.path === path);
-  };
-
-  // Listen for custom navigation events from Navigation component
-  useEffect(() => {
-    const handleNavigation = (e) => {
-      const targetPath = e.detail.path;
-      const sectionIndex = getSectionIndexFromPath(targetPath);
-      if (sectionIndex !== -1) {
-        setCurrentSection(sectionIndex);
-        setImmediateOffset(0); // Reset any immediate offset
-        window.history.pushState(null, "", targetPath);
-      }
-    };
-
-    window.addEventListener("navigate", handleNavigation);
-
-    return () => {
-      window.removeEventListener("navigate", handleNavigation);
-    };
-  }, [sections]);
-
-  // Check for initial route on mount
-  useEffect(() => {
-    const initialPath = window.location.pathname;
-    const initialSectionIndex = getSectionIndexFromPath(initialPath);
-    if (initialSectionIndex !== -1) {
-      setCurrentSection(initialSectionIndex);
-    }
-  }, []);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleWheel = (e) => {
-      console.log("isScrolling", isScrolling);
-      if (isScrolling) {
-        e.preventDefault();
-        return;
-      }
-
-      e.preventDefault();
-
-      const now = Date.now();
-      const timeSinceLastScroll = now - lastScrollTime.current;
-      console.log("timeSinceLastScroll", timeSinceLastScroll);
-      if (timeSinceLastScroll < 800) return;
-
-      let nextSection;
-      const scrollDirection = e.deltaY > 0 ? "down" : "up";
-
-      if (e.deltaY > 0 && currentSection < sections.length - 1) {
-        // Scroll down
-        nextSection = currentSection + 1;
-      } else if (e.deltaY < 0 && currentSection > 0) {
-        // Scroll up
-        nextSection = currentSection - 1;
-      } else {
-        return;
-      }
-
-      lastScrollTime.current = now;
-      setIsScrolling(true);
-
-      // Immediate responsive feedback - small movement in scroll direction
-      const immediateMove = scrollDirection === "down" ? 8 : -8; // 8vh movement
-      setImmediateOffset(immediateMove);
-
-      // After a short delay, snap to the full section
-      setTimeout(() => {
-        setImmediateOffset(0);
-        setCurrentSection(nextSection);
-        // Update URL
-        window.history.replaceState(null, "", sections[nextSection].path);
-
-        // Complete the transition
-        setTimeout(() => setIsScrolling(false), 1200);
-      }, 150);
-    };
-
-    container.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => {
-      container.removeEventListener("wheel", handleWheel);
-    };
-  }, [currentSection, isScrolling, sections]);
-
-  return (
-    <main ref={containerRef} className="col-span-2 lg:col-span-5 h-screen overflow-hidden relative">
-      <div
-        className="transition-transform duration-700 ease-in-out"
-        style={{
-          transform: `translateY(-${currentSection * 100 + immediateOffset}vh)`,
-          height: `${sections.length * 100}vh`,
-        }}
-      >
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className="h-screen flex flex-col justify-start py-8 overflow-y-auto relative z-0"
-          >
-            {section.component}
-          </div>
-        ))}
-      </div>
-    </main>
-  );
-}
-
 // Main App component
 function App() {
+  const [appLoaded, setAppLoaded] = useState(false);
+
+  useEffect(() => {
+    // Add a small delay for smooth initial load animation
+    setTimeout(() => setAppLoaded(true), 100);
+  }, []);
+
   return (
     <Router>
-      <div className="min-h-screen">
+      <div
+        className={`min-h-screen transition-all duration-1000 ease-out ${
+          appLoaded ? "opacity-100 blur-none" : "opacity-0 blur-sm"
+        }`}
+      >
         <GlobalImageOverlay />
-        <div className="mx-auto px-8">
-          <div className="grid grid-cols-3 lg:grid-cols-7 gap-12 h-screen">
+        <div className="mx-auto px-12">
+          <div className="grid grid-cols-3 lg:grid-cols-7 gap-4 min-h-screen">
             {/* Left Sidebar */}
             <aside className="lg:col-span-2">
-              <div className="sticky top-12">
+              <div
+                className={`sticky top-12 transition-all duration-700 delay-200 ease-out ${
+                  appLoaded
+                    ? "opacity-100 transform translate-x-0"
+                    : "opacity-0 transform -translate-x-4"
+                }`}
+              >
                 <Navigation />
               </div>
             </aside>
 
-            {/* Scrollable Content */}
-            <ScrollableContent />
+            {/* Main Content */}
+            <main
+              className={`col-span-2 lg:col-span-5 py-12 transition-all duration-700 delay-400 ease-out ${
+                appLoaded
+                  ? "opacity-100 transform translate-x-0"
+                  : "opacity-0 transform translate-x-4"
+              }`}
+            >
+              <Routes>
+                <Route path="/" element={<SelectedWork />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/work/what-do-you-dream-about" element={<WhatDoYouDreamAbout />} />
+                <Route path="/work/letters-to-my-mom" element={<LettersToMyMom />} />
+                <Route path="/work/diffusion-me" element={<DiffusionMe />} />
+                <Route path="/work/prl" element={<Prl />} />
+                <Route path="/work/prl-mobile" element={<PrlMobile />} />
+                <Route path="/work/tangent" element={<Tangent />} />
+                <Route path="/work/stylescape" element={<StyleScape />} />
+                <Route path="/art" element={<VisualArt />} />
+              </Routes>
+            </main>
           </div>
         </div>
       </div>
