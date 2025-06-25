@@ -2,7 +2,7 @@ function LettersToMyMom() {
   return (
     <div className="space-y-6">
       <div className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Letters to my Mom</h2>
+        <h2 className="text-3xl mb-2">Letters to my Mom</h2>
         <p className="text-gray-500 text-sm">(2025)</p>
       </div>
 

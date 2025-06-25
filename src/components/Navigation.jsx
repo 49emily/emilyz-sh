@@ -26,17 +26,17 @@ function Navigation() {
       <div className="space-y-2">
         <div>
           <button onClick={() => handleNavClick("/")}>
-            <h3 className="text-2xl">Home</h3>
+            <h3 className="text-2xl text-white">Home</h3>
           </button>
         </div>
         <div>
           <button onClick={() => handleNavClick("/about")}>
-            <h3 className="text-2xl">About</h3>
+            <h3 className="text-2xl text-white">About</h3>
           </button>
         </div>
         {/* Selected Work Header */}
         <div>
-          <h3 className="text-2xl mb-1">Selected Work</h3>
+          <h3 className="text-2xl mb-1 text-white">Selected Work</h3>
           <div className="space-y-1">
             {workItems.map((item) => (
               <button
@@ -44,8 +44,8 @@ function Navigation() {
                 onClick={() => handleNavClick(item.path)}
                 className={`block transition-colors duration-200 text-lg text-left tracking-tight leading-tight w-full ${
                   location.pathname === item.path
-                    ? "font-medium"
-                    : "text-gray-500 hover:text-gray-900"
+                    ? "font-medium text-white"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 <span>{item.label}</span>
@@ -63,8 +63,8 @@ function Navigation() {
               onClick={() => handleNavClick(item.path)}
               className={`block text-2xl transition-colors duration-200 text-left w-full ${
                 location.pathname === item.path
-                  ? "text-gray-900 font-medium"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-white font-medium"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               {item.label}

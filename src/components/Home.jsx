@@ -24,7 +24,7 @@ function Home() {
   const [showDice, setShowDice] = useState(false);
 
   return (
-    <div className="mt-20 mx-auto max-w-2xl relative">
+    <div className="mx-auto my-auto max-w-2xl relative">
       <div className="text-2xl tracking-tight">
         <p className="mb-6">
           Hi! My name is{" "}

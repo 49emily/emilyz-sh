@@ -2,7 +2,7 @@ import ExternalLink from "./ExternalLink";
 
 const About = () => {
   return (
-    <div className="my-auto mx-auto max-w-2xl relative">
+    <div className="my-auto mx-auto max-w-3xl relative">
       <div className="text-2xl tracking-tight">
         Previously, I...
         <ul className="list-decimal list-inside space-y-1">

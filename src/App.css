@@ -15,3 +15,57 @@
 .zsh:hover {
   color: #df1186;
 }
+
+/* Cloud Background 3D Effect */
+.cloudViewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  perspective: 600px;
+  pointer-events: none;
+  z-index: -10;
+}
+
+.cloudWorld {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 512px;
+  height: 512px;
+  margin-left: -256px;
+  margin-top: -256px;
+  transform-style: preserve-3d;
+}
+
+.cloudBase {
+  position: absolute;
+  left: 256px;
+  top: 256px;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.cloudLayer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 256px;
+  height: 256px;
+  margin-left: -128px;
+  margin-top: -128px;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0.2) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.8;
+}

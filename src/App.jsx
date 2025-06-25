@@ -22,7 +22,7 @@ import stanfordImage from "./assets/stanford.JPG";
 import meImage from "./assets/me.jpg";
 import scaleImage from "./assets/scale.JPG";
 import fakerImage from "./assets/faker.jpg";
-
+import studioGhibliSky from "./assets/studio_ghibli_sky.jpg";
 import "./App.css";
 
 // Global image overlay component
@@ -207,7 +207,6 @@ function ScrollableContent() {
       if (timeSinceLastScroll < 800) return;
 
       let nextSection;
-      const scrollDirection = e.deltaY > 0 ? "down" : "up";
 
       if (e.deltaY > 0 && currentSection < sections.length - 1) {
         // Scroll down
@@ -222,9 +221,9 @@ function ScrollableContent() {
       lastScrollTime.current = now;
       setIsScrolling(true);
 
-      // Immediate responsive feedback - small movement in scroll direction
-      const immediateMove = scrollDirection === "down" ? 8 : -8; // 8vh movement
-      setImmediateOffset(immediateMove);
+      // // Immediate responsive feedback - small movement in scroll direction
+      // const immediateMove = scrollDirection === "down" ? 20 : -20; // 8vh movement
+      // setImmediateOffset(immediateMove);
 
       // After a short delay, snap to the full section
       setTimeout(() => {
@@ -245,25 +244,53 @@ function ScrollableContent() {
     };
   }, [currentSection, isScrolling, sections]);
 
+  // Get current section name for path display
+  const getCurrentSectionName = () => {
+    const currentPath = sections[currentSection]?.path || "/";
+    if (currentPath === "/") return "Home";
+    if (currentPath === "/about") return "About";
+    if (currentPath === "/art") return "Visual Art";
+    if (currentPath.startsWith("/work/")) {
+      const workName = currentPath
+        .replace("/work/", "")
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+      return workName;
+    }
+    return "Home";
+  };
+
   return (
-    <main ref={containerRef} className="col-span-2 lg:col-span-5 h-screen overflow-hidden relative">
-      <div
-        className="transition-transform duration-700 ease-in-out"
-        style={{
-          transform: `translateY(-${currentSection * 100 + immediateOffset}vh)`,
-          height: `${sections.length * 100}vh`,
-        }}
-      >
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className="h-screen flex flex-col justify-start py-8 overflow-y-auto relative z-0"
-          >
-            {section.component}
-          </div>
-        ))}
+    <div className="col-span-2 lg:col-span-4 relative">
+      {/* Path display */}
+      <div className="absolute top-2 left-0 text-white/80 font-mono text-sm mb-2 z-10">
+        zsh / {getCurrentSectionName()}
       </div>
-    </main>
+      <main
+        ref={containerRef}
+        className="h-screen overflow-hidden relative my-8 rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/80 via-white/70 to-white/60 border border-white/30 shadow-2xl drop-shadow-2xl"
+        style={{ height: "calc(100vh - 3rem)" }}
+      >
+        <div
+          className="transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateY(-${currentSection * 100 + immediateOffset}vh)`,
+            height: `calc(${sections.length * 100}vh - 5rem)`,
+          }}
+        >
+          {sections.map((section, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-start overflow-y-auto relative z-0"
+              style={{ height: "100vh" }}
+            >
+              {section.component}
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
   );
 }
 
@@ -273,10 +300,17 @@ function App() {
     <Router>
       <div className="min-h-screen">
         <GlobalImageOverlay />
-        <div className="mx-auto px-8">
-          <div className="grid grid-cols-3 lg:grid-cols-7 gap-12 h-screen">
+        <div
+          style={{
+            backgroundImage: `url(${studioGhibliSky})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="mx-auto pl-8 pr-4"
+        >
+          <div className="grid grid-cols-3 lg:grid-cols-5 gap-12 h-screen">
             {/* Left Sidebar */}
-            <aside className="lg:col-span-2">
+            <aside className="lg:col-span-1">
               <div className="sticky top-12">
                 <Navigation />
               </div>
