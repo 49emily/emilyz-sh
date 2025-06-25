@@ -156,7 +156,7 @@ function App() {
             {/* Left Sidebar */}
             <aside className="lg:col-span-2">
               <div
-                className={`fixed top-12 left-12 transition-all duration-700 delay-200 ease-out ${
+                className={`fixed top-12 left-16 transition-all duration-700 delay-200 ease-out ${
                   appLoaded
                     ? "opacity-100 transform translate-x-0"
                     : "opacity-0 transform -translate-x-4"

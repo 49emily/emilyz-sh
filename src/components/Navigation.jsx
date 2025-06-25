@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import profileImg from "../assets/profile3.jpg";
+import arrowImg from "../assets/arrow.png";
 
 function Navigation() {
   const location = useLocation();
@@ -8,7 +9,6 @@ function Navigation() {
     { path: "/", label: "Selected Work" },
     // { path: "/about", label: "About" },
     { path: "/about", label: "About" },
-    { path: "/art", label: "Visual Art Portfolio" },
   ];
 
   return (
@@ -78,7 +78,16 @@ function Navigation() {
 
       <div className="space-y-4">
         {navItems.map((item) => (
-          <div key={item.path}>
+          <div key={item.path} className="relative">
+            {/* Arrow indicator for selected item - positioned absolutely to not affect text alignment */}
+            {location.pathname === item.path && (
+              <img
+                src={arrowImg}
+                alt="Selected"
+                className="absolute left-[-20px] top-2/5 transform -translate-y-1/2 w-4 h-4 object-contain"
+              />
+            )}
+
             <Link
               to={item.path}
               className={`block text-2xl italic transition-colors duration-200 hover:text-gray-900  ${

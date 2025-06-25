@@ -272,41 +272,16 @@ function SelectedWork() {
         <h2 className="text-3xl font-light mb-8">
           <i>Visual Art</i>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {visualArtItems.map((item, index) => (
-            <div key={index} className="group block transition-all duration-200 ease-out">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden border-2 border-transparent hover:border-black transition-all duration-200">
-                {/* Image placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-purple-100 to-pink-200 relative overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center text-gray-600">
-                      <div className="text-2xl mb-2">🎨</div>
-                      <div className="text-sm font-light">{item.status}</div>
-                    </div>
-                  </div>
-
-                  {/* Overlay with status */}
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2 py-1 bg-black/50 text-white text-xs rounded-full backdrop-blur-sm">
-                      {item.year}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <div className="mb-3">
-                    <h3 className="text-xl font-light mb-1 group-hover:text-gray-900 transition-colors">
-                      {item.title}
-                    </h3>
-                    <span className="text-sm text-gray-500 font-light">{item.status}</span>
-                  </div>
-                  <p className="text-sm text-gray-600 font-light">{item.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <iframe
+          src="https://v2-embednotion.com/104b4250a017802b8390d94e5a2eea36"
+          style={{
+            width: "100%",
+            height: "600px",
+            border: "2px solid #ccc",
+            borderRadius: "10px",
+            padding: "none",
+          }}
+        ></iframe>
       </section>
     </div>
   );
