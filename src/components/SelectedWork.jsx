@@ -102,10 +102,14 @@ function SelectedWork() {
       description:
         "A visual journey through different aesthetic landscapes and design philosophies.",
       image: null, // placeholder for now
-      status: "Design Study",
+      status: "infinitely generated world walkthroughs",
       links: [
-        { label: "GitHub", url: "https://github.com/emilyz49/stylescape", icon: "github" },
-        { label: "Live Site", url: "https://stylescape.emilyz.sh", icon: "external" },
+        { label: "GitHub", url: "https://github.com/49emily/stylescape", icon: "github" },
+        {
+          label: "Project Page",
+          url: "https://cs231n-final-project-stylescape.vercel.app/",
+          icon: "external",
+        },
       ],
     },
   ];
@@ -135,7 +139,7 @@ function SelectedWork() {
     <div className="space-y-12">
       <div className="mb-12">
         <p className="text-md">
-          ~ an ongoing internet archive dedicated to the process of making new, beautiful things
+          ~ an ongoing internet archive dedicated to the process of making new things
         </p>
       </div>
 

@@ -83,14 +83,15 @@ body::before {
 }
 
 .link {
-  color: #760646;
+  color: #fb1abf;
 
-  text-decoration: underline;
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
   cursor: pointer;
 }
 
 .link:hover {
-  color: #df1186;
+  color: #d90d76;
 }
 
 .zsh {
