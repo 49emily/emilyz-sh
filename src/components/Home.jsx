@@ -27,16 +27,7 @@ function Home() {
     <div className="flex items-center justify-center min-h-[80vh]">
       <div className="max-w-2xl relative">
         <div className="text-2xl tracking-tight">
-          <p className="mb-6">
-            Hi! My name is{" "}
-            <span
-              className="link cursor-pointer"
-              onMouseEnter={() => showImage("me")}
-              onMouseLeave={() => hideImage("me")}
-            >
-              Emily Zhang.
-            </span>
-          </p>
+          <p className="mb-6">Welcome! My name is Emily Zhang.</p>
           <p className="mb-6">
             I'm an engineer, artist, and creative technologist born in{" "}
             <span

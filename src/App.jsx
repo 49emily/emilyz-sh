@@ -156,7 +156,7 @@ function App() {
             {/* Left Sidebar */}
             <aside className="lg:col-span-2">
               <div
-                className={`sticky top-12 transition-all duration-700 delay-200 ease-out ${
+                className={`fixed top-12 left-12 transition-all duration-700 delay-200 ease-out ${
                   appLoaded
                     ? "opacity-100 transform translate-x-0"
                     : "opacity-0 transform -translate-x-4"
@@ -176,15 +176,12 @@ function App() {
             >
               <Routes>
                 <Route path="/" element={<SelectedWork />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/about" element={<Home />} />
+                {/* <Route path="/home" element={<Home />} /> */}
                 <Route path="/work/what-do-you-dream-about" element={<WhatDoYouDreamAbout />} />
                 <Route path="/work/letters-to-my-mom" element={<LettersToMyMom />} />
                 <Route path="/work/diffusion-me" element={<DiffusionMe />} />
-                <Route path="/work/prl" element={<Prl />} />
-                <Route path="/work/prl-mobile" element={<PrlMobile />} />
-                <Route path="/work/tangent" element={<Tangent />} />
-                <Route path="/work/stylescape" element={<StyleScape />} />
+
                 <Route path="/art" element={<VisualArt />} />
               </Routes>
             </main>
