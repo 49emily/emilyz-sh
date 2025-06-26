@@ -1,9 +1,71 @@
 import { useLocation, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import profileImg from "../assets/profile3.jpg";
-import arrowImg from "../assets/arrow.png";
 
 function Navigation() {
   const location = useLocation();
+  const [distance, setDistance] = useState(null);
+  const [locationError, setLocationError] = useState(null);
+  const [typedText, setTypedText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  // Emily's approximate location (Nanjing)
+  const emilyLocation = { lat: 32.0584, lng: 118.7965 };
+
+  // Calculate distance between two points using Haversine formula
+  const calculateDistance = (lat1, lng1, lat2, lng2) => {
+    const R = 3959; // Earth's radius in miles
+    const dLat = (lat2 - lat1) * (Math.PI / 180);
+    const dLng = (lng2 - lng1) * (Math.PI / 180);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * (Math.PI / 180)) *
+        Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c; // Distance in miles
+  };
+
+  // Typing animation effect
+  useEffect(() => {
+    if (distance !== null) {
+      const fullText = `you are ${distance.toLocaleString()} miles away from zsh`;
+      setIsTyping(true);
+      setTypedText("");
+
+      let currentIndex = 0;
+      const typingInterval = setInterval(() => {
+        if (currentIndex < fullText.length) {
+          setTypedText(fullText.slice(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          setIsTyping(false);
+          clearInterval(typingInterval);
+        }
+      }, 50); // 50ms per character
+
+      return () => clearInterval(typingInterval);
+    }
+  }, [distance]);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLat = position.coords.latitude;
+          const userLng = position.coords.longitude;
+          const dist = calculateDistance(userLat, userLng, emilyLocation.lat, emilyLocation.lng);
+          setDistance(Math.round(dist));
+        },
+        () => {
+          setLocationError("Location access denied");
+        }
+      );
+    } else {
+      setLocationError("Geolocation not supported");
+    }
+  }, []);
 
   const navItems = [
     { path: "/", label: "Selected Work" },
@@ -79,25 +141,44 @@ function Navigation() {
       <div className="space-y-4">
         {navItems.map((item) => (
           <div key={item.path} className="relative">
-            {/* Arrow indicator for selected item - positioned absolutely to not affect text alignment */}
+            {/* Arrow indicator for selected item - positioned absolutely to not affect text alignment
             {location.pathname === item.path && (
-              <img
-                src={arrowImg}
-                alt="Selected"
+              <img 
+                src={arrowImg} 
+                alt="Selected" 
                 className="absolute left-[-20px] top-2/5 transform -translate-y-1/2 w-4 h-4 object-contain"
               />
-            )}
+            )} */}
 
             <Link
               to={item.path}
               className={`block text-2xl italic transition-colors duration-200 hover:text-gray-900  ${
-                location.pathname === item.path ? "text-black" : "text-gray-600"
+                location.pathname === item.path ? "text-black" : "text-gray-500"
               }`}
             >
               {item.label}
             </Link>
           </div>
         ))}
+      </div>
+
+      <div className="mt-4">
+        {distance !== null && (
+          <div className="flex items-center gap-2 mb-2">
+            <div className="relative">
+              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+              <div className="absolute inset-0 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping opacity-75"></div>
+            </div>
+
+            <p className="text-sm text-gray-600 font-mono">
+              {typedText}
+              {isTyping && <span className="animate-pulse">|</span>}
+            </p>
+          </div>
+        )}
+        {locationError && (
+          <p className="text-sm text-gray-500 italic text-center">location unknown</p>
+        )}
       </div>
     </nav>
   );
