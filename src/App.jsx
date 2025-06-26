@@ -3,18 +3,11 @@ import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import VisualArt from "./components/VisualArt";
-import Experience from "./components/Experience";
 import About from "./components/About";
 import SelectedWork from "./components/SelectedWork";
 
-// Individual work components
-import WhatDoYouDreamAbout from "./components/works/WhatDoYouDreamAbout";
-import LettersToMyMom from "./components/works/LettersToMyMom";
-import DiffusionMe from "./components/works/DiffusionMe";
-import Prl from "./components/works/Prl";
-import PrlMobile from "./components/works/PrlMobile";
-import Tangent from "./components/works/Tangent";
-import StyleScape from "./components/works/StyleScape";
+// Import projects data for routing
+import { getProjectRoutes } from "./data/projects";
 
 // Import images for global overlay
 import nanjingImage from "./assets/nanjing.jpg";
@@ -157,9 +150,7 @@ function App() {
             <aside className="lg:col-span-2">
               <div
                 className={`fixed top-12 left-16 transition-all duration-700 delay-200 ease-out ${
-                  appLoaded
-                    ? "opacity-100 transform translate-x-0"
-                    : "opacity-0 transform -translate-x-4"
+                  appLoaded ? "opacity-100" : "opacity-0 -translate-x-4"
                 }`}
               >
                 <Navigation />
@@ -169,18 +160,18 @@ function App() {
             {/* Main Content */}
             <main
               className={`col-span-2 lg:col-span-5 py-12 transition-all duration-700 delay-400 ease-out ${
-                appLoaded
-                  ? "opacity-100 transform translate-x-0"
-                  : "opacity-0 transform translate-x-4"
+                appLoaded ? "opacity-100 transform" : "opacity-0 transform translate-x-4"
               }`}
             >
               <Routes>
                 <Route path="/" element={<SelectedWork />} />
                 <Route path="/about" element={<Home />} />
                 {/* <Route path="/home" element={<Home />} /> */}
-                <Route path="/work/what-do-you-dream-about" element={<WhatDoYouDreamAbout />} />
-                <Route path="/work/letters-to-my-mom" element={<LettersToMyMom />} />
-                <Route path="/work/diffusion-me" element={<DiffusionMe />} />
+
+                {/* Dynamic project routes */}
+                {getProjectRoutes().map((project) => (
+                  <Route key={project.path} path={project.path} element={<project.component />} />
+                ))}
 
                 <Route path="/art" element={<VisualArt />} />
               </Routes>
