@@ -1,9 +1,10 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import profileImg from "../assets/profile3.jpg";
 
 function Navigation() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [distance, setDistance] = useState(null);
   const [locationError, setLocationError] = useState(null);
   const [typedText, setTypedText] = useState("");
@@ -139,7 +140,12 @@ function Navigation() {
           <div className="p-6 pt-20">
             <nav>
               <div className="flex flex-col items-center gap-4 mb-8">
-                <img src={profileImg} alt="Profile" className="w-[80%] object-cover" />
+                <img
+                  src={profileImg}
+                  onClick={() => navigate("/")}
+                  alt="Profile"
+                  className="w-[80%] object-cover cursor-pointer"
+                />
 
                 {/* Social Media Icons */}
                 <div className="flex space-x-6 justify-center">
@@ -221,7 +227,7 @@ function Navigation() {
                       <div className="absolute inset-0 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping opacity-75"></div>
                     </div>
 
-                    <p className="text-sm text-secondary font-mono">
+                    <p className="text-sm text-secondary">
                       {typedText}
                       {isTyping && <span className="animate-pulse">|</span>}
                     </p>
@@ -239,7 +245,12 @@ function Navigation() {
       {/* Desktop Navigation - Hidden on Mobile */}
       <nav className="hidden lg:block">
         <div className="flex flex-col items-center gap-4">
-          <img src={profileImg} alt="Profile" className="w-50 object-cover" />
+          <img
+            src={profileImg}
+            onClick={() => navigate("/")}
+            alt="Profile"
+            className="w-50 object-cover cursor-pointer"
+          />
 
           {/* Social Media Icons */}
           <div className="flex space-x-4 mb-8 justify-center">
@@ -329,7 +340,7 @@ function Navigation() {
                 <div className="absolute inset-0 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping opacity-75"></div>
               </div>
 
-              <p className="text-sm text-secondary font-mono">
+              <p className="text-sm text-secondary">
                 {typedText}
                 {isTyping && <span className="animate-pulse">|</span>}
               </p>

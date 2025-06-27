@@ -169,12 +169,11 @@
 }
 
 /* Set base font and global typography adjustments */
-/* body {
-  font-family: "Signifier", serif;
+body {
+  font-family: "Editorial New", serif;
   font-weight: 300;
-  letter-spacing: -0.02em;
   color: var(--color-primary);
-} */
+}
 
 /* Link styling with theme support */
 .link {

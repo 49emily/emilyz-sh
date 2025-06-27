@@ -148,11 +148,11 @@ function AppContent() {
         <GlobalImageOverlay />
         <ThemeToggle />
         <div className="mx-auto px-4 lg:px-12">
-          <div className="lg:grid lg:grid-cols-7 lg:gap-4 min-h-screen">
+          <div className="lg:grid lg:grid-cols-7 min-h-screen">
             {/* Left Sidebar - Hidden on Mobile */}
             <aside className="hidden lg:block lg:col-span-2">
               <div
-                className={`fixed top-30 left-20 transition-all duration-700 delay-200 ease-out ${
+                className={`fixed top-35 left-20 transition-all duration-700 delay-200 ease-out ${
                   appLoaded ? "opacity-100" : "opacity-0 -translate-x-4"
                 }`}
               >
