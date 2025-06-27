@@ -16,7 +16,7 @@ function SelectedWork() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             const ProjectCard = (
-              <div className="glass backdrop-blur-sm overflow-hidden border-2 border-transparent hover:border-accent transition-all duration-200">
+              <div className="glass backdrop-blur-sm overflow-hidden border-2 border-transparent hover:border-accent transition-all duration-200 h-full flex flex-col">
                 {/* Image placeholder */}
                 <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-300 relative overflow-hidden">
                   {project.image ? (
@@ -43,7 +43,7 @@ function SelectedWork() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex-grow flex flex-col">
                   <div className="mb-3">
                     <h3 className="text-xl font-light mb-1 group-hover:text-accent transition-colors text-primary">
                       {project.title}
@@ -94,7 +94,7 @@ function SelectedWork() {
 
                   {/* Subtle arrow indicator - only show if path exists */}
                   {project.path && (
-                    <div className="mt-4 flex items-center text-muted group-hover:text-secondary transition-colors">
+                    <div className="mt-auto pt-4 flex items-center text-muted group-hover:text-secondary transition-colors">
                       <span className="text-sm">More details</span>
                       <svg
                         className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
