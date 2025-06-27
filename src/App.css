@@ -7,19 +7,34 @@
 
 /* Studio Ghibli background with dark mode support */
 body {
+  background-color: #f8f9fa; /* fallback color */
+  transition: background-image 0.3s ease;
+  position: relative;
+}
+
+/* Fixed background for all devices using pseudo-element */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("./assets/studio_ghibli4.gif");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: #f8f9fa; /* fallback color */
+  z-index: -2;
   transition: background-image 0.3s ease;
 }
 
 /* Dark mode background */
 .dark body {
-  background-image: url("./assets/studio_ghiblidark.gif");
   background-color: #1a1a1a; /* fallback color for dark mode */
+}
+
+.dark body::after {
+  background-image: url("./assets/studio_ghiblidark.gif");
 }
 
 /* Add subtle overlay to ensure text readability with theme support */
