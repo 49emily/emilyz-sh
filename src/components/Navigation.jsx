@@ -122,18 +122,20 @@ function Navigation() {
         </div>
       </button>
 
-      {/* Mobile Navigation Overlay */}
+      {/* Mobile Navigation Overlay - Always present for blur preload */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 mobile-nav-container ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`lg:hidden fixed inset-0 z-40 mobile-nav-container transition-all duration-200 ${
+          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
+        style={{
+          backdropFilter: "blur(4px)",
+          WebkitBackdropFilter: "blur(4px)",
+          background: isMobileMenuOpen ? "rgba(0, 0, 0, 0.2)" : "transparent",
+        }}
+        onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className="absolute inset-0 bg-black/20 backdrop-blur-sm"
-          onClick={() => setIsMobileMenuOpen(false)}
-        ></div>
-        <div
-          className={`absolute top-0 left-0 w-80 max-w-[85vw] h-full bg-white/80 dark:bg-black/80 backdrop-blur-md border-r border-white/20 dark:border-white/10 transform transition-transform duration-300 ${
+          className={`absolute top-0 left-0 w-80 max-w-[85vw] h-full bg-white/80 dark:bg-black/80 backdrop-blur-md border-r border-white/20 dark:border-white/10 transform transition-transform duration-250 ease-out ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
