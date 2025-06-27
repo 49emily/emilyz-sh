@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import ExternalLink from "./ExternalLink";
 import { showImage, hideImage } from "../utils";
 
@@ -15,25 +15,93 @@ function Home() {
   ];
 
   const [currentTopicIndex, setCurrentTopicIndex] = useState(0);
+  const [showDice, setShowDice] = useState(false);
+  const [name, setName] = useState("Emily Zhang");
+  const [isMobile, setIsMobile] = useState(false);
+  const [isNameChinese, setIsNameChinese] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+  const homeRef = useRef(null);
+
+  // Detect if device supports touch (mobile/tablet)
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Handle clicking outside of images to hide them on mobile
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobile && currentImage && homeRef.current && !event.target.closest(".image-trigger")) {
+        hideImage(currentImage);
+        setCurrentImage(null);
+      }
+    };
+
+    if (isMobile) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [isMobile, currentImage]);
 
   const rollDice = () => {
     const randomIndex = Math.floor(Math.random() * topics.length);
     setCurrentTopicIndex(randomIndex);
   };
 
-  const [showDice, setShowDice] = useState(false);
-  const [name, setName] = useState("Emily Zhang");
+  const handleNameInteraction = () => {
+    if (isMobile) {
+      // Toggle name on click for mobile
+      const newState = !isNameChinese;
+      setIsNameChinese(newState);
+      setName(newState ? "张思涵" : "Emily Zhang");
+    }
+  };
+
+  const handleImageInteraction = (imageName, isEnter = true) => {
+    if (isMobile) {
+      // Click to show, click outside to hide for mobile
+      if (currentImage === imageName) {
+        hideImage(imageName);
+        setCurrentImage(null);
+      } else {
+        if (currentImage) {
+          hideImage(currentImage);
+        }
+        showImage(imageName);
+        setCurrentImage(imageName);
+      }
+    } else {
+      // Hover behavior for desktop
+      if (isEnter) {
+        showImage(imageName);
+      } else {
+        hideImage(imageName);
+      }
+    }
+  };
+
+  const handleDiceInteraction = (isEnter = true) => {
+    if (!isMobile) {
+      setShowDice(isEnter);
+    }
+  };
 
   return (
-    <div className="flex items-center justify-center min-h-[80vh]">
+    <div className="flex items-center justify-center min-h-[80vh]" ref={homeRef}>
       <div className="max-w-2xl relative">
         <div className="text-2xl tracking-tight text-primary">
           <p className="mb-6">
             Welcome! My name is{" "}
             <span
               className="link cursor-pointer"
-              onMouseEnter={() => setName("张思涵")}
-              onMouseLeave={() => setName("Emily Zhang")}
+              onClick={handleNameInteraction}
+              onMouseEnter={!isMobile ? () => setName("张思涵") : undefined}
+              onMouseLeave={!isMobile ? () => setName("Emily Zhang") : undefined}
             >
               {name}.
             </span>
@@ -41,25 +109,28 @@ function Home() {
           <p className="mb-6">
             I'm an engineer, artist, and creative technologist born in{" "}
             <span
-              className="link cursor-pointer"
-              onMouseEnter={() => showImage("nanjing")}
-              onMouseLeave={() => hideImage("nanjing")}
+              className="link cursor-pointer image-trigger"
+              onClick={() => handleImageInteraction("nanjing")}
+              onMouseEnter={!isMobile ? () => handleImageInteraction("nanjing", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("nanjing", false) : undefined}
             >
               Nanjing, China
             </span>
             , currently residing in the liminal space between{" "}
             <span
-              className="link cursor-pointer"
-              onMouseEnter={() => showImage("stanford")}
-              onMouseLeave={() => hideImage("stanford")}
+              className="link cursor-pointer image-trigger"
+              onClick={() => handleImageInteraction("stanford")}
+              onMouseEnter={!isMobile ? () => handleImageInteraction("stanford", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("stanford", false) : undefined}
             >
               Stanford University
             </span>{" "}
             and{" "}
             <span
-              className="link cursor-pointer"
-              onMouseEnter={() => showImage("sf")}
-              onMouseLeave={() => hideImage("sf")}
+              className="link cursor-pointer image-trigger"
+              onClick={() => handleImageInteraction("sf")}
+              onMouseEnter={!isMobile ? () => handleImageInteraction("sf", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("sf", false) : undefined}
             >
               San Francisco
             </span>
@@ -73,13 +144,13 @@ function Home() {
             I've recently been working on and thinking about{" "}
             <span
               className="link cursor-pointer"
-              onMouseEnter={() => setShowDice(true)}
-              onMouseLeave={() => setShowDice(false)}
+              onMouseEnter={() => handleDiceInteraction(true)}
+              onMouseLeave={() => handleDiceInteraction(false)}
               onClick={rollDice}
               title="Click to explore other topics I'm working on"
             >
               {topics[currentTopicIndex]}
-              {showDice && (
+              {(showDice || isMobile) && (
                 <span className="text-lg hover:scale-110 transition-transform inline-block ml-1">
                   🎲
                 </span>
