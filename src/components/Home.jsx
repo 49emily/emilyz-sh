@@ -15,6 +15,7 @@ function Home() {
   ];
 
   const [currentTopicIndex, setCurrentTopicIndex] = useState(0);
+  const [usedTopicIndices, setUsedTopicIndices] = useState(new Set([0])); // Track used topics, start with index 0
   const [showDice, setShowDice] = useState(false);
   const [name, setName] = useState("Emily Zhang");
   const [isMobile, setIsMobile] = useState(false);
@@ -49,8 +50,25 @@ function Home() {
   }, [isMobile, currentImage]);
 
   const rollDice = () => {
-    const randomIndex = Math.floor(Math.random() * topics.length);
+    // If all topics have been used, reset the cycle
+    if (usedTopicIndices.size >= topics.length) {
+      setUsedTopicIndices(new Set());
+    }
+
+    // Get available indices (not yet used in current cycle)
+    const availableIndices = [];
+    for (let i = 0; i < topics.length; i++) {
+      if (!usedTopicIndices.has(i)) {
+        availableIndices.push(i);
+      }
+    }
+
+    // Pick a random index from available ones
+    const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+
+    // Update state
     setCurrentTopicIndex(randomIndex);
+    setUsedTopicIndices((prev) => new Set([...prev, randomIndex]));
   };
 
   const handleNameInteraction = () => {

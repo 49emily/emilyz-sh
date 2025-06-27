@@ -7,8 +7,8 @@
   /* Custom theme colors - these become utility classes */
   --color-primary: #000000;
   --color-secondary: #595f6b;
-  --color-accent: #fb1abf;
-  --color-muted: #9ca3af;
+  --color-accent: #fb38fb;
+  --color-muted: #9298a2;
   --color-highlight: #e1e1e1;
 
   /* Font families */
@@ -22,8 +22,8 @@
   .dark {
     --color-primary: #ffffff;
     --color-secondary: #d1d5db;
-    --color-accent: #ff69b4;
-    --color-muted: #6b7280;
+    --color-accent: #ff96ff;
+    --color-muted: #888f9e;
     --color-highlight: #52555a;
   }
 }
