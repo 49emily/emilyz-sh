@@ -254,7 +254,7 @@ function Navigation() {
             src={profileImg}
             onClick={() => navigate("/")}
             alt="Profile"
-            className="w-50 object-cover cursor-pointer"
+            className="w-50 max-w-[60vw] object-cover cursor-pointer"
           />
 
           {/* Social Media Icons */}
