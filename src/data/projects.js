@@ -2,8 +2,6 @@
 import WhatDoYouDreamAbout from "../components/works/WhatDoYouDreamAbout";
 import LettersToMyMom from "../components/works/LettersToMyMom";
 import DiffusionMe from "../components/works/DiffusionMe";
-import StyleScape from "../components/works/StyleScape";
-import Tangent from "../components/works/Tangent";
 
 // Import project images
 import whatdoyoudreamImage from "../assets/projects/dream.jpeg";

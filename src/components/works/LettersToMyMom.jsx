@@ -21,7 +21,11 @@ function LettersToMyMom({ links = [] }) {
       </div>
 
       <div className="space-y-4">
-        <img src={lettersToMyMomImage} className="w-1/2 min-w-96 h-auto" alt="Letters to my Mom" />
+        <img
+          src={lettersToMyMomImage}
+          className="w-[80%] lg:w-1/2 h-auto"
+          alt="Letters to my Mom"
+        />
         <p className="text-lg text-primary">
           At their home in rural China last year, my grandparents found a small piece of old paper
           tucked away in a book. It was a love letter that my dad wrote my mom in the '90s when they

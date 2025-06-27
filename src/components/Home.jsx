@@ -50,15 +50,17 @@ function Home() {
   }, [isMobile, currentImage]);
 
   const rollDice = () => {
-    // If all topics have been used, reset the cycle
-    if (usedTopicIndices.size >= topics.length) {
-      setUsedTopicIndices(new Set());
+    let currentUsedIndices = usedTopicIndices;
+
+    // If all topics have been used, start a new cycle
+    if (currentUsedIndices.size >= topics.length) {
+      currentUsedIndices = new Set();
     }
 
     // Get available indices (not yet used in current cycle)
     const availableIndices = [];
     for (let i = 0; i < topics.length; i++) {
-      if (!usedTopicIndices.has(i)) {
+      if (!currentUsedIndices.has(i)) {
         availableIndices.push(i);
       }
     }
@@ -68,7 +70,7 @@ function Home() {
 
     // Update state
     setCurrentTopicIndex(randomIndex);
-    setUsedTopicIndices((prev) => new Set([...prev, randomIndex]));
+    setUsedTopicIndices(new Set([...currentUsedIndices, randomIndex]));
   };
 
   const handleNameInteraction = () => {
