@@ -5,14 +5,14 @@ function LettersToMyMom({ links = [] }) {
   return (
     <div className="space-y-6">
       <div className="mb-6">
-        <h2 className="text-2xl mb-2">Letters to my Mom</h2>
+        <h2 className="text-3xl mb-2">Letters to my Mom</h2>
         <p className="text-gray-500 text-sm">(2025)</p>
 
         {/* Links section */}
         {links.length > 0 && (
           <div className="flex gap-4 mt-3">
             {links.map((link, index) => (
-              <ExternalLink key={index} href={link.url} className="text-sm link">
+              <ExternalLink key={index} href={link.url} className="link">
                 {link.label}
               </ExternalLink>
             ))}
