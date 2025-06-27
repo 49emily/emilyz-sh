@@ -60,7 +60,7 @@ function SelectedWork() {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center px-2 py-1 bg-highlight hover:bg-muted/10 text-secondary text-sm rounded-full transition-colors"
+                          className="inline-flex items-center px-2 py-1 bg-highlight hover:bg-muted/10 text-primary text-sm rounded-full transition-colors"
                           onClick={(e) => e.stopPropagation()}
                         >
                           {link.icon === "github" ? (

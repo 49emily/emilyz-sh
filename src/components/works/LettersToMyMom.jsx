@@ -6,7 +6,7 @@ function LettersToMyMom({ links = [] }) {
     <div className="space-y-6">
       <div className="mb-6">
         <h2 className="text-3xl mb-2">Letters to my Mom</h2>
-        <p className="text-gray-500 text-sm">(2025)</p>
+        <p className="text-secondary text-sm">(2025)</p>
 
         {/* Links section */}
         {links.length > 0 && (
@@ -22,7 +22,7 @@ function LettersToMyMom({ links = [] }) {
 
       <div className="space-y-4">
         <img src={lettersToMyMomImage} className="w-1/2 min-w-96 h-auto" alt="Letters to my Mom" />
-        <p className="text-gray-700">
+        <p className="text-lg text-primary">
           At their home in rural China last year, my grandparents found a small piece of old paper
           tucked away in a book. It was a love letter that my dad wrote my mom in the '90s when they
           were long-distance dating, complete with frayed, folded edges and smudged blue ink. When I
