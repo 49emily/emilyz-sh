@@ -147,10 +147,10 @@ function AppContent() {
       >
         <GlobalImageOverlay />
         <ThemeToggle />
-        <div className="mx-auto px-12">
-          <div className="grid grid-cols-3 lg:grid-cols-7 gap-4 min-h-screen">
-            {/* Left Sidebar */}
-            <aside className="lg:col-span-2">
+        <div className="mx-auto px-4 lg:px-12">
+          <div className="lg:grid lg:grid-cols-7 lg:gap-4 min-h-screen">
+            {/* Left Sidebar - Hidden on Mobile */}
+            <aside className="hidden lg:block lg:col-span-2">
               <div
                 className={`fixed top-30 left-20 transition-all duration-700 delay-200 ease-out ${
                   appLoaded ? "opacity-100" : "opacity-0 -translate-x-4"
@@ -160,9 +160,14 @@ function AppContent() {
               </div>
             </aside>
 
+            {/* Mobile Navigation */}
+            <div className="lg:hidden">
+              <Navigation />
+            </div>
+
             {/* Main Content */}
             <main
-              className={`col-span-2 lg:col-span-5 py-12 transition-all duration-700 delay-400 ease-out ${
+              className={`lg:col-span-5 px-4 py-12 lg:py-12 pt-20 lg:pt-12 transition-all duration-700 delay-400 ease-out ${
                 appLoaded ? "opacity-100 transform" : "opacity-0 transform translate-x-4"
               }`}
             >
