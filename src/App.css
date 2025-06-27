@@ -1,65 +1,11 @@
-/* Editorial New Font Faces */
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Ultralight-BF644b21500d0c0.otf")
-    format("opentype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-UltralightItalic-BF644b214ff1e9b.otf")
-    format("opentype");
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Regular-BF644b214ff145f.otf")
-    format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Italic-BF644b214fb0c0a.otf")
-    format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Ultrabold-BF644b21500840c.otf")
-    format("opentype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-UltraboldItalic-BF644b214faef01.otf")
-    format("opentype");
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* Apply Editorial New as the primary font */
 * {
   font-family: "Editorial New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", sans-serif;
+  font-weight: 300;
 }
 
-/* Studio Ghibli background */
+/* Studio Ghibli background with dark mode support */
 body {
   background-image: url("./assets/studio_ghibli4.gif");
   background-size: cover;
@@ -67,9 +13,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: #f8f9fa; /* fallback color */
+  transition: background-image 0.3s ease;
 }
 
-/* Add subtle overlay to ensure text readability */
+/* Dark mode background */
+.dark body {
+  background-image: url("./assets/studio_ghiblidark.gif");
+  background-color: #1a1a1a; /* fallback color for dark mode */
+}
+
+/* Add subtle overlay to ensure text readability with theme support */
 body::before {
   content: "";
   position: fixed;
@@ -80,50 +33,64 @@ body::before {
   background: rgba(255, 255, 255, 0.4);
   pointer-events: none;
   z-index: -1;
+  transition: background 0.3s ease;
 }
 
-.link {
-  color: #fb1abf;
+/* Dark mode overlay */
+.dark body::before {
+  background: rgba(0, 0, 0, 0.4);
+}
 
+/* Theme-aware link styling */
+.link {
+  color: var(--color-accent);
   text-decoration: underline dotted;
   text-decoration-thickness: 1px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .link:hover {
-  color: #cd08b9;
+  opacity: 0.8;
+  transform: translateY(-1px);
 }
 
+/* Theme-aware zsh styling */
 .zsh {
-  color: #760646;
+  color: var(--color-accent);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   display: inline-block;
 }
 
 .zsh:hover {
-  color: #df1186;
+  opacity: 0.8;
   transform: translateY(-1px) scale(1.02);
 }
 
-/* Smooth scrollbar styling */
+/* Smooth scrollbar styling with theme support */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 3px;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(118, 6, 70, 0.3);
+  background: var(--color-accent);
+  opacity: 0.3;
   border-radius: 3px;
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(223, 17, 134, 0.5);
+  opacity: 0.5;
 }
 
 /* Remove focus outlines */
@@ -199,10 +166,10 @@ body::before {
   animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Enhanced backdrop blur support */
+/* Glass effect with theme support */
 .backdrop-blur-strong {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .backdrop-blur-subtle {
@@ -210,29 +177,32 @@ body::before {
   -webkit-backdrop-filter: blur(4px);
 }
 
-/* Smooth transitions for all interactive elements */
+/* Button and interactive element theming */
 button,
-a,
-[role="button"],
-[tabindex] {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+[role="button"] {
+  color: var(--color-primary);
+  transition: all 0.3s ease;
 }
 
-/* Glass morphism effect */
+/* Glass morphism effect with theme support */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Hover lift effect */
+.dark .glass {
+  background: rgba(83, 83, 83, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effects */
 .hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

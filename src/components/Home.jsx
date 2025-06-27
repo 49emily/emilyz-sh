@@ -27,7 +27,7 @@ function Home() {
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
       <div className="max-w-2xl relative">
-        <div className="text-2xl tracking-tight">
+        <div className="text-2xl tracking-tight text-primary">
           <p className="mb-6">
             Welcome! My name is{" "}
             <span

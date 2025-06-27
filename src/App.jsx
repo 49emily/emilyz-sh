@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import VisualArt from "./components/VisualArt";
 import About from "./components/About";
 import SelectedWork from "./components/SelectedWork";
+import ThemeToggle from "./components/ThemeToggle";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Import projects data for routing
 import { getProjectRoutes } from "./data/projects";
@@ -128,7 +130,7 @@ function GlobalImageOverlay() {
 }
 
 // Main App component
-function App() {
+function AppContent() {
   const [appLoaded, setAppLoaded] = useState(false);
 
   useEffect(() => {
@@ -144,12 +146,13 @@ function App() {
         }`}
       >
         <GlobalImageOverlay />
+        <ThemeToggle />
         <div className="mx-auto px-12">
           <div className="grid grid-cols-3 lg:grid-cols-7 gap-4 min-h-screen">
             {/* Left Sidebar */}
             <aside className="lg:col-span-2">
               <div
-                className={`fixed top-12 left-16 transition-all duration-700 delay-200 ease-out ${
+                className={`fixed top-30 left-20 transition-all duration-700 delay-200 ease-out ${
                   appLoaded ? "opacity-100" : "opacity-0 -translate-x-4"
                 }`}
               >
@@ -170,7 +173,11 @@ function App() {
 
                 {/* Dynamic project routes */}
                 {getProjectRoutes().map((project) => (
-                  <Route key={project.path} path={project.path} element={<project.component />} />
+                  <Route
+                    key={project.path}
+                    path={project.path}
+                    element={<project.component links={project.links} />}
+                  />
                 ))}
 
                 <Route path="/art" element={<VisualArt />} />
@@ -180,6 +187,14 @@ function App() {
         </div>
       </div>
     </Router>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

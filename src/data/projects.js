@@ -6,9 +6,13 @@ import StyleScape from "../components/works/StyleScape";
 import Tangent from "../components/works/Tangent";
 
 // Import project images
-import whatdoyoudreamImage from "../assets/projects/whatdoyoudream.png";
+import whatdoyoudreamImage from "../assets/projects/dream.jpeg";
 import lettersToMyMomImage from "../assets/projects/letters.jpg";
 import pearlImage from "../assets/projects/pearl.jpeg";
+import pearlMobileImage from "../assets/projects/pearlios.png";
+import stylescapeImage from "../assets/projects/stylescape.png";
+
+import tangentImage from "../assets/projects/tangent.png";
 
 export const projects = [
   {
@@ -16,10 +20,8 @@ export const projects = [
     year: "2025",
     path: "/work/what-do-you-dream-about",
     component: WhatDoYouDreamAbout,
-    description:
-      "An interactive media installation that asks viewers machine-generated questions and generates real-time interpretations using Stream Diffusion.",
     image: whatdoyoudreamImage,
-    status: "Interactive Installation",
+    status: "real-time diffusion installation",
     links: [
       // {
       //   label: "GitHub",
@@ -34,10 +36,8 @@ export const projects = [
     year: "2025",
     path: "/work/letters-to-my-mom",
     component: LettersToMyMom,
-    description:
-      "A personal exploration of family, identity, and cross-cultural communication through digital storytelling.",
     image: lettersToMyMomImage,
-    status: "Coming Soon",
+    status: "series of generative prints",
     links: [
       { label: "GitHub", url: "https://github.com/49emily/ai-art-calligraphy", icon: "github" },
     ],
@@ -47,8 +47,6 @@ export const projects = [
     year: "2025",
     path: "/work/diffusion-me",
     component: DiffusionMe,
-    description:
-      "An exploration of AI-generated self-representation and identity through diffusion models.",
     image: null,
     status: "training a generative model on my own art",
     links: [
@@ -61,8 +59,6 @@ export const projects = [
     year: "2024-25",
     path: null,
     component: null,
-    description:
-      "A collaborative project exploring the intersection of technology and human relationships.",
     image: pearlImage,
     status: "The journal that reflects with you. Scaled to 2000+ users.",
     links: [
@@ -75,6 +71,7 @@ export const projects = [
         url: "https://www.producthunt.com/products/pearl-8",
         icon: "external",
       },
+      { label: "Discord", url: "https://discord.gg/prl", icon: "discord" },
     ],
   },
   {
@@ -82,20 +79,16 @@ export const projects = [
     year: "2025",
     path: null,
     component: null,
-    description:
-      "Mobile companion to the prl project, designed for intimate, personal interactions.",
-    image: null,
+    image: pearlMobileImage,
     status: "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
     links: [{ label: "DM for Testflight", url: "https://x.com/writewithprl", icon: "twitter" }],
   },
   {
     title: "Tangent",
     year: "2025",
-    path: "/work/tangent",
-    component: Tangent,
-    description:
-      "A creative exploration of unexpected connections and divergent thinking patterns.",
-    image: null,
+    path: null,
+    component: null,
+    image: tangentImage,
     status: "An experimental browser that acts as your second brain.",
     links: [
       {
@@ -108,10 +101,9 @@ export const projects = [
   {
     title: "StyleScape",
     year: "2024",
-    path: "/work/stylescape",
-    component: StyleScape,
-    description: "A visual journey through different aesthetic landscapes and design philosophies.",
-    image: null,
+    path: null,
+    component: null,
+    image: stylescapeImage,
     status: "infinitely generated world walkthroughs",
     links: [
       { label: "GitHub", url: "https://github.com/49emily/stylescape", icon: "github" },
