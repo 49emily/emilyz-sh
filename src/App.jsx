@@ -19,6 +19,9 @@ import meImage from "./assets/me.jpg";
 import scaleImage from "./assets/scale.JPG";
 import fakerImage from "./assets/faker.jpg";
 
+// Import the navigation profile image to preload it
+import profileImg from "./assets/profile3.jpg";
+
 import "./App.css";
 
 // Global image overlay component
@@ -132,11 +135,24 @@ function GlobalImageOverlay() {
 // Main App component
 function AppContent() {
   const [appLoaded, setAppLoaded] = useState(false);
+  const [navImageLoaded, setNavImageLoaded] = useState(false);
 
   useEffect(() => {
-    // Add a small delay for smooth initial load animation
-    setTimeout(() => setAppLoaded(true), 100);
+    // Preload the navigation profile image
+    const img = new Image();
+    img.onload = () => {
+      setNavImageLoaded(true);
+    };
+    img.src = profileImg;
   }, []);
+
+  useEffect(() => {
+    // Only set app as loaded after navigation image has loaded
+    if (navImageLoaded) {
+      // Add a small delay for smooth initial load animation
+      setTimeout(() => setAppLoaded(true), 100);
+    }
+  }, [navImageLoaded]);
 
   return (
     <Router>

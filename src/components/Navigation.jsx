@@ -212,7 +212,10 @@ function Navigation() {
                       to={item.path}
                       onClick={handleNavClick}
                       className={`block text-3xl italic transition-colors duration-200 hover:text-primary ${
-                        location.pathname === item.path ? "text-primary" : "text-secondary"
+                        location.pathname === item.path ||
+                        (item.path === "/" && location.pathname.startsWith("/work/"))
+                          ? "text-primary"
+                          : "text-muted"
                       }`}
                     >
                       {item.label}
@@ -325,7 +328,10 @@ function Navigation() {
               <Link
                 to={item.path}
                 className={`block text-3xl italic transition-colors duration-200 hover:text-primary ${
-                  location.pathname === item.path ? "text-primary" : "text-secondary"
+                  location.pathname === item.path ||
+                  (item.path === "/" && location.pathname.startsWith("/work/"))
+                    ? "text-primary"
+                    : "text-muted"
                 }`}
               >
                 {item.label}
