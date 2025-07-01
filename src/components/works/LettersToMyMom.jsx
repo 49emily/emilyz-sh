@@ -26,7 +26,7 @@ function LettersToMyMom({ links = [] }) {
           className="w-[80%] lg:w-1/2 h-auto"
           alt="Letters to my Mom"
         />
-        <p className="text-lg text-primary">
+        <p className="text-lg text-primary font-light">
           At their home in rural China last year, my grandparents found a small piece of old paper
           tucked away in a book. It was a love letter that my dad wrote my mom in the '90s when they
           were long-distance dating, complete with frayed, folded edges and smudged blue ink. When I

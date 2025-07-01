@@ -116,57 +116,19 @@
   font-style: italic;
 }
 
-/* Editorial New Font Faces */
+/* Editorial New Variable Font Faces */
 @font-face {
   font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Ultralight-BF644b21500d0c0.otf")
-    format("opentype");
-  font-weight: 100;
+  src: url("./assets/fonts/editorialnew/PPEditorialNew-Variable.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-UltralightItalic-BF644b214ff1e9b.otf")
-    format("opentype");
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Regular-BF644b214ff145f.otf")
-    format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Italic-BF644b214fb0c0a.otf")
-    format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-Ultrabold-BF644b21500840c.otf")
-    format("opentype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Editorial New";
-  src: url("./assets/fonts/editorialnew/PPEditorialNew-UltraboldItalic-BF644b214faef01.otf")
-    format("opentype");
-  font-weight: 800;
+  src: url("./assets/fonts/editorialnew/PPEditorialNew-ItalicVariable.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
@@ -174,7 +136,7 @@
 /* Set base font and global typography adjustments */
 body {
   font-family: "Editorial New", serif;
-  font-weight: 300;
+  font-weight: 200;
   color: var(--color-primary);
 }
 
