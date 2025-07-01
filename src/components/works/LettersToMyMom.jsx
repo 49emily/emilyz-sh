@@ -6,7 +6,7 @@ function LettersToMyMom({ links = [] }) {
     <div className="space-y-6">
       <div className="mb-6">
         <h2 className="text-3xl mb-2">Letters to my Mom</h2>
-        <p className="text-secondary text-sm">(2025)</p>
+        <p className="text-secondary">(2025)</p>
 
         {/* Links section */}
         {links.length > 0 && (

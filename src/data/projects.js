@@ -9,6 +9,7 @@ import lettersToMyMomImage from "../assets/projects/letters.jpg";
 import pearlImage from "../assets/projects/pearl.jpeg";
 import pearlMobileImage from "../assets/projects/pearlios.png";
 import stylescapeImage from "../assets/projects/stylescape.png";
+import diffusionMeImage from "../assets/projects/diffusionme.png";
 
 import tangentImage from "../assets/projects/tangent.png";
 
@@ -16,6 +17,8 @@ export const projects = [
   {
     title: "what do you dream about?",
     year: "2025",
+    completionDate: "06/15/2025",
+    creativeRating: 0.9,
     path: "/work/what-do-you-dream-about",
     component: WhatDoYouDreamAbout,
     image: whatdoyoudreamImage,
@@ -32,6 +35,8 @@ export const projects = [
   {
     title: "Letters to my Mom",
     year: "2025",
+    completionDate: "05/10/2025",
+    creativeRating: 0.8,
     path: "/work/letters-to-my-mom",
     component: LettersToMyMom,
     image: lettersToMyMomImage,
@@ -41,20 +46,23 @@ export const projects = [
     ],
   },
   {
-    title: "diffusion-me",
+    title: "emily-diffusion",
     year: "2025",
-    path: "/work/diffusion-me",
+    completionDate: "06/05/2025",
+    creativeRating: 0.6,
+    path: "/work/emily-diffusion",
     component: DiffusionMe,
-    image: null,
+    image: diffusionMeImage,
     status: "training a generative model on my own art",
     links: [
-      { label: "GitHub", url: "https://github.com/emilyz49/diffusion-me", icon: "github" },
-      { label: "Paper", url: "https://arxiv.org/abs/2501.00000", icon: "external" },
+      { label: "GitHub", url: "https://github.com/emilyz49/emily-diffusion", icon: "github" },
     ],
   },
   {
     title: "prl",
     year: "2024-25",
+    completionDate: "12/20/2024",
+    creativeRating: 0.4,
     path: null,
     component: null,
     image: pearlImage,
@@ -75,6 +83,8 @@ export const projects = [
   {
     title: "prl iOS",
     year: "2025",
+    completionDate: "03/15/2025",
+    creativeRating: 0.3,
     path: null,
     component: null,
     image: pearlMobileImage,
@@ -84,6 +94,8 @@ export const projects = [
   {
     title: "Tangent",
     year: "2025",
+    completionDate: "01/08/2025",
+    creativeRating: 0.2,
     path: null,
     component: null,
     image: tangentImage,
@@ -99,6 +111,8 @@ export const projects = [
   {
     title: "StyleScape",
     year: "2024",
+    completionDate: "05/15/2024",
+    creativeRating: 0.1,
     path: null,
     component: null,
     image: stylescapeImage,
