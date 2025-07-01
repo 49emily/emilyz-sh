@@ -11,6 +11,8 @@
   --color-muted: #9298a2;
   --color-highlight: #e1e1e1;
 
+  --color-background: #ffffff;
+
   /* Font families */
   --font-editorial: "Editorial New", serif;
   --font-signifier: "Signifier", serif;
@@ -25,6 +27,7 @@
     --color-accent: #ff96ff;
     --color-muted: #888f9e;
     --color-highlight: #52555a;
+    --color-background: #333333;
   }
 }
 

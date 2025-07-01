@@ -186,12 +186,12 @@ body::before {
   -webkit-backdrop-filter: blur(4px);
 }
 
-/* Button and interactive element theming */
+/* Button and interactive element theming
 button,
 [role="button"] {
   color: var(--color-primary);
   transition: all 0.3s ease;
-}
+} */
 
 /* Glass morphism effect with theme support */
 .glass {
@@ -204,6 +204,20 @@ button,
 .dark .glass {
   background: rgba(83, 83, 83, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-hover {
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.dark .glass-hover:hover {
+  background: rgba(83, 83, 83, 0.6) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Hover effects */

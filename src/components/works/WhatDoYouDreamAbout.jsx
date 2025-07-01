@@ -3,10 +3,10 @@ import ExternalLink from "../ExternalLink";
 
 function WhatDoYouDreamAbout({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl">
+    <div className="space-y-6 max-w-4xl mb-20">
       <div className="mb-6">
         <h2 className="text-3xl mb-2">what do you dream about?</h2>
-        <p className="text-secondary text-sm">(2025)</p>
+        <p className="text-secondary">(2025)</p>
 
         {/* Links section */}
         {links.length > 0 && (
@@ -21,7 +21,7 @@ function WhatDoYouDreamAbout({ links = [] }) {
       </div>
 
       <div className="space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="space-y-6">
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg"
