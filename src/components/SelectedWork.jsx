@@ -1,7 +1,57 @@
 import { Link } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import { projects } from "../data/projects";
 
 function SelectedWork() {
+  const [sortBy, setSortBy] = useState("date-desc"); // date-desc, date-asc, creative-desc, creative-asc
+  const [showSortMenu, setShowSortMenu] = useState(false);
+  const sortMenuRef = useRef(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sortMenuRef.current && !sortMenuRef.current.contains(event.target)) {
+        setShowSortMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Sort projects based on current sort option
+  const sortedProjects = [...projects].sort((a, b) => {
+    switch (sortBy) {
+      case "date-desc":
+        return new Date(b.completionDate) - new Date(a.completionDate);
+      case "date-asc":
+        return new Date(a.completionDate) - new Date(b.completionDate);
+      case "creative-desc":
+        return b.creativeRating - a.creativeRating;
+      case "creative-asc":
+        return a.creativeRating - b.creativeRating;
+      default:
+        return 0;
+    }
+  });
+
+  const getSortLabel = () => {
+    switch (sortBy) {
+      case "date-desc":
+        return "Newest first";
+      case "date-asc":
+        return "Oldest first";
+      case "creative-desc":
+        return "Most creative";
+      case "creative-asc":
+        return "Most techy";
+      default:
+        return "Sort";
+    }
+  };
+
   return (
     <div className="space-y-12">
       <div className="mb-12">
@@ -10,11 +60,106 @@ function SelectedWork() {
 
       {/* Projects Section */}
       <section>
-        <h2 className="text-3xl font-light mb-8 text-primary">
-          <i>Projects</i>
-        </h2>
+        <div className="flex flex-row items-center justify-between mb-8">
+          <h2 className="text-3xl font-light text-primary">
+            <i>Projects</i>
+          </h2>
+
+          {/* Sort Controls */}
+          <div className="relative" ref={sortMenuRef}>
+            <button
+              onClick={() => setShowSortMenu(!showSortMenu)}
+              className="flex items-center gap-2 px-3 py-2 glass glass-hover text-primary rounded-full"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"
+                />
+              </svg>
+              <span className="text-sm">{getSortLabel()}</span>
+              <svg
+                className={`w-3 h-3 transition-transform ${showSortMenu ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {/* Dropdown Menu */}
+            {showSortMenu && (
+              <div className="absolute right-0 top-full mt-2 w-48 bg-background border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-10 text-primary">
+                <div className="pt-2">
+                  <div className="px-3 py-1 text-xs font-medium text-muted uppercase tracking-wide">
+                    By Date
+                  </div>
+                  <button
+                    onClick={() => {
+                      setSortBy("date-desc");
+                      setShowSortMenu(false);
+                    }}
+                    className={`w-full text-left px-3 py-2 text-sm hover:bg-muted/20 transition-colors ${
+                      sortBy === "date-desc" ? "bg-muted/20" : "text-secondary"
+                    }`}
+                  >
+                    Newest first
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSortBy("date-asc");
+                      setShowSortMenu(false);
+                    }}
+                    className={`w-full text-left px-3 py-2 text-sm hover:bg-muted/20 transition-colors ${
+                      sortBy === "date-asc" ? "bg-muted/20" : "text-secondary"
+                    }`}
+                  >
+                    Oldest first
+                  </button>
+
+                  <div className="border-t border-gray-200 dark:border-gray-600 mb-2"></div>
+
+                  <div className="px-3 py-1 text-xs font-medium text-muted uppercase tracking-wide">
+                    By Type
+                  </div>
+                  <button
+                    onClick={() => {
+                      setSortBy("creative-desc");
+                      setShowSortMenu(false);
+                    }}
+                    className={`w-full text-left px-3 py-2 text-sm hover:bg-muted/20 transition-colors ${
+                      sortBy === "creative-desc" ? "bg-muted/20" : "text-secondary"
+                    }`}
+                  >
+                    Art → Tech
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSortBy("creative-asc");
+                      setShowSortMenu(false);
+                    }}
+                    className={`w-full text-left px-3 py-2 text-sm hover:bg-muted/20 transition-colors ${
+                      sortBy === "creative-asc" ? "bg-muted/20" : "text-secondary"
+                    }`}
+                  >
+                    Tech → Art
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => {
+          {sortedProjects.map((project, index) => {
             const ProjectCard = (
               <div className="glass backdrop-blur-sm overflow-hidden border-2 border-transparent hover:border-accent transition-all duration-200 h-full flex flex-col">
                 {/* Image placeholder */}

@@ -1,11 +1,12 @@
 import ExternalLink from "../ExternalLink";
+import diffusionMeVideo from "../../assets/projects/diffusionme.mp4";
 
 function DiffusionMe({ links = [] }) {
   return (
     <div className="space-y-6">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2">diffusion-me</h2>
-        <p className="text-gray-500 text-sm">(2025)</p>
+        <h2 className="text-3xl mb-2">emily-diffusion</h2>
+        <p className="text-secondary">(2025)</p>
 
         {/* Links section */}
         {links.length > 0 && (
@@ -20,7 +21,17 @@ function DiffusionMe({ links = [] }) {
       </div>
 
       <div className="space-y-4">
-        <p className="text-gray-700 leading-relaxed">Project details coming soon...</p>
+        <div className="w-full">
+          <video
+            src={diffusionMeVideo}
+            controls
+            className="w-full max-w-4xl rounded-lg shadow-lg"
+            preload="metadata"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p className="text-primary text-lg">Project details coming soon...</p>
       </div>
     </div>
   );
