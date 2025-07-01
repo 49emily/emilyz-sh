@@ -45,7 +45,7 @@ function WhatDoYouDreamAbout({ links = [] }) {
           </div>
         </div>
 
-        <p className="text-lg text-primary">
+        <p className="text-lg text-primary font-light">
           <i>what do you dream about?</i> is an interactive media installation that asks viewers in
           machine-generated voice questions like <i>"what do you eat for breakfast?"</i>,{" "}
           <i>"where did you first fall in love?"</i>, <i>"what do you dream about?"</i>. Reversing

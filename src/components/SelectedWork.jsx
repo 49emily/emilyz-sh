@@ -61,7 +61,7 @@ function SelectedWork() {
       {/* Projects Section */}
       <section>
         <div className="flex flex-row items-center justify-between mb-8">
-          <h2 className="text-3xl font-light text-primary">
+          <h2 className="text-3xl  text-primary">
             <i>Projects</i>
           </h2>
 
@@ -174,7 +174,7 @@ function SelectedWork() {
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="text-center text-muted">
                         <div className="text-2xl mb-2">📱</div>
-                        <div className="text-md font-light">{project.status}</div>
+                        <div className="text-md">{project.status}</div>
                       </div>
                     </div>
                   )}
@@ -190,10 +190,10 @@ function SelectedWork() {
                 {/* Content */}
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="mb-3">
-                    <h3 className="text-xl font-light mb-1 group-hover:text-accent transition-colors text-primary">
+                    <h3 className="text-xl mb-1 group-hover:text-accent transition-colors text-primary">
                       {project.title}
                     </h3>
-                    <span className="text-sm text-secondary font-light">{project.status}</span>
+                    <span className="text-sm text-secondary">{project.status}</span>
                   </div>
 
                   {/* External Links */}
@@ -279,7 +279,7 @@ function SelectedWork() {
 
       {/* Visual Art Section */}
       <section>
-        <h2 className="text-3xl font-light mb-8 text-primary">
+        <h2 className="text-3xl mb-8 text-primary">
           <i>Visual Art</i>
         </h2>
         <iframe
