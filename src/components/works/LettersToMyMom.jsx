@@ -27,8 +27,8 @@ function LettersToMyMom({ links = [] }) {
         tucked away in a book. It was a love letter that my dad wrote my mom in the '90s when they
         were long-distance dating, complete with frayed, folded edges and smudged blue ink. When I
         saw it I was immediately emotional, nostalgic for a time when loving was hard, but
-        worthwhile. Letters to My Mom is a bittersweet homage to my parents' story and a machine
-        exploration of loss, labor, and love.
+        worthwhile. <i>Letters to My Mom</i> is a bittersweet homage to my parents' story and a
+        machine exploration of loss, labor, and love.
         <br />
         <br />I cropped, annotated, and upscaled each character of my dad's original letter captured
         by my grandpa's phone camera halfway across the world. Using this small dataset, I trained a

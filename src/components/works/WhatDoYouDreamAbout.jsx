@@ -12,7 +12,7 @@ function WhatDoYouDreamAbout({ links = [] }) {
         {links.length > 0 && (
           <div className="flex gap-4 mt-3">
             {links.map((link, index) => (
-              <ExternalLink key={index} href={link.url} className="text-sm link">
+              <ExternalLink key={index} href={link.url} className="link">
                 {link.label}
               </ExternalLink>
             ))}
@@ -34,6 +34,9 @@ function WhatDoYouDreamAbout({ links = [] }) {
         yourself as a man). The machine here feels large, and the viewer small. I brought my setup
         all over campus, and watched students rock side to side, cover the camera, use props, to
         condition machine imagination.{" "}
+      </p>
+      <p className="text-lg text-primary font-light">
+        The live installation was run on a Runpod RTX 2000 Ada GPU.
       </p>
 
       <div className="space-y-8">

@@ -24,11 +24,11 @@ export const projects = [
     image: whatdoyoudreamImage,
     status: "real-time diffusion installation",
     links: [
-      // {
-      //   label: "GitHub",
-      //   url: "https://github.com/emilyz49/what-do-you-dream-about",
-      //   icon: "github",
-      // },
+      {
+        label: "GitHub",
+        url: "https://github.com/49emily/what-do-you-dream-about",
+        icon: "github",
+      },
       // { label: "Demo", url: "https://what-do-you-dream-about.com", icon: "external" },
     ],
   },
