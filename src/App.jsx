@@ -177,7 +177,7 @@ function AppContent() {
             {/* Left Sidebar - Hidden on Mobile */}
             <aside className="hidden lg:block lg:col-span-2">
               <div
-                className={`fixed top-40 left-20 transition-all duration-700 delay-200 ease-out ${
+                className={`fixed top-1/2 left-0 w-[28.571%] -translate-y-1/2 flex justify-center transition-all duration-700 delay-200 ease-out ${
                   appLoaded ? "opacity-100" : "opacity-0 -translate-x-4"
                 }`}
               >
@@ -192,7 +192,7 @@ function AppContent() {
 
             {/* Main Content */}
             <main
-              className={`lg:col-span-5 px-4 py-12 lg:py-12 pt-20 lg:pt-12 transition-all duration-700 delay-400 ease-out ${
+              className={`lg:col-span-5 px-4  transition-all duration-700 delay-400 ease-out ${
                 appLoaded ? "opacity-100 transform" : "opacity-0 transform translate-x-4"
               }`}
             >
