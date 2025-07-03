@@ -3,7 +3,7 @@ import ExternalLink from "../ExternalLink";
 
 function WhatDoYouDreamAbout({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl mb-20">
+    <div className="space-y-6 max-w-4xl mb-20  py-12 pt-20 lg:pt-12">
       <div className="mb-6">
         <h2 className="text-3xl mb-2">what do you dream about?</h2>
         <p className="text-secondary">(2025)</p>
