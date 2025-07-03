@@ -211,7 +211,7 @@ function Navigation() {
                     <Link
                       to={item.path}
                       onClick={handleNavClick}
-                      className={`block text-3xl transition-colors duration-200 hover:text-primary ${
+                      className={`block text-3xl transition-colors italic duration-200 hover:text-primary ${
                         location.pathname === item.path ||
                         (item.path === "/" && location.pathname.startsWith("/work/"))
                           ? "text-primary"
