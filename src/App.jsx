@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
-import VisualArt from "./components/VisualArt";
 import About from "./components/About";
 import SelectedWork from "./components/SelectedWork";
 import ThemeToggle from "./components/ThemeToggle";
@@ -15,9 +14,7 @@ import { getProjectRoutes } from "./data/projects";
 import nanjingImage from "./assets/nanjing.jpg";
 import sfImage from "./assets/sf.JPG";
 import stanfordImage from "./assets/stanford.JPG";
-import meImage from "./assets/me.jpg";
 import scaleImage from "./assets/scale.JPG";
-import fakerImage from "./assets/faker.jpg";
 
 // Import the navigation profile image to preload it
 import profileImg from "./assets/profile3.jpg";
@@ -200,8 +197,6 @@ function AppContent() {
                     element={<project.component links={project.links} />}
                   />
                 ))}
-
-                <Route path="/art" element={<VisualArt />} />
               </Routes>
             </main>
           </div>

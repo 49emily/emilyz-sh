@@ -20,6 +20,22 @@ function WhatDoYouDreamAbout({ links = [] }) {
         )}
       </div>
 
+      <p className="text-lg text-primary font-light">
+        <i>what do you dream about?</i> is an interactive media installation that asks viewers in
+        machine-generated voice questions like <i>"what do you eat for breakfast?"</i>,{" "}
+        <i>"where did you first fall in love?"</i>, <i>"what do you dream about?"</i>. Reversing the
+        familiar role of prompting an LLM for our needs, we answer at the behest of the machine, and
+        then it generates in real-time its interpretation of our answer on a giant 100" projection.
+        This generator is conditioned on the camera pointing at the viewer – so audiences begin
+        moving their bodies, turning into strawberries, buildings, and cats. This is done using
+        ChatGPT-augmented prompts and Stream Diffusion, a fast implementation of img2img diffusion
+        that runs at multiple frames per second, but not without jarring hallucinations (if you
+        answer that you dream of running your own business, you will suddenly be looking back at
+        yourself as a man). The machine here feels large, and the viewer small. I brought my setup
+        all over campus, and watched students rock side to side, cover the camera, use props, to
+        condition machine imagination.{" "}
+      </p>
+
       <div className="space-y-8">
         <div className="space-y-6">
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
@@ -44,22 +60,6 @@ function WhatDoYouDreamAbout({ links = [] }) {
             </video>
           </div>
         </div>
-
-        <p className="text-lg text-primary font-light">
-          <i>what do you dream about?</i> is an interactive media installation that asks viewers in
-          machine-generated voice questions like <i>"what do you eat for breakfast?"</i>,{" "}
-          <i>"where did you first fall in love?"</i>, <i>"what do you dream about?"</i>. Reversing
-          the familiar role of prompting an LLM for our needs, we answer at the behest of the
-          machine, and then it generates in real-time its interpretation of our answer on a giant
-          100" projection. This generator is conditioned on the camera pointing at the viewer – so
-          audiences begin moving their bodies, turning into strawberries, buildings, and cats. This
-          is done using ChatGPT-augmented prompts and Stream Diffusion, a fast implementation of
-          img2img diffusion that runs at multiple frames per second, but not without jarring
-          hallucinations (if you answer that you dream of running your own business, you will
-          suddenly be looking back at yourself as a man). The machine here feels large, and the
-          viewer small. I brought my setup all over campus, and watched students rock side to side,
-          cover the camera, use props, to condition machine imagination.{" "}
-        </p>
       </div>
     </div>
   );
