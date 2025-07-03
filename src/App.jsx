@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
@@ -20,6 +20,17 @@ import scaleImage from "./assets/scale.JPG";
 import profileImg from "./assets/profile3.jpg";
 
 import "./App.css";
+
+// ScrollToTop component to handle scroll restoration
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 // Global image overlay component
 function GlobalImageOverlay() {
@@ -153,6 +164,7 @@ function AppContent() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div
         className={`min-h-screen transition-all duration-1000 ease-out ${
           appLoaded ? "opacity-100 blur-none" : "opacity-0 blur-sm"
@@ -165,7 +177,7 @@ function AppContent() {
             {/* Left Sidebar - Hidden on Mobile */}
             <aside className="hidden lg:block lg:col-span-2">
               <div
-                className={`fixed top-35 left-20 transition-all duration-700 delay-200 ease-out ${
+                className={`fixed top-40 left-20 transition-all duration-700 delay-200 ease-out ${
                   appLoaded ? "opacity-100" : "opacity-0 -translate-x-4"
                 }`}
               >
