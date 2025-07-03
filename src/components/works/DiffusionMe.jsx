@@ -3,6 +3,12 @@ import diffusionMeVideo from "../../assets/projects/diffusionme.mp4";
 import DontStare from "../../assets/projects/Don_t Stare.png";
 import comfyImage from "../../assets/projects/comfyui.png";
 import falImage from "../../assets/projects/fal.png";
+import letterPainting from "../../assets/projects/letterpainting.png";
+import letterPaintingAI from "../../assets/projects/letterpaintingai.png";
+import tearMeApart from "../../assets/projects/tearmeapart.png";
+import tearMeApartAI from "../../assets/projects/tearmeapartai.png";
+import rise from "../../assets/projects/rise.png";
+import riseAI from "../../assets/projects/riseai.png";
 
 function DiffusionMe({ links = [] }) {
   return (
@@ -78,16 +84,29 @@ function DiffusionMe({ links = [] }) {
           The LoRA was able to retain surprising formalistic elements, like the shading on the hair,
           the messy way I paint moving strands of hair, the sheen on the canvas, the general tones
           and hues of the shadows (especially on the skin), and the border from artist's tape on my
-          watercolor portraits.
+          watercolor portraits. Also all the asian girls look vaguely like my cousin, who appears
+          many times in the works I trained on.
         </p>
         <div>
           <img src={falImage} alt="fal" className="w-full max-w-4xl" />
           <p className=" text-sm mt-2 italic">Notice the hair!!!</p>
         </div>
         <p className="text-primary text-lg font-light">
-          You can see how safely within distribution the LoRA stays in the following comparisons
+          You can see how safely within distribution the LoRA stays in the following comparisons:
           (left is my original artwork, right is a generated sample).
         </p>
+        <div className="flex flex-row items-center gap-4 justify-between w-full">
+          <img src={letterPainting} alt="DiffusionMe" className="w-1/2" />
+          <img src={letterPaintingAI} alt="DiffusionMe" className="w-1/2" />
+        </div>
+        <div className="flex flex-row items-center gap-4 justify-between w-full">
+          <img src={tearMeApart} alt="DiffusionMe" className="w-1/2" />
+          <img src={tearMeApartAI} alt="DiffusionMe" className="w-1/2" />
+        </div>
+        <div className="flex flex-row items-center gap-4 justify-between w-full">
+          <img src={rise} alt="DiffusionMe" className="w-1/2" />
+          <img src={riseAI} alt="DiffusionMe" className="w-1/2" />
+        </div>
       </div>
     </div>
   );
