@@ -13,7 +13,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./assets/studio_ghibli5.gif");
+  background-image: url("./assets/studio_ghibli4.gif");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body::after {
 }
 
 .dark body::after {
-  background-image: url("./assets/studio_ghiblidark2.gif");
+  background-image: url("./assets/studio_ghiblidark.gif");
 }
 
 /* Add subtle overlay to ensure text readability with theme support */
@@ -46,7 +46,7 @@ body::before {
 
 /* Dark mode overlay */
 .dark body::before {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Theme-aware link styling */
