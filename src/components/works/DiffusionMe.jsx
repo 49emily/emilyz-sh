@@ -16,7 +16,7 @@ import badGeneration3 from "../../assets/projects/badgeneration3.jpg";
 
 function DiffusionMe({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl w-full">
+    <div className="space-y-6 max-w-4xl w-full  py-12 pt-20 lg:pt-12">
       <div className="mb-6">
         <h2 className="text-3xl mb-2">emily-diffusion</h2>
         <p className="text-secondary">(2025)</p>

@@ -177,8 +177,8 @@ function AppContent() {
             {/* Left Sidebar - Hidden on Mobile */}
             <aside className="hidden lg:block lg:col-span-2">
               <div
-                className={`fixed top-1/2 left-0 w-[28.571%] -translate-y-1/2 flex justify-center transition-all duration-700 delay-200 ease-out ${
-                  appLoaded ? "opacity-100" : "opacity-0 -translate-x-4"
+                className={`fixed top-0 h-screen left-0 w-[28.571%] flex justify-center items-center transition-all duration-700 delay-200 ease-out ${
+                  appLoaded ? "opacity-100" : "-translate-x-4 opacity-0"
                 }`}
               >
                 <Navigation />
