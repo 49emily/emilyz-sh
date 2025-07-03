@@ -5,7 +5,7 @@ import letter2 from "../../assets/projects/letter2.jpg";
 
 function LettersToMyMom({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl w-full">
+    <div className="space-y-6 max-w-4xl w-full py-12 pt-20 lg:pt-12">
       <div className="mb-6">
         <h2 className="text-3xl mb-2">Letters to my Mom</h2>
         <p className="text-secondary">(2025)</p>
