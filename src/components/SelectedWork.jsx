@@ -53,7 +53,7 @@ function SelectedWork() {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-12 py-12 pt-20 lg:pt-12">
       <div className="mb-12">
         <p className="text-md text-primary">~ an ongoing internet archive</p>
       </div>
