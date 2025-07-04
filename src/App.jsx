@@ -37,17 +37,12 @@ function GlobalImageOverlay() {
   const [showNanjingImage, setShowNanjingImage] = useState(false);
   const [showSfImage, setShowSfImage] = useState(false);
   const [showStanfordImage, setShowStanfordImage] = useState(false);
-  const [showMeImage, setShowMeImage] = useState(false);
   const [showScaleImage, setShowScaleImage] = useState(false);
-  const [showFakerImage, setShowFakerImage] = useState(false);
 
   useEffect(() => {
     const handleShowImage = (e) => {
       const { imageType, show } = e.detail;
       switch (imageType) {
-        case "me":
-          setShowMeImage(show);
-          break;
         case "nanjing":
           setShowNanjingImage(show);
           break;
@@ -59,9 +54,6 @@ function GlobalImageOverlay() {
           break;
         case "scale":
           setShowScaleImage(show);
-          break;
-        case "faker":
-          setShowFakerImage(show);
           break;
         default:
           break;
@@ -77,16 +69,6 @@ function GlobalImageOverlay() {
 
   return (
     <>
-      {showMeImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <img
-            src={meImage}
-            alt="Emily Zhang"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
-        </div>
-      )}
-
       {showNanjingImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
           <img
@@ -122,16 +104,6 @@ function GlobalImageOverlay() {
           <img
             src={scaleImage}
             alt="Scale AI"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
-        </div>
-      )}
-
-      {showFakerImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <img
-            src={fakerImage}
-            alt="Faker"
             className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
           />
         </div>
