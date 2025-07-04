@@ -3,6 +3,7 @@ body {
   background-color: #f8f9fa; /* fallback color */
   transition: background-image 0.3s ease;
   position: relative;
+  overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
 }
 
 /* Fixed background for all devices using pseudo-element */

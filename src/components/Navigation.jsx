@@ -258,7 +258,7 @@ function Navigation() {
           />
 
           {/* Social Media Icons */}
-          <div className="flex space-x-4 mb-8 justify-center">
+          <div className="flex flex-row mb-8 justify-between w-50 max-w-[60vw] ">
             <a
               href="https://github.com/49emily"
               target="_blank"
