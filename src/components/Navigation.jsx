@@ -150,7 +150,7 @@ function Navigation() {
                 />
 
                 {/* Social Media Icons */}
-                <div className="flex space-x-6 justify-center">
+                <div className="flex space-x-6 justify-between w-50 max-w-[60vw] ">
                   <a
                     href="https://github.com/49emily"
                     target="_blank"

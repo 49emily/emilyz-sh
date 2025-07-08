@@ -161,7 +161,7 @@ function Home() {
             programming as an art form. I want to create beautiful things that I am proud of.
           </p>
           <p className="mb-6">
-            I've recently been working on and thinking about{" "}
+            I've recently been working on / thinking about{" "}
             <span
               className="link cursor-pointer"
               onMouseEnter={() => handleDiceInteraction(true)}
