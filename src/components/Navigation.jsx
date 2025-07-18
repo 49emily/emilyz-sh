@@ -238,9 +238,7 @@ function Navigation() {
                     </p>
                   </div>
                 )}
-                {locationError && (
-                  <p className="text-sm text-muted italic text-center">location unknown</p>
-                )}
+                {locationError && <p className="text-sm text-muted italic">location unknown</p>}
               </div>
             </nav>
           </div>
@@ -354,9 +352,7 @@ function Navigation() {
               </p>
             </div>
           )}
-          {locationError && (
-            <p className="text-sm text-muted italic text-center">location unknown</p>
-          )}
+          {locationError && <p className="text-sm text-muted italic">location unknown</p>}
         </div>
       </nav>
     </>
