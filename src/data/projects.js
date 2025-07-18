@@ -13,7 +13,24 @@ import diffusionMeImage from "../assets/projects/diffusionme.png";
 
 import tangentImage from "../assets/projects/tangent.png";
 
+import drawJournalImage from "../assets/projects/drawjournal.jpg";
+
 export const projects = [
+  {
+    title: "journaling.ink",
+    year: "2025",
+    completionDate: "07/18/2025",
+    creativeRating: 0.75,
+    path: "/work/draw-with-your-journal",
+    component: null,
+    image: drawJournalImage,
+    status:
+      "draw with handwriting and text from your journal entries. opencv.js and custom fabric.js brushes.",
+    links: [
+      { label: "Live Site", url: "https://journaling.ink", icon: "external" },
+      { label: "GitHub", url: "https://github.com/49emily/journal-draw", icon: "github" },
+    ],
+  },
   {
     title: "what do you dream about?",
     year: "2025",
@@ -41,9 +58,9 @@ export const projects = [
     component: LettersToMyMom,
     image: lettersToMyMomImage,
     status: "series of generative prints",
-    links: [
-      { label: "GitHub", url: "https://github.com/49emily/ai-art-calligraphy", icon: "github" },
-    ],
+    // links: [
+    //   { label: "GitHub", url: "https://github.com/49emily/ai-art-calligraphy", icon: "github" },
+    // ],
   },
   {
     title: "emily-diffusion",
