@@ -39,7 +39,7 @@ export const projects = [
     path: "/work/what-do-you-dream-about",
     component: WhatDoYouDreamAbout,
     image: whatdoyoudreamImage,
-    status: "real-time diffusion installation",
+    status: "interactive real-time diffusion installation",
     links: [
       {
         label: "GitHub",
@@ -57,7 +57,7 @@ export const projects = [
     path: "/work/letters-to-my-mom",
     component: LettersToMyMom,
     image: lettersToMyMomImage,
-    status: "series of generative prints",
+    status: "series of generative prints based on a love letter my dad wrote my mom in the 90s",
     // links: [
     //   { label: "GitHub", url: "https://github.com/49emily/ai-art-calligraphy", icon: "github" },
     // ],
