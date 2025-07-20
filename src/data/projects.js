@@ -21,7 +21,7 @@ export const projects = [
     year: "2025",
     completionDate: "07/18/2025",
     creativeRating: 0.75,
-    path: "/work/draw-with-your-journal",
+    path: null,
     component: null,
     image: drawJournalImage,
     status:
