@@ -72,7 +72,7 @@ export const projects = [
     image: diffusionMeImage,
     status: "training a generative model on my own art",
     links: [
-      { label: "GitHub", url: "https://github.com/emilyz49/emily-diffusion", icon: "github" },
+      { label: "GitHub", url: "https://github.com/49emily/emily-diffusion", icon: "github" },
     ],
   },
   {
