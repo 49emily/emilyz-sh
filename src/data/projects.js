@@ -4,7 +4,7 @@ import LettersToMyMom from "../components/works/LettersToMyMom";
 import DiffusionMe from "../components/works/DiffusionMe";
 
 // Import project images
-import whatdoyoudreamImage from "../assets/projects/dream.jpeg";
+import whatdoyoudreamImage from "../assets/projects/whatdoyoudream.png";
 import lettersToMyMomImage from "../assets/projects/letters.jpg";
 import pearlImage from "../assets/projects/pearl.jpeg";
 import pearlMobileImage from "../assets/projects/pearlios.png";
@@ -14,6 +14,7 @@ import diffusionMeImage from "../assets/projects/diffusionme.png";
 import tangentImage from "../assets/projects/tangent.png";
 
 import drawJournalImage from "../assets/projects/drawjournal.jpg";
+import portraitOfYouImage from "../assets/projects/portraitofyou.png";
 
 export const projects = [
   {
@@ -71,9 +72,7 @@ export const projects = [
     component: DiffusionMe,
     image: diffusionMeImage,
     status: "training a generative model on my own art",
-    links: [
-      { label: "GitHub", url: "https://github.com/49emily/emily-diffusion", icon: "github" },
-    ],
+    links: [{ label: "GitHub", url: "https://github.com/49emily/emily-diffusion", icon: "github" }],
   },
   {
     title: "prl",
@@ -142,6 +141,17 @@ export const projects = [
         icon: "external",
       },
     ],
+  },
+  {
+    title: "Portrait of You",
+    year: "2025",
+    completionDate: "11/01/2025",
+    creativeRating: 0.75,
+    path: null,
+    component: null,
+    image: portraitOfYouImage,
+    status: "generative, living works that erode with brainrot digital consumption in real time",
+    links: [{ label: "Live Site", url: "https://portraitofyou.space", icon: "external" }],
   },
 ];
 
