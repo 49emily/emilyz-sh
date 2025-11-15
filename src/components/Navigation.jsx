@@ -82,9 +82,11 @@ function Navigation() {
   }, [isMobileMenuOpen]);
 
   const navItems = [
-    { path: "/", label: "Selected Work" },
-    // { path: "/about", label: "About" },
-    { path: "/about", label: "About" },
+    { path: "/code", label: "code" },
+    { path: "/painting", label: "painting" },
+    { path: "/installation", label: "installation" },
+    { path: "/index", label: "index" },
+    { path: "/about", label: "about" },
   ];
 
   const toggleMobileMenu = () => {
@@ -205,7 +207,7 @@ function Navigation() {
                 </div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {navItems.map((item) => (
                   <div key={item.path} className="relative">
                     <Link
@@ -213,7 +215,7 @@ function Navigation() {
                       onClick={handleNavClick}
                       className={`block text-3xl transition-colors italic duration-200 hover:text-primary ${
                         location.pathname === item.path ||
-                        (item.path === "/" && location.pathname.startsWith("/work/"))
+                        (item.path === "/code" && location.pathname.startsWith("/work/"))
                           ? "text-primary"
                           : "text-muted"
                       }`}
@@ -250,7 +252,7 @@ function Navigation() {
         <div className="flex flex-col items-center gap-4">
           <img
             src={profileImg}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/code")}
             alt="Profile"
             className="w-50 max-w-[60vw] object-cover cursor-pointer"
           />
@@ -311,7 +313,7 @@ function Navigation() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-3">
           {navItems.map((item) => (
             <div key={item.path} className="relative">
               {/* Arrow indicator for selected item - positioned absolutely to not affect text alignment
@@ -325,11 +327,11 @@ function Navigation() {
 
               <Link
                 to={item.path}
-                className={`block text-3xl italic transition-colors duration-200 hover:text-primary ${
+                className={`block text-3xl  transition-colors duration-200 hover:italic ${
                   location.pathname === item.path ||
-                  (item.path === "/" && location.pathname.startsWith("/work/"))
-                    ? "text-primary"
-                    : "text-muted"
+                  (item.path === "/code" && location.pathname.startsWith("/work/"))
+                    ? "italic"
+                    : ""
                 }`}
               >
                 {item.label}
@@ -346,13 +348,13 @@ function Navigation() {
                 <div className="absolute inset-0 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping opacity-75"></div>
               </div>
 
-              <p className="text-sm text-secondary">
+              <p className="text-md text-secondary">
                 {typedText}
                 {isTyping && <span className="animate-pulse">|</span>}
               </p>
             </div>
           )}
-          {locationError && <p className="text-sm text-muted italic">location unknown</p>}
+          {locationError && <p className="text-md text-muted italic">location unknown</p>}
         </div>
       </nav>
     </>
