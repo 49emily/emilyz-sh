@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
-import About from "./components/About";
-import SelectedWork from "./components/SelectedWork";
+import Code from "./components/Code";
+import Painting from "./components/Painting";
+import Installation from "./components/Installation";
+import Index from "./components/Index";
 import ThemeToggle from "./components/ThemeToggle";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
@@ -169,9 +171,12 @@ function AppContent() {
               }`}
             >
               <Routes>
-                <Route path="/" element={<SelectedWork />} />
+                <Route path="/" element={<Code />} />
+                <Route path="/code" element={<Code />} />
+                <Route path="/painting" element={<Painting />} />
+                <Route path="/installation" element={<Installation />} />
+                <Route path="/index" element={<Index />} />
                 <Route path="/about" element={<Home />} />
-                {/* <Route path="/home" element={<Home />} /> */}
 
                 {/* Dynamic project routes */}
                 {getProjectRoutes().map((project) => (
