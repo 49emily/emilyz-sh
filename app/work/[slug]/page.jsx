@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import WhatDoYouDreamAbout from "../../components/works/WhatDoYouDreamAbout";
 import LettersToMyMom from "../../components/works/LettersToMyMom";
 import DiffusionMe from "../../components/works/DiffusionMe";
@@ -58,14 +59,18 @@ function PaintingDisplay({ project }) {
         <div className="space-y-8 mt-12">
           {displayImages.map((imagePath, index) => (
             <div key={index} className="relative w-full bg-gray-100">
-              <img
-                src={imagePath}
-                alt={`${project.title}${displayImages.length > 1 ? ` - Image ${index + 1}` : ""}`}
-                className="w-full h-auto"
-                loading={index === 0 ? "eager" : "lazy"}
-                decoding="async"
-                style={{ backgroundColor: "#f3f4f6" }}
-              />
+              <div className="relative w-full" style={{ aspectRatio: "auto", minHeight: "400px" }}>
+                <Image
+                  src={imagePath}
+                  alt={`${project.title}${displayImages.length > 1 ? ` - Image ${index + 1}` : ""}`}
+                  width={1920}
+                  height={1440}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+                  className="w-full h-auto object-contain"
+                  priority={index === 0}
+                  style={{ backgroundColor: "#f3f4f6" }}
+                />
+              </div>
             </div>
           ))}
 
