@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { getProjectsByTag } from "../data/projects";
 
 export const dynamic = "force-dynamic";
 
 export default function Code() {
+  const router = useRouter();
   // Get code projects and sort by completion date (most recent first)
   const codeProjects = getProjectsByTag("code");
   const sortedProjects = [...codeProjects].sort((a, b) => {
@@ -101,6 +103,19 @@ export default function Code() {
                 </div>
               </div>
             );
+
+            // If project has both path and external links, use onClick to avoid nested <a> tags
+            if (project.path && project.links && project.links.length > 0) {
+              return (
+                <div
+                  key={index}
+                  className="group block transition-all duration-200 ease-out cursor-pointer"
+                  onClick={() => router.push(project.path)}
+                >
+                  {ProjectCard}
+                </div>
+              );
+            }
 
             return project.path ? (
               <Link
