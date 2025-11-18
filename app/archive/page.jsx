@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Archive",
+  description: "Archive of past work and projects by Emily Sihan Zhang.",
+};
+
 export default function Archive() {
   return (
     <div className="space-y-12 py-12 pt-20 ">
