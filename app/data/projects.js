@@ -740,11 +740,11 @@ export const projects = [
     completionDate: "9/18/2025",
     tags: ["installation"],
     path: "/work/last-night",
-    image: "/projects/last-night/lastnight.PNG",
+    image: "/projects/last-night/lastnight.png",
     status: "a show in an intimate, transient space (my summer apartment in SF)",
     artMetadata: {
       medium: "a show in an intimate, transient space (my summer apartment in sf)",
-      images: ["/projects/last-night/lastnight.PNG"],
+      images: ["/projects/last-night/lastnight.png"],
       tags: ["Installation"],
       description: null,
     },
