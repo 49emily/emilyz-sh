@@ -4,8 +4,9 @@ import LayoutContent from "./LayoutContent";
 import "./globals.css";
 
 export const metadata = {
-  title: "Emily Zhang",
-  description: "Engineer, artist, and creative technologist",
+  title: "emily sihan zhang",
+  description:
+    "Emily Sihan Zhang is an engineer, artist, and creative technologist based in Brooklyn, NY.",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
