@@ -219,11 +219,8 @@ function Navigation() {
                     <Link
                       href={item.path}
                       onClick={handleNavClick}
-                      className={`block text-3xl transition-colors italic duration-200 hover:text-primary ${
-                        pathname === item.path ||
-                        (item.path === "/code" && pathname.startsWith("/work/"))
-                          ? "text-primary"
-                          : "text-muted"
+                      className={`block text-3xl transition-colors duration-200 hover:text-primary ${
+                        pathname === item.path ? "italic" : ""
                       }`}
                     >
                       {item.label}
