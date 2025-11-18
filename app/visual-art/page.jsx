@@ -26,12 +26,13 @@ export default function VisualArt() {
               >
                 {/* Image */}
                 <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-300 relative overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="object-cover w-full h-full transition-transform duration-500"
-                    loading="eager"
-                    decoding="async"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500"
+                    priority={index < 6}
                     style={{
                       backgroundColor: "#f3f4f6",
                       willChange: "transform",

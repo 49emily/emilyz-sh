@@ -401,7 +401,7 @@ export const projects = [
     completionDate: "05/30/2024",
     tags: ["visual-art"],
     path: "/work/light-as-a-feather",
-    image: "/projects/light-as-a-feather/IMG_3377_2.heic",
+    image: "/projects/light-as-a-feather/IMG_3377_2.png",
     status: "Graphite pencil on paper",
     artMetadata: {
       medium: "Graphite pencil on paper",
@@ -434,7 +434,7 @@ export const projects = [
     completionDate: "01/01/2023",
     tags: ["visual-art"],
     path: "/work/lying-in-the-sun",
-    image: "/projects/lying-in-the-sun/IMG_6541.heic",
+    image: "/projects/lying-in-the-sun/IMG_6541.png",
     status: "Acrylic on canvas",
     artMetadata: {
       medium: "Acrylic on canvas",
@@ -670,7 +670,7 @@ export const projects = [
     completionDate: "04/01/2024",
     tags: ["visual-art"],
     path: "/work/braised-pork-belly",
-    image: "/projects/braised-pork-belly/%E7%BA%A2%E7%83%A7%E8%82%89.jpg",
+    image: "/projects/braised-pork-belly/braised-pork-belly.jpg",
     status: "Oil and acrylic on canvas",
     artMetadata: {
       medium: "Oil and acrylic on canvas",
@@ -713,7 +713,7 @@ export const projects = [
       tags: ["Installation"],
       size: '16" x 20"',
       images: ["/projects/cctv/cctv1.png", "/projects/cctv/cctv2.png"],
-      video: "/projects/cctv/cctvvid1.mov",
+      video: "/projects/cctv/cctv.mov",
       description: null,
     },
   },

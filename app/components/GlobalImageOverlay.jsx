@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function GlobalImageOverlay() {
   const [showNanjingImage, setShowNanjingImage] = useState(false);
@@ -40,41 +41,61 @@ export default function GlobalImageOverlay() {
     <>
       {showNanjingImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <img
-            src="/nanjing.jpg"
-            alt="Nanjing, China"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
+          <div className="relative w-[80vw] h-[80vh]">
+            <Image
+              src="/nanjing.jpg"
+              alt="Nanjing, China"
+              fill
+              sizes="80vw"
+              className="object-contain opacity-90 shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       )}
 
       {showSfImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <img
-            src="/sf.JPG"
-            alt="San Francisco"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
+          <div className="relative w-[80vw] h-[80vh]">
+            <Image
+              src="/sf.JPG"
+              alt="San Francisco"
+              fill
+              sizes="80vw"
+              className="object-contain opacity-90 shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       )}
 
       {showStanfordImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <img
-            src="/stanford.JPG"
-            alt="Stanford University"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
+          <div className="relative w-[80vw] h-[80vh]">
+            <Image
+              src="/stanford.JPG"
+              alt="Stanford University"
+              fill
+              sizes="80vw"
+              className="object-contain opacity-90 shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       )}
 
       {showScaleImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <img
-            src="/scale.JPG"
-            alt="Scale AI"
-            className="max-w-[80vw] max-h-[80vh] object-contain opacity-90 shadow-2xl"
-          />
+          <div className="relative w-[80vw] h-[80vh]">
+            <Image
+              src="/scale.JPG"
+              alt="Scale AI"
+              fill
+              sizes="80vw"
+              className="object-contain opacity-90 shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       )}
     </>
