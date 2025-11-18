@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import WhatDoYouDreamAbout from "../../components/works/WhatDoYouDreamAbout";
 import LettersToMyMom from "../../components/works/LettersToMyMom";
 import DiffusionMe from "../../components/works/DiffusionMe";
-import { projects, paintings, getPaintingBySlug } from "../../data/projects";
+import { getProjectBySlug } from "../../data/projects";
 
 const componentMap = {
   "what-do-you-dream-about": WhatDoYouDreamAbout,
@@ -13,39 +13,40 @@ const componentMap = {
 };
 
 // Component for displaying paintings/visual art
-function PaintingDisplay({ painting }) {
-  const displayImages = painting.images || [painting.image];
+function PaintingDisplay({ project }) {
+  const { artMetadata } = project;
+  const displayImages = artMetadata.images || [project.image];
 
   return (
     <div className="min-h-screen py-12 pt-20">
       <div className="max-w-4xl mx-auto px-4">
         {/* Title */}
-        <h1 className="text-3xl mb-4 text-primary">{painting.title}</h1>
+        <h1 className="text-3xl mb-4 text-primary">{project.title}</h1>
 
         {/* Metadata */}
         <div className="text-xl mb-8 text-primary space-y-1">
           <p>
-            <i className="text-secondary">medium:</i> {painting.medium}
+            <i className="text-secondary">medium:</i> {artMetadata.medium}
           </p>
-          {painting.size && (
+          {artMetadata.size && (
             <p>
-              <i className="text-secondary">size:</i> {painting.size}
+              <i className="text-secondary">size:</i> {artMetadata.size}
             </p>
           )}
           <p>
-            <i className="text-secondary">year:</i> {painting.year}
+            <i className="text-secondary">year:</i> {project.year}
           </p>
-          {painting.exhibitions && painting.exhibitions.length > 0 && (
+          {artMetadata.exhibitions && artMetadata.exhibitions.length > 0 && (
             <p>
-              <i className="text-secondary">exhibitions:</i> {painting.exhibitions.join(", ")}
+              <i className="text-secondary">exhibitions:</i> {artMetadata.exhibitions.join(", ")}
             </p>
           )}
         </div>
 
         {/* Description */}
-        {painting.description && (
+        {artMetadata.description && (
           <div className="text-lg font-light max-w-none text-primary">
-            {painting.description.split("\n\n").map((paragraph, index) => (
+            {artMetadata.description.split("\n\n").map((paragraph, index) => (
               <p key={index} className="mb-4 leading-relaxed">
                 {paragraph}
               </p>
@@ -56,19 +57,22 @@ function PaintingDisplay({ painting }) {
         {/* Images */}
         <div className="space-y-8 mt-12">
           {displayImages.map((imagePath, index) => (
-            <div key={index} className="relative w-full">
+            <div key={index} className="relative w-full bg-gray-100">
               <img
                 src={imagePath}
-                alt={`${painting.title}${displayImages.length > 1 ? ` - Image ${index + 1}` : ""}`}
+                alt={`${project.title}${displayImages.length > 1 ? ` - Image ${index + 1}` : ""}`}
                 className="w-full h-auto"
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+                style={{ backgroundColor: "#f3f4f6" }}
               />
             </div>
           ))}
 
-          {painting.video && (
+          {artMetadata.video && (
             <div className="relative w-full">
-              <video controls className="w-full h-auto" poster={painting.image}>
-                <source src={painting.video} type="video/mp4" />
+              <video controls className="w-full h-auto" poster={project.image}>
+                <source src={artMetadata.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -83,17 +87,10 @@ export default function WorkPage() {
   const params = useParams();
   const slug = params.slug;
 
-  // Check if it's a painting/visual art piece
-  const painting = getPaintingBySlug(slug);
-  if (painting) {
-    return <PaintingDisplay painting={painting} />;
-  }
+  // Get project by slug
+  const project = getProjectBySlug(slug);
 
-  // Otherwise, check if it's a code project with custom component
-  const project = projects.find((p) => p.path === `/work/${slug}`);
-  const Component = componentMap[slug];
-
-  if (!Component || !project) {
+  if (!project) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <p className="text-2xl text-primary">Project not found</p>
@@ -101,5 +98,22 @@ export default function WorkPage() {
     );
   }
 
-  return <Component links={project.links || []} />;
+  // If it has artMetadata, render the painting display
+  if (project.artMetadata) {
+    return <PaintingDisplay project={project} />;
+  }
+
+  // If it has a component, render the custom component
+  const Component = project.component ? componentMap[project.component] : null;
+
+  if (Component) {
+    return <Component links={project.links || []} />;
+  }
+
+  // No page exists for this project
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <p className="text-2xl text-primary">No page available for this project</p>
+    </div>
+  );
 }

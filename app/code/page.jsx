@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "../data/projects";
+import { getProjectsByTag } from "../data/projects";
 
 export const dynamic = "force-dynamic";
 
 export default function Code() {
-  // Sort projects by completion date (most recent first)
-  const sortedProjects = [...projects].sort((a, b) => {
+  // Get code projects and sort by completion date (most recent first)
+  const codeProjects = getProjectsByTag("code");
+  const sortedProjects = [...codeProjects].sort((a, b) => {
     const dateA = new Date(a.completionDate);
     const dateB = new Date(b.completionDate);
     return dateB - dateA; // Descending order (most recent first)
