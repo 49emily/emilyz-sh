@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 
@@ -16,16 +17,16 @@ export default function ProjectCard({ project }) {
       {/* Image */}
       <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-300 relative overflow-hidden">
         {project.image ? (
-          <img
+          <Image
             src={project.image}
             alt={project.title}
-            className="object-cover w-full h-full transition-transform duration-500"
-            loading="eager"
-            decoding="async"
+            fill
+            className="object-cover transition-transform duration-500"
             style={{
               backgroundColor: "#f3f4f6",
               willChange: "transform",
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
