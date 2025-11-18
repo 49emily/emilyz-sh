@@ -6,12 +6,11 @@ export default function Archive() {
       </div>
 
       <section>
-        <h2 className="text-3xl mb-8 text-primary">
+        {/* <h2 className="text-3xl mb-8 text-primary">
           <i>Archive</i>
-        </h2>
+        </h2> */}
         <p className="text-secondary">Content coming soon...</p>
       </section>
     </div>
   );
 }
-

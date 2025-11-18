@@ -1,8 +1,12 @@
+"use client";
+
 import { getProjectsByTag } from "../data/projects";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Installation() {
+  const router = useRouter();
   // Get installation projects and sort by completion date (most recent first)
   const installationProjects = getProjectsByTag("installation");
   const sortedProjects = [...installationProjects].sort((a, b) => {
@@ -71,7 +75,7 @@ export default function Installation() {
 
                   {/* External Links */}
                   {project.links && (
-                    <div className="mt-4 flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {project.links.map((link, linkIndex) => (
                         <a
                           key={linkIndex}
@@ -112,6 +116,19 @@ export default function Installation() {
                 </div>
               </div>
             );
+
+            // If project has both path and external links, use onClick to avoid nested <a> tags
+            if (project.path && project.links && project.links.length > 0) {
+              return (
+                <div
+                  key={index}
+                  className="group block transition-all duration-200 ease-out cursor-pointer"
+                  onClick={() => router.push(project.path)}
+                >
+                  {ProjectCard}
+                </div>
+              );
+            }
 
             return project.path ? (
               <Link
