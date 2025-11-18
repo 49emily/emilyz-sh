@@ -2,7 +2,7 @@ import { paintings } from "../data/projects";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Painting() {
+export default function VisualArt() {
   // Sort paintings by completion date (most recent first)
   const sortedPaintings = [...paintings].sort((a, b) => {
     return new Date(b.completionDate) - new Date(a.completionDate);
@@ -39,7 +39,7 @@ export default function Painting() {
                       {painting.title}
                     </h3>
                     <span className="text-md text-secondary">
-                      {painting.size} • {painting.medium} • {painting.year}
+                      {painting.medium} • {painting.year}
                     </span>
                   </div>
 

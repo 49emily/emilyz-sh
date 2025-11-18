@@ -87,7 +87,7 @@ function Navigation() {
 
   const navItems = [
     { path: "/code", label: "code" },
-    { path: "/painting", label: "painting" },
+    { path: "/visual-art", label: "visual art" },
     { path: "/installation", label: "installation" },
     { path: "/archive", label: "archive" },
     { path: "/about", label: "about" },

@@ -1,13 +1,9 @@
 export default function Installation() {
   return (
-    <div className="space-y-12 py-12 pt-20">
-      <div className="mb-12">
-        <p className="text-md text-primary">~ installation works</p>
-      </div>
-
+    <div className="space-y-12 pt-16 pb-24">
       <section>
-        <h2 className="text-3xl mb-8 text-primary">
-          <i>Installation</i>
+        <h2 className="text-2xl mb-8">
+          <i className="text-secondary">medium:</i> installation
         </h2>
         <p className="text-secondary">Content coming soon...</p>
       </section>
