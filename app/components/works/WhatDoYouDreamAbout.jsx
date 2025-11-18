@@ -7,7 +7,9 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
     <div className="space-y-6 max-w-4xl mb-20  py-12 pt-20">
       <div className="mb-6">
         <h2 className="text-3xl mb-2">what do you dream about?</h2>
-        <p className="text-secondary">(2025)</p>
+        <div className="text-lg text-primary">
+          <i className="text-secondary">year:</i> 2025
+        </div>
 
         {/* Links section */}
         {links.length > 0 && (

@@ -703,7 +703,7 @@ export const projects = [
     title: "CCTV",
     slug: "cctv",
     year: "2025",
-    completionDate: "9/15/2025",
+    completionDate: "9/19/2025",
     tags: ["visual-art", "installation"],
     path: "/work/cctv",
     image: "/projects/cctv/cctv1.png",

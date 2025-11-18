@@ -4,14 +4,14 @@ import { useState, useEffect, useRef } from "react";
 import ExternalLink from "../components/ExternalLink";
 import { showImage, hideImage } from "../utils";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export default function About() {
   // Topics for dice roll
   const topics = [
     "machine understandings of love",
-    "browser engines",
-    "my post-grad trip to Asia",
+    "the business of great stories",
+    "T1 at worlds",
     "interfaces that scale",
     "mental health",
     "creative agency in the age of AI",
@@ -140,7 +140,16 @@ export default function About() {
             >
               Nanjing, China
             </span>
-            , currently residing in the liminal space between{" "}
+            , currently based in New York City and working on software and storytelling at{" "}
+            <span
+              className="link cursor-pointer image-trigger"
+              onClick={() => handleImageInteraction("a24")}
+              onMouseEnter={!isMobile ? () => handleImageInteraction("a24", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("a24", false) : undefined}
+            >
+              A24 Films
+            </span>
+            . I was previously at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}
@@ -149,7 +158,7 @@ export default function About() {
             >
               Stanford University
             </span>{" "}
-            and{" "}
+            and in{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("sf")}
