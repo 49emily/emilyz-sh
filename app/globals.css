@@ -17,6 +17,8 @@
   --font-editorial: "Editorial New", serif;
   --font-signifier: "Signifier", serif;
   --font-tid: "Tid-Book", monospace;
+  --font-davinci: "DaVinci", serif;
+  --font-exposure: "Exposure", serif;
 }
 
 /* Define dark mode color overrides */
@@ -35,7 +37,7 @@
 @font-face {
   font-family: "Tid-Book";
   src: url("/fonts/tid-book/Tid-Book.woff2") format("woff2");
-  font-weight: 400;
+  font-weight: 420;
   font-style: normal;
   font-display: swap;
 }
@@ -128,10 +130,463 @@
   font-display: swap;
 }
 
+/* DaVinci font declarations */
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Thin-Trial.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Thin-Italic-Trial.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Light-Trial.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Light-Italic-Trial.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Regular-Trial.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Italic-Trial.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Medium-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Medium-Italic-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Semibold-Trial.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Semibold-Italic-Trial.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Bold-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Bold-Italic-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Heavy-Trial.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DaVinci";
+  src: url("/fonts/davinci/TRJNDaVinci-Heavy-Italic-Trial.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Exposure font declarations - mapping -100 to +100 exposure values to CSS font weights */
+/* Mapping: -100 = 300, 0 = 400, +100 = 500 (formula: font-weight = 400 + exposure_value) */
+/* Normal style */
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-100].otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-90].otf") format("opentype");
+  font-weight: 310;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-80].otf") format("opentype");
+  font-weight: 320;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-70].otf") format("opentype");
+  font-weight: 330;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-60].otf") format("opentype");
+  font-weight: 340;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-50].otf") format("opentype");
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-40].otf") format("opentype");
+  font-weight: 360;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-30].otf") format("opentype");
+  font-weight: 370;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-20].otf") format("opentype");
+  font-weight: 380;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[-10].otf") format("opentype");
+  font-weight: 390;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[0].otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+10].otf") format("opentype");
+  font-weight: 410;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+20].otf") format("opentype");
+  font-weight: 420;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+30].otf") format("opentype");
+  font-weight: 430;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+40].otf") format("opentype");
+  font-weight: 440;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+50].otf") format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+60].otf") format("opentype");
+  font-weight: 460;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+70].otf") format("opentype");
+  font-weight: 470;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+80].otf") format("opentype");
+  font-weight: 480;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+90].otf") format("opentype");
+  font-weight: 490;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureTrial[+100].otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic style */
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-100].otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-90].otf") format("opentype");
+  font-weight: 310;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-80].otf") format("opentype");
+  font-weight: 320;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-70].otf") format("opentype");
+  font-weight: 330;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-60].otf") format("opentype");
+  font-weight: 340;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-50].otf") format("opentype");
+  font-weight: 350;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-40].otf") format("opentype");
+  font-weight: 360;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-30].otf") format("opentype");
+  font-weight: 370;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-20].otf") format("opentype");
+  font-weight: 380;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[-10].otf") format("opentype");
+  font-weight: 390;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[0].otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+10].otf") format("opentype");
+  font-weight: 410;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+20].otf") format("opentype");
+  font-weight: 420;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+30].otf") format("opentype");
+  font-weight: 430;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+40].otf") format("opentype");
+  font-weight: 440;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+50].otf") format("opentype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+60].otf") format("opentype");
+  font-weight: 460;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+70].otf") format("opentype");
+  font-weight: 470;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+80].otf") format("opentype");
+  font-weight: 480;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+90].otf") format("opentype");
+  font-weight: 490;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exposure";
+  src: url("/fonts/exposure/ExposureItalicTrial[+100].otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Set base font and global typography adjustments */
 body {
-  font-family: "Editorial New", serif;
-  font-weight: 200;
+  font-family: "Exposure", serif;
+  font-weight: 400;
   color: var(--color-primary);
   background-color: #f8f9fa; /* fallback color */
   transition: background-image 0.3s ease;
@@ -193,11 +648,12 @@ body::before {
   text-decoration: underline dotted;
   text-decoration-thickness: 1px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .link:hover {
-  color: #b50ae9;
+  /* color: #b50ae9; */
+  font-weight: 340;
 }
 
 /* Theme-aware zsh styling */
@@ -357,4 +813,31 @@ body::before {
 .hover-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation link font weight reduction on hover and active */
+.nav-link {
+  transition: font-weight 0.2s ease;
+  font-weight: 420;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  font-weight: 350;
+}
+
+.font-semilight {
+  font-weight: 420;
+}
+
+.font-light {
+  font-weight: 450;
+}
+
+.font-semiheavy {
+  font-weight: 380;
+}
+
+.font-heavy {
+  font-weight: 350;
 }

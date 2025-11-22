@@ -1,6 +1,7 @@
 "use client";
 
 import ExternalLink from "../ExternalLink";
+import { getBunnyCDNUrl } from "../../utils";
 
 export default function WhatDoYouDreamAbout({ links = [] }) {
   return (
@@ -23,7 +24,7 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
         )}
       </div>
 
-      <p className="text-lg text-primary font-light">
+      <p className="text-lg text-primary ">
         <i>what do you dream about?</i> is an interactive media installation that asks viewers in
         machine-generated voice questions like <i>&quot;what do you eat for breakfast?&quot;</i>,{" "}
         <i>&quot;where did you first fall in love?&quot;</i>,{" "}
@@ -39,7 +40,7 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
         watched students rock side to side, cover the camera, use props, to condition machine
         imagination.{" "}
       </p>
-      <p className="text-lg text-primary font-light">
+      <p className="text-lg text-primary ">
         The live installation was run on a Runpod RTX 2000 Ada GPU.
       </p>
 
@@ -60,7 +61,7 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
             <video
               className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
               controls
-              src="/projects/whatdoyoudream.mp4"
+              src={getBunnyCDNUrl("/projects/whatdoyoudream.mp4")}
               title="what do you dream about? - Local Video"
             >
               Your browser does not support the video tag.

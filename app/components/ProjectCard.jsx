@@ -22,10 +22,6 @@ export default function ProjectCard({ project }) {
             alt={project.title}
             fill
             className="object-cover transition-transform duration-500"
-            style={{
-              backgroundColor: "#f3f4f6",
-              willChange: "transform",
-            }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
@@ -40,14 +36,14 @@ export default function ProjectCard({ project }) {
 
       {/* Content */}
       <div className="py-6 px-4 flex-grow flex flex-col">
-        <div className="mb-3">
-          <h3 className="text-2xl mb-1 group-hover:text-accent transition-colors text-primary flex items-start justify-between">
+        <div className="mb-4">
+          <h3 className="text-2xl mb-1 font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
             <span>{project.title}</span>
             {project.path && (
               <ChevronRight className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
             )}
           </h3>
-          <span className="text-md text-secondary">
+          <span className="text-sm text-secondary">
             {project.artMetadata
               ? `${project.artMetadata?.size ? project.artMetadata?.size + " • " : ""} ${
                   project.artMetadata?.medium

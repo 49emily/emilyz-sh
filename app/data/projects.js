@@ -1,6 +1,14 @@
 // This will be updated to use Next.js Image imports instead of webpack
 // For now, we'll use string paths that point to the public directory
 
+import { getBunnyCDNUrl } from "../utils";
+
+// Helper function to convert project image paths to Bunny CDN URLs
+const cdnPath = (path) => {
+  if (!path) return path;
+  return getBunnyCDNUrl(path);
+};
+
 export const projects = [
   {
     title: "journaling.ink",
@@ -10,7 +18,7 @@ export const projects = [
     tags: ["code"],
     path: null,
     component: null,
-    image: "/projects/journaling-ink/drawjournal.jpg",
+    image: cdnPath("/projects/journaling-ink/drawjournal.jpg"),
     status:
       "draw with handwriting and text from your journal entries. opencv.js and custom fabric.js brushes.",
     links: [
@@ -26,7 +34,7 @@ export const projects = [
     tags: ["code", "installation"],
     path: "/work/what-do-you-dream-about",
     component: "what-do-you-dream-about",
-    image: "/projects/what-do-you-dream-about/whatdoyoudream.png",
+    image: cdnPath("/projects/what-do-you-dream-about/whatdoyoudream.png"),
     status: "interactive real-time diffusion installation",
     links: [
       {
@@ -44,7 +52,7 @@ export const projects = [
     tags: ["code"],
     path: "/work/letters-to-my-mom",
     component: "letters-to-my-mom",
-    image: "/projects/letters-to-my-mom/letters.jpg",
+    image: cdnPath("/projects/letters-to-my-mom/letters.jpg"),
     status: "series of generative prints based on a love letter my dad wrote my mom in the 90s",
     links: [
       { label: "Github", url: "https://github.com/49emily/ai-art-calligraphy", icon: "github" },
@@ -58,7 +66,7 @@ export const projects = [
     tags: ["code"],
     path: "/work/emily-diffusion",
     component: "emily-diffusion",
-    image: "/projects/emily-diffusion/diffusionme.png",
+    image: cdnPath("/projects/emily-diffusion/diffusionme.png"),
     status: "training a generative model on my own art",
     links: [{ label: "GitHub", url: "https://github.com/49emily/emily-diffusion", icon: "github" }],
   },
@@ -70,7 +78,7 @@ export const projects = [
     tags: ["code"],
     path: null,
     component: null,
-    image: "/projects/prl/pearl.png",
+    image: cdnPath("/projects/prl/pearl.png"),
     status: "The journal that reflects with you. Scaled to 2000+ users.",
     links: [
       { label: "Live Site", url: "https://www.writewithprl.com/", icon: "external" },
@@ -92,7 +100,7 @@ export const projects = [
     tags: ["code"],
     path: null,
     component: null,
-    image: "/projects/prl/pearlios.jpeg",
+    image: cdnPath("/projects/prl/pearlios.jpeg"),
     status: "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
     links: [{ label: "DM for Testflight", url: "https://x.com/writewithprl", icon: "twitter" }],
   },
@@ -104,7 +112,7 @@ export const projects = [
     tags: ["code"],
     path: null,
     component: null,
-    image: "/projects/tangent/tangent.png",
+    image: cdnPath("/projects/tangent/tangent.png"),
     status: "An experimental browser that acts as your second brain.",
     links: [
       {
@@ -122,7 +130,7 @@ export const projects = [
     tags: ["code"],
     path: null,
     component: null,
-    image: "/projects/stylescape/stylescape.png",
+    image: cdnPath("/projects/stylescape/stylescape.png"),
     status: "infinitely generated world walkthroughs",
     links: [
       { label: "GitHub", url: "https://github.com/49emily/stylescape", icon: "github" },
@@ -141,7 +149,7 @@ export const projects = [
     tags: ["code", "installation"],
     path: null,
     component: null,
-    image: "/projects/portrait-of-you/portraitof.png",
+    image: cdnPath("/projects/portrait-of-you/portraitof.png"),
     status: "generative, living works that erode with brainrot digital consumption in real time",
     links: [{ label: "Live Site", url: "https://portraitofyou.space", icon: "external" }],
   },
@@ -153,7 +161,7 @@ export const projects = [
     completionDate: "12/15/2024",
     tags: ["visual-art"],
     path: "/work/35-times-i-cried",
-    image: "/projects/35-times-i-cried/IMG_9934.jpg",
+    image: cdnPath("/projects/35-times-i-cried/IMG_9934.jpg"),
     status: "Watercolor on Xuan paper",
     artMetadata: {
       medium: "Watercolor on Xuan paper",
@@ -170,7 +178,7 @@ export const projects = [
     completionDate: "08/12/2021",
     tags: ["visual-art"],
     path: "/work/all-i-see-in-the-mirror",
-    image: "/projects/all-i-see-in-the-mirror/7_All_I_See_in_the_Mirror_is_You.jpg",
+    image: cdnPath("/projects/all-i-see-in-the-mirror/7_All_I_See_in_the_Mirror_is_You.jpg"),
     status: "Colored pencil and white gel pen on paper",
     artMetadata: {
       medium: "Colored pencil and white gel pen on paper",
@@ -187,7 +195,7 @@ export const projects = [
     completionDate: "12/01/2022",
     tags: ["visual-art"],
     path: "/work/apocalyptic-woman",
-    image: "/projects/apocalyptic-woman/Apocalyptic_Woman.jpg",
+    image: cdnPath("/projects/apocalyptic-woman/Apocalyptic_Woman.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
       medium: "Watercolor on Arches paper",
@@ -203,7 +211,7 @@ export const projects = [
     completionDate: "03/01/2022",
     tags: ["visual-art"],
     path: "/work/bloom",
-    image: "/projects/bloom/4_BLOOM.jpg",
+    image: cdnPath("/projects/bloom/4_BLOOM.jpg"),
     status: "Procreate on iPad",
     artMetadata: {
       medium: "Procreate on iPad",
@@ -218,7 +226,7 @@ export const projects = [
     completionDate: "02/01/2023",
     tags: ["visual-art"],
     path: "/work/bonnaroo",
-    image: "/projects/bonnaroo/IMG_2245.png",
+    image: cdnPath("/projects/bonnaroo/IMG_2245.png"),
     status: "Acrylic on canvas",
     artMetadata: {
       medium: "Acrylic on canvas",
@@ -235,7 +243,7 @@ export const projects = [
     completionDate: "05/01/2022",
     tags: ["visual-art"],
     path: "/work/caged",
-    image: "/projects/caged/14_caged.jpg",
+    image: cdnPath("/projects/caged/14_caged.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
       medium: "Watercolor on Arches paper",
@@ -251,7 +259,7 @@ export const projects = [
     completionDate: "04/01/2022",
     tags: ["visual-art"],
     path: "/work/covergirl",
-    image: "/projects/covergirl/11_Covergirl.jpg",
+    image: cdnPath("/projects/covergirl/11_Covergirl.jpg"),
     status: "Watercolor and white gel pen on panel",
     artMetadata: {
       medium: "Watercolor and white gel pen on panel",
@@ -267,7 +275,7 @@ export const projects = [
     completionDate: "04/01/2025",
     tags: ["visual-art"],
     path: "/work/dissociation",
-    image: "/projects/dissociation/DSC00626 4.jpg",
+    image: cdnPath("/projects/dissociation/DSC00626 4.jpg"),
     status: "Oil on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -285,7 +293,7 @@ export const projects = [
     completionDate: "03/01/2023",
     tags: ["visual-art"],
     path: "/work/dont-stare",
-    image: "/projects/dont-stare/Don_t_Stare.jpg",
+    image: cdnPath("/projects/dont-stare/Don_t_Stare.jpg"),
     status: "Oil on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -303,7 +311,7 @@ export const projects = [
     completionDate: "01/01/2021",
     tags: ["visual-art"],
     path: "/work/dreams",
-    image: "/projects/dreams/15_dreams.jpg",
+    image: cdnPath("/projects/dreams/15_dreams.jpg"),
     status: "Procreate on iPad",
     artMetadata: {
       medium: "Procreate on iPad",
@@ -319,7 +327,7 @@ export const projects = [
     completionDate: "06/23/2022",
     tags: ["visual-art"],
     path: "/work/drown",
-    image: "/projects/drown/8_DROWN.jpg",
+    image: cdnPath("/projects/drown/8_DROWN.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
       medium: "Watercolor on Arches paper",
@@ -335,7 +343,7 @@ export const projects = [
     completionDate: "03/10/2023",
     tags: ["visual-art"],
     path: "/work/drunk",
-    image: "/projects/drunk/DRUNK.jpg",
+    image: cdnPath("/projects/drunk/DRUNK.jpg"),
     status: "Oil and acrylic on canvas",
     artMetadata: {
       medium: "Oil and acrylic on canvas",
@@ -353,7 +361,7 @@ export const projects = [
     completionDate: "03/15/2025",
     tags: ["visual-art"],
     path: "/work/fatigue",
-    image: "/projects/fatigue/DSC00623.jpg",
+    image: cdnPath("/projects/fatigue/DSC00623.jpg"),
     status: "Oil on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -369,12 +377,12 @@ export const projects = [
     completionDate: "10/28/2024",
     tags: ["visual-art"],
     path: "/work/flowergpt",
-    image: "/projects/flowergpt/IMG_541B17B25889-1.jpeg",
+    image: cdnPath("/projects/flowergpt/IMG_541B17B25889-1.jpeg"),
     status: "Video made with sound recorder and iPhone camera",
     artMetadata: {
       medium: "Video made with sound recorder and iPhone camera",
       tags: ["Video"],
-      video: "/projects/flowergpt/Sequence_01_1.mp4",
+      video: cdnPath("/projects/flowergpt/Sequence_01_1.mp4"),
       description: null,
     },
   },
@@ -385,7 +393,9 @@ export const projects = [
     completionDate: "03/20/2023",
     tags: ["visual-art"],
     path: "/work/girl-lying-in-pink-flowers",
-    image: "/projects/girl-lying-in-pink-flowers/Girl_Lying_in_a_Field_of_Pink_Flowers.jpg",
+    image: cdnPath(
+      "/projects/girl-lying-in-pink-flowers/Girl_Lying_in_a_Field_of_Pink_Flowers.jpg"
+    ),
     status: "Oil and acrylic on canvas",
     artMetadata: {
       medium: "Oil and acrylic on canvas",
@@ -401,7 +411,7 @@ export const projects = [
     completionDate: "05/30/2024",
     tags: ["visual-art"],
     path: "/work/light-as-a-feather",
-    image: "/projects/light-as-a-feather/IMG_3377_2.png",
+    image: cdnPath("/projects/light-as-a-feather/IMG_3377_2.png"),
     status: "Graphite pencil on paper",
     artMetadata: {
       medium: "Graphite pencil on paper",
@@ -417,7 +427,7 @@ export const projects = [
     completionDate: "09/18/2021",
     tags: ["visual-art"],
     path: "/work/lotus",
-    image: "/projects/lotus/3_Lotus.jpg",
+    image: cdnPath("/projects/lotus/3_Lotus.jpg"),
     status: "Micron pen on paper",
     artMetadata: {
       medium: "Micron pen on paper",
@@ -434,7 +444,7 @@ export const projects = [
     completionDate: "01/01/2023",
     tags: ["visual-art"],
     path: "/work/lying-in-the-sun",
-    image: "/projects/lying-in-the-sun/IMG_6541.png",
+    image: cdnPath("/projects/lying-in-the-sun/IMG_6541.png"),
     status: "Acrylic on canvas",
     artMetadata: {
       medium: "Acrylic on canvas",
@@ -450,7 +460,7 @@ export const projects = [
     completionDate: "07/11/2021",
     tags: ["visual-art"],
     path: "/work/mcnamaras-legacy",
-    image: "/projects/mcnamaras-legacy/12_McNamara_s_Legacy.jpg",
+    image: cdnPath("/projects/mcnamaras-legacy/12_McNamara_s_Legacy.jpg"),
     status: "Colored pencil, graphite, white gel pen on paper",
     artMetadata: {
       medium: "Colored pencil, graphite, white gel pen on paper",
@@ -466,7 +476,7 @@ export const projects = [
     completionDate: "05/21/2022",
     tags: ["visual-art"],
     path: "/work/meritocracy",
-    image: "/projects/meritocracy/13_meritocracy_.jpg",
+    image: cdnPath("/projects/meritocracy/13_meritocracy_.jpg"),
     status: "Watercolor, colored pencil, gel pen on Arches paper",
     artMetadata: {
       medium: "Watercolor, colored pencil, gel pen on Arches paper",
@@ -482,7 +492,7 @@ export const projects = [
     completionDate: "11/01/2020",
     tags: ["visual-art"],
     path: "/work/nursery",
-    image: "/projects/nursery/nursery.jpg",
+    image: cdnPath("/projects/nursery/nursery.jpg"),
     status: "Procreate on iPad",
     artMetadata: {
       medium: "Procreate on iPad",
@@ -498,15 +508,15 @@ export const projects = [
     completionDate: "11/30/2023",
     tags: ["visual-art"],
     path: "/work/red-fire-blue-flower",
-    image: "/projects/red-fire-blue-flower/IMG_4217.jpg",
+    image: cdnPath("/projects/red-fire-blue-flower/IMG_4217.jpg"),
     status: "Monotype and graphite pencil",
     artMetadata: {
       medium: "Monotype and graphite pencil",
       tags: ["Drawing"],
       images: [
-        "/projects/red-fire-blue-flower/IMG_4217.jpg",
-        "/projects/red-fire-blue-flower/APC_0043_3.jpg",
-        "/projects/red-fire-blue-flower/APC_0044_3.jpg",
+        cdnPath("/projects/red-fire-blue-flower/IMG_4217.jpg"),
+        cdnPath("/projects/red-fire-blue-flower/APC_0043_3.jpg"),
+        cdnPath("/projects/red-fire-blue-flower/APC_0044_3.jpg"),
       ],
       description:
         'In traditional Chinese medicine, rosemary is used to tonify Yang, restoring the harmony of opposing Yin and Yang energies within the body. Under the philosophy that everything in the world, including our organs, is a balanced composition of fire, water, metal, earth, and wood, natural ingredients have always been seen as the best remedies by Chinese families. Mine is no exception.\n\nWhen I broached the idea of exploring therapy and potential medication to my mom, she said, "Just drink some jasmine tea." While the tea has not helped, art has. Artmaking has always been a therapeutic process for me; I hold conviction in it as much as my culture does in its medicinal flora.\n\nThis diptych is an homage to that process, as I print healing herbs onto fragile figures, applying their oils and aromas to invisible wounds with the pressure of the press. It is a visualization of restoration through the creative act and a lasting imprint of a transient therapy that surpasses temporality. Giving me balance like that of fire and water, artmaking affords me stability that I find nowhere else in life – it makes me whole.',
@@ -519,7 +529,7 @@ export const projects = [
     completionDate: "05/02/2022",
     tags: ["visual-art"],
     path: "/work/rise",
-    image: "/projects/rise/9_RISE.jpg",
+    image: cdnPath("/projects/rise/9_RISE.jpg"),
     status: "Watercolor on panel",
     artMetadata: {
       medium: "Watercolor on panel",
@@ -535,7 +545,7 @@ export const projects = [
     completionDate: "03/10/2022",
     tags: ["visual-art"],
     path: "/work/rumination",
-    image: "/projects/rumination/10_RUMINATION.jpg",
+    image: cdnPath("/projects/rumination/10_RUMINATION.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
       medium: "Watercolor on Arches paper",
@@ -552,7 +562,7 @@ export const projects = [
     completionDate: "12/17/2021",
     tags: ["visual-art"],
     path: "/work/scorch",
-    image: "/projects/scorch/6_SCORCH.jpg",
+    image: cdnPath("/projects/scorch/6_SCORCH.jpg"),
     status: "Colored pencil on paper",
     artMetadata: {
       medium: "Colored pencil on paper",
@@ -569,7 +579,7 @@ export const projects = [
     completionDate: "10/25/2021",
     tags: ["visual-art"],
     path: "/work/split",
-    image: "/projects/split/5_Split.jpg",
+    image: cdnPath("/projects/split/5_Split.jpg"),
     status: "Colored pencil on paper",
     artMetadata: {
       medium: "Colored pencil on paper",
@@ -586,7 +596,7 @@ export const projects = [
     completionDate: "10/13/2021",
     tags: ["visual-art"],
     path: "/work/stay-still",
-    image: "/projects/stay-still/1_Stay_Still.jpg",
+    image: cdnPath("/projects/stay-still/1_Stay_Still.jpg"),
     status: "Graphite and colored pencil on paper",
     artMetadata: {
       medium: "Graphite and colored pencil on paper",
@@ -603,7 +613,7 @@ export const projects = [
     completionDate: "06/01/2024",
     tags: ["visual-art"],
     path: "/work/still-life-heart",
-    image: "/projects/still-life-heart/da647884-4b72-478b-b68d-84e48e1d476b.png",
+    image: cdnPath("/projects/still-life-heart/da647884-4b72-478b-b68d-84e48e1d476b.png"),
     status: "Oil on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -620,7 +630,7 @@ export const projects = [
     completionDate: "11/01/2020",
     tags: ["visual-art"],
     path: "/work/symmetry",
-    image: "/projects/symmetry/Symmetry.jpg",
+    image: cdnPath("/projects/symmetry/Symmetry.jpg"),
     status: "Colored pencil and white gel pen on paper",
     artMetadata: {
       medium: "Colored pencil and white gel pen on paper",
@@ -636,7 +646,7 @@ export const projects = [
     completionDate: "03/28/2022",
     tags: ["visual-art"],
     path: "/work/tear-me-apart",
-    image: "/projects/tear-me-apart/2_Tear_Me_Apart.jpg",
+    image: cdnPath("/projects/tear-me-apart/2_Tear_Me_Apart.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
       medium: "Watercolor on Arches paper",
@@ -652,7 +662,7 @@ export const projects = [
     completionDate: "04/01/2025",
     tags: ["visual-art"],
     path: "/work/love-letter",
-    image: "/projects/love-letter/DSC00608 2.jpg",
+    image: cdnPath("/projects/love-letter/DSC00608 2.jpg"),
     status: "Oil on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -670,7 +680,7 @@ export const projects = [
     completionDate: "04/01/2024",
     tags: ["visual-art"],
     path: "/work/braised-pork-belly",
-    image: "/projects/braised-pork-belly/braised-pork-belly.jpg",
+    image: cdnPath("/projects/braised-pork-belly/braised-pork-belly.jpg"),
     status: "Oil and acrylic on canvas",
     artMetadata: {
       medium: "Oil and acrylic on canvas",
@@ -686,16 +696,16 @@ export const projects = [
     completionDate: "12/15/2024",
     tags: ["installation"],
     path: "/work/gacha",
-    image: "/projects/gacha/IMG_0356.png",
+    image: cdnPath("/projects/gacha/IMG_0356.png"),
     status: "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
     artMetadata: {
       medium: "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
       tags: ["Sculpture"],
       description: null,
       images: [
-        "/projects/gacha/IMG_0356.png",
-        "/projects/gacha/gacha 2.png",
-        "/projects/gacha/gacha 3.png",
+        cdnPath("/projects/gacha/IMG_0356.png"),
+        cdnPath("/projects/gacha/gacha 2.png"),
+        cdnPath("/projects/gacha/gacha 3.png"),
       ],
     },
   },
@@ -706,14 +716,14 @@ export const projects = [
     completionDate: "9/19/2025",
     tags: ["visual-art", "installation"],
     path: "/work/cctv",
-    image: "/projects/cctv/cctv1.png",
+    image: cdnPath("/projects/cctv/IMG_9768 2.jpg"),
     status: "Oil paint on canvas and digital projection",
     artMetadata: {
       medium: "Oil paint on canvas and digital projection",
       tags: ["Installation"],
       size: '16" x 20"',
-      images: ["/projects/cctv/cctv1.png", "/projects/cctv/cctv2.png"],
-      video: "/projects/cctv/cctv.mov",
+      images: [cdnPath("/projects/cctv/IMG_9768 2.jpg"), cdnPath("/projects/cctv/IMG_9769 3.jpg")],
+      video: cdnPath("/projects/cctv/cctv.mov"),
       description: null,
     },
   },
@@ -724,7 +734,7 @@ export const projects = [
     completionDate: "8/15/2025",
     tags: ["visual-art"],
     path: "/work/the-lovers",
-    image: "/projects/the-lovers/thelovers.png",
+    image: cdnPath("/projects/the-lovers/thelovers.jpg"),
     status: "Oil paint on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -740,11 +750,11 @@ export const projects = [
     completionDate: "9/18/2025",
     tags: ["installation"],
     path: "/work/last-night",
-    image: "/projects/last-night/lastnight.jpg",
+    image: cdnPath("/projects/last-night/lastnight.jpg"),
     status: "a show in an intimate, transient space (my summer apartment in SF)",
     artMetadata: {
       medium: "a show in an intimate, transient space (my summer apartment in sf)",
-      images: ["/projects/last-night/lastnight.jpg"],
+      images: [cdnPath("/projects/last-night/lastnight.jpg")],
       tags: ["Installation"],
       description: null,
     },

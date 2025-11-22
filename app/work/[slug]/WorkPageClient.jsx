@@ -22,7 +22,7 @@ function PaintingDisplay({ project }) {
     <div className="min-h-screen py-12 pt-20">
       <div className="max-w-4xl mx-auto px-4">
         {/* Title */}
-        <h1 className="text-3xl mb-4 text-primary">{project.title}</h1>
+        <h1 className="text-3xl mb-4 text-primary font-heavy">{project.title}</h1>
 
         {/* Metadata */}
         <div className="text-xl mb-8 text-primary space-y-1">
@@ -46,7 +46,7 @@ function PaintingDisplay({ project }) {
 
         {/* Description */}
         {artMetadata.description && (
-          <div className="text-lg font-light max-w-none text-primary">
+          <div className="text-lg max-w-none text-primary">
             {artMetadata.description.split("\n\n").map((paragraph, index) => (
               <p key={index} className="mb-4 leading-relaxed">
                 {paragraph}
@@ -103,16 +103,16 @@ export default function WorkPageClient() {
     );
   }
 
-  // If it has artMetadata, render the painting display
-  if (project.artMetadata) {
-    return <PaintingDisplay project={project} />;
-  }
-
   // If it has a component, render the custom component
   const Component = project.component ? componentMap[project.component] : null;
 
   if (Component) {
     return <Component links={project.links || []} />;
+  }
+
+  // If it has artMetadata, render the painting display
+  if (project.artMetadata) {
+    return <PaintingDisplay project={project} />;
   }
 
   // No page exists for this project

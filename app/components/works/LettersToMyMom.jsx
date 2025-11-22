@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ExternalLink from "../ExternalLink";
+import { getBunnyCDNUrl } from "../../utils";
 
 export default function LettersToMyMom({ links = [] }) {
   return (
@@ -29,7 +30,7 @@ export default function LettersToMyMom({ links = [] }) {
         )}
       </div>
 
-      <p className="text-lg text-primary font-light">
+      <p className="text-lg text-primary ">
         At their home in rural China last year, my grandparents found a small piece of old paper
         tucked away in a book. It was a love letter that my dad wrote my mom in the &apos;90s when
         they were long-distance dating, complete with frayed, folded edges and smudged blue ink.
@@ -50,7 +51,7 @@ export default function LettersToMyMom({ links = [] }) {
 
       <div className="space-y-4">
         <Image
-          src="/projects/letters.jpg"
+          src={getBunnyCDNUrl("/projects/letters.jpg")}
           alt="Letters to my Mom"
           width={800}
           height={600}
@@ -58,14 +59,14 @@ export default function LettersToMyMom({ links = [] }) {
         />
         <div className="flex flex-row items-center gap-4 justify-between w-full">
           <Image
-            src="/projects/letter1.jpg"
+            src={getBunnyCDNUrl("/projects/letter1.jpg")}
             alt="Letter 1"
             width={400}
             height={600}
             className="w-1/2"
           />
           <Image
-            src="/projects/letter2.jpg"
+            src={getBunnyCDNUrl("/projects/letter2.jpg")}
             alt="Letter 2"
             width={400}
             height={600}

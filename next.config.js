@@ -9,6 +9,16 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.b-cdn.net",
+      },
+      {
+        protocol: "https",
+        hostname: "**.bunnycdn.com",
+      },
+    ],
   },
 };
 

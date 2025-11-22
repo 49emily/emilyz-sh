@@ -118,7 +118,7 @@ export default function About() {
   return (
     <div className="flex items-center justify-center min-h-screen pt-20 lg:pt-0" ref={homeRef}>
       <div className="max-w-2xl relative">
-        <div className="text-2xl tracking-tight text-primary">
+        <div className="text-xl text-primary">
           <p className="mb-6">
             Welcome! My name is{" "}
             <span
@@ -127,8 +127,9 @@ export default function About() {
               onMouseEnter={!isMobile ? () => setName("张思涵") : undefined}
               onMouseLeave={!isMobile ? () => setName("Emily Zhang") : undefined}
             >
-              {name}.
+              {name}
             </span>
+            .
           </p>
           <p className="mb-6">
             I&apos;m an engineer, artist, and creative technologist born in{" "}
@@ -174,7 +175,7 @@ export default function About() {
             programming as an art form. I want to create beautiful things that I am proud of.
           </p>
           <p className="mb-6">
-            I&apos;ve recently been working on / thinking about{" "}
+            I&apos;ve recently been working on and thinking about{" "}
             <span
               className="link cursor-pointer"
               onMouseEnter={() => handleDiceInteraction(true)}

@@ -1,3 +1,2 @@
-*.mov filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
+# Git LFS disabled - now using Bunny CDN for project assets
+# Project images/videos are ignored (see .gitignore)

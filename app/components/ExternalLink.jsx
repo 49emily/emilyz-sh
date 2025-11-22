@@ -18,9 +18,7 @@ const ExternalLink = ({ href, children, className = "link", showIcon = true }) =
       onMouseLeave={() => setIsHovered(false)}
     >
       {children}
-      {shouldShowIcon && isHovered && (
-        <ExternalLinkIcon className="ml-1 w-4 h-4 inline" />
-      )}
+      {shouldShowIcon && isHovered && <ExternalLinkIcon className="ml-1 w-4 h-4 inline" />}
     </a>
   );
 };

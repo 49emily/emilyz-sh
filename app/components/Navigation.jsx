@@ -109,19 +109,19 @@ function Navigation() {
         onClick={toggleMobileMenu}
         aria-label="Toggle mobile menu"
       >
-        <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+        <div className="w-5 h-5 flex flex-col justify-center items-center space-y-1">
           <span
-            className={`block w-5 h-0.5 bg-primary transition-all duration-300 ${
+            className={`block w-4 h-0.5 bg-primary transition-all duration-300 ${
               isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
             }`}
           ></span>
           <span
-            className={`block w-5 h-0.5 bg-primary transition-all duration-300 ${
+            className={`block w-4 h-0.5 bg-primary transition-all duration-300 ${
               isMobileMenuOpen ? "opacity-0" : "opacity-100"
             }`}
           ></span>
           <span
-            className={`block w-5 h-0.5 bg-primary transition-all duration-300 ${
+            className={`block w-4 h-0.5 bg-primary transition-all duration-300 ${
               isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
             }`}
           ></span>
@@ -219,8 +219,8 @@ function Navigation() {
                     <Link
                       href={item.path}
                       onClick={handleNavClick}
-                      className={`block text-3xl transition-colors duration-200 hover:text-primary ${
-                        pathname === item.path ? "italic" : ""
+                      className={`nav-link block text-3xl transition-colors duration-200 hover:text-primary ${
+                        pathname === item.path ? "italic active" : ""
                       }`}
                     >
                       {item.label}
@@ -229,15 +229,15 @@ function Navigation() {
                 ))}
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 w-50 max-w-[60vw]">
                 {distance !== null && (
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="relative">
+                  <div className="flex items-start gap-2 mb-2 min-w-0">
+                    <div className="relative flex-shrink-0 mt-[0.1875rem]">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                       <div className="absolute inset-0 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping opacity-75"></div>
                     </div>
 
-                    <p className="text-sm text-secondary">
+                    <p className="text-sm text-secondary break-words min-w-0 flex-1 leading-tight">
                       {typedText}
                       {isTyping && <span className="animate-pulse">|</span>}
                     </p>
@@ -323,10 +323,8 @@ function Navigation() {
             <div key={item.path} className="relative">
               <Link
                 href={item.path}
-                className={`block text-3xl  transition-colors duration-200 hover:italic ${
-                  pathname === item.path || (item.path === "/code" && pathname.startsWith("/work/"))
-                    ? "italic"
-                    : ""
+                className={`nav-link block text-3xl transition-colors duration-200 hover:italic ${
+                  pathname === item.path ? "italic active" : ""
                 }`}
               >
                 {item.label}
@@ -335,15 +333,15 @@ function Navigation() {
           ))}
         </div>
 
-        <div className="mt-6">
+        <div className="mt-6 w-50 max-w-[60vw]">
           {distance !== null && (
-            <div className="flex items-center gap-2 mb-2">
-              <div className="relative">
+            <div className=" flex items-center gap-4 mb-2 min-w-0">
+              <div className="relative flex-shrink-0">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                 <div className="absolute inset-0 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping opacity-75"></div>
               </div>
 
-              <p className="text-md text-secondary">
+              <p className="text-sm italic text-primary break-words min-w-0 flex-1 leading-tight">
                 {typedText}
                 {isTyping && <span className="animate-pulse">|</span>}
               </p>
