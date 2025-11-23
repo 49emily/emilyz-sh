@@ -1,9 +1,9 @@
 export const metadata = {
-  title: "About",
+  title: "about",
   description:
     "About Emily Sihan Zhang - engineer, artist, and creative technologist based in Brooklyn, NY.",
   openGraph: {
-    title: "About | emily sihan zhang",
+    title: "emily sihan zhang > about",
     description:
       "About Emily Sihan Zhang - engineer, artist, and creative technologist based in Brooklyn, NY.",
   },

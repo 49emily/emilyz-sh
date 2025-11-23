@@ -5,7 +5,7 @@ const ProjectLink = ({ link, linkIndex }) => {
       href={link.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="font-semilight inline-flex items-center px-2 py-1 border hover:bg-highlight text-primary text-sm rounded-full transition-colors hover:font-heavy"
+      className="font-semilight inline-flex items-center px-2 py-1 border project-link text-sm rounded-full transition-colors"
       onClick={(e) => e.stopPropagation()}
     >
       {link.icon === "github" ? (

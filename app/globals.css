@@ -656,19 +656,6 @@ body::before {
   font-weight: 340;
 }
 
-/* Theme-aware zsh styling */
-.zsh {
-  color: var(--color-accent);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  display: inline-block;
-}
-
-.zsh:hover {
-  opacity: 0.8;
-  transform: translateY(-1px) scale(1.02);
-}
-
 /* Smooth scrollbar styling with theme support */
 ::-webkit-scrollbar {
   width: 6px;
@@ -783,12 +770,30 @@ body::before {
   background: rgba(220, 220, 222, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(220, 220, 222, 0.8);
+  border: 1px solid rgba(220, 220, 222, 0.5);
 }
 
 .dark .glass {
   background: rgba(83, 83, 83, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass:hover {
+  background: var(--color-highlight);
+}
+
+.project-link {
+  background: rgba(220, 220, 222, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark .project-link {
+  background: rgba(83, 83, 83, 0.1);
+}
+
+.project-link:hover {
+  background: var(--color-highlight);
 }
 
 /* Hover effects */
