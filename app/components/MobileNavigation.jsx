@@ -91,7 +91,7 @@ function MobileNavigation() {
         onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className={`absolute top-0 left-0 w-80 max-w-[85vw] min-h-screen bg-white/80 dark:bg-black/80 backdrop-blur-md border-r border-white/20 dark:border-white/10 transform transition-transform duration-250 ease-out overflow-y-auto ${
+          className={`absolute top-0 left-0 w-80 max-w-[85vw] min-h-screen bg-background/80 backdrop-blur-md border-r border-white/20 dark:border-white/10 transform transition-transform duration-250 ease-out overflow-y-auto ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
