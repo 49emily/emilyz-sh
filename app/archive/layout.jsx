@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Archive",
-  description: "Archive of past work and projects by Emily Sihan Zhang.",
+  title: "archive",
+  description: "everything i make",
 };
 
 export default function ArchiveLayout({ children }) {

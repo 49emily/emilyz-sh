@@ -1,11 +1,10 @@
 export const metadata = {
   title: "about",
-  description:
-    "About Emily Sihan Zhang - engineer, artist, and creative technologist based in Brooklyn, NY.",
+  description: "emily sihan zhang is an engineer, artist, and creative technologist based in nyc.",
   openGraph: {
     title: "emily sihan zhang > about",
     description:
-      "About Emily Sihan Zhang - engineer, artist, and creative technologist based in Brooklyn, NY.",
+      "emily sihan zhang is an engineer, artist, and creative technologist based in nyc.",
   },
 };
 
