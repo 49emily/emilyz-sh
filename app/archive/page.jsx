@@ -58,7 +58,7 @@ export default function Archive() {
               <Link
                 key={index}
                 href={projectPath}
-                className="block hover:bg-muted/20 transition-colors glass-hover"
+                className="block hover:bg-muted/20 transition-colors"
               >
                 {content}
               </Link>

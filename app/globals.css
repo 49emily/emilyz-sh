@@ -791,20 +791,6 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.glass-hover {
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.glass-hover:hover {
-  background: rgba(220, 220, 222, 0.1) !important;
-  border-color: rgba(220, 220, 222, 0.4) !important;
-}
-
-.dark .glass-hover:hover {
-  background: rgba(83, 83, 83, 0.6) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-}
-
 /* Hover effects */
 .hover-lift {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
