@@ -627,7 +627,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
   pointer-events: none;
   z-index: -1;
   transition: background 0.3s ease;
@@ -784,12 +784,25 @@ body::before {
 
 .project-link {
   background: rgba(220, 220, 222, 0.1);
-  backdrop-filter: blur(10px);
+  position: relative;
+  isolation: isolate;
+  will-change: backdrop-filter;
   -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -ms-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  /* Fallback for browsers that don't support backdrop-filter */
+  @supports not (backdrop-filter: blur(10px)) {
+    background: rgba(220, 220, 222, 0.3);
+  }
 }
 
 .dark .project-link {
   background: rgba(83, 83, 83, 0.1);
+  @supports not (backdrop-filter: blur(10px)) {
+    background: rgba(83, 83, 83, 0.3);
+  }
 }
 
 .project-link:hover {
