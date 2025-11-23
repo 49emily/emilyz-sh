@@ -7,9 +7,9 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
   return (
     <div className="space-y-6 max-w-4xl mb-20  py-12 pt-20">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2">what do you dream about?</h2>
+        <h2 className="text-3xl mb-2 font-heavy">what do you dream about?</h2>
         <div className="text-lg text-primary">
-          <i className="text-secondary">year:</i> 2025
+          <i className="font-light">year:</i> 2025
         </div>
 
         {/* Links section */}
@@ -61,7 +61,7 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
             <video
               className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
               controls
-              src={getBunnyCDNUrl("/projects/whatdoyoudream.mp4")}
+              src={getBunnyCDNUrl("/projects/what-do-you-dream-about/whatdoyoudream.mp4")}
               title="what do you dream about? - Local Video"
             >
               Your browser does not support the video tag.

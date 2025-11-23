@@ -1,8 +1,8 @@
 export const metadata = {
-  title: "Code",
+  title: "code",
   description: "Software, interfaces, and AI projects by Emily Sihan Zhang.",
   openGraph: {
-    title: "Code | emily sihan zhang",
+    title: "emily sihan zhang > code",
     description: "Software, interfaces, and AI projects by Emily Sihan Zhang.",
   },
 };

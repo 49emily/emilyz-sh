@@ -827,7 +827,7 @@ body::before {
 }
 
 .font-semilight {
-  font-weight: 420;
+  font-weight: 430;
 }
 
 .font-light {
@@ -840,4 +840,9 @@ body::before {
 
 .font-heavy {
   font-weight: 350;
+}
+
+/* Enable hover-based font-weight change for custom font classes */
+.group:hover .group-hover\:font-heavy {
+  font-weight: 350; /* match .font-heavy */
 }

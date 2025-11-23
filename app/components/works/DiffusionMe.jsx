@@ -6,11 +6,11 @@ import { getBunnyCDNUrl } from "../../utils";
 
 export default function DiffusionMe({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl w-full  py-12 pt-20 lg:pt-12">
+    <div className="space-y-6 max-w-4xl w-full  py-12 pt-20 ">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2">emily-diffusion</h2>
+        <h2 className="text-3xl mb-2 font-heavy">emily-diffusion</h2>
         <div className="text-lg text-primary">
-          <i className="text-secondary">year:</i> 2025
+          <i className="font-light">year:</i> 2025
         </div>
 
         {/* Links section */}
@@ -28,7 +28,7 @@ export default function DiffusionMe({ links = [] }) {
       <div className="space-y-8">
         <div className="w-full">
           <video
-            src={getBunnyCDNUrl("/projects/diffusionme.mp4")}
+            src={getBunnyCDNUrl("/projects/emily-diffusion/diffusionme.mp4")}
             controls
             className="w-full max-w-4xl rounded-lg shadow-lg"
             preload="metadata"

@@ -1,8 +1,8 @@
 export const metadata = {
-  title: "Visual Art",
+  title: "painting",
   description: "Paintings, drawings, and video works by Emily Sihan Zhang.",
   openGraph: {
-    title: "Visual Art | emily sihan zhang",
+    title: "emily sihan zhang > painting",
     description: "Paintings, drawings, and video works by Emily Sihan Zhang.",
   },
 };

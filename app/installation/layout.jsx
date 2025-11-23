@@ -1,8 +1,8 @@
 export const metadata = {
-  title: "Installation",
+  title: "installation",
   description: "Installation, sculpture, and site-specific works by Emily Sihan Zhang.",
   openGraph: {
-    title: "Installation | emily sihan zhang",
+    title: "emily sihan zhang > installation",
     description: "Installation, sculpture, and site-specific works by Emily Sihan Zhang.",
   },
 };

@@ -16,19 +16,19 @@ export default function PaintingDisplay({ project }) {
         {/* Metadata */}
         <div className="text-xl mb-8 text-primary space-y-1">
           <p>
-            <i className="text-secondary">medium:</i> {artMetadata.medium}
+            <i className="font-light">medium:</i> {artMetadata.medium}
           </p>
           {artMetadata.size && (
             <p>
-              <i className="text-secondary">size:</i> {artMetadata.size}
+              <i className="font-light">size:</i> {artMetadata.size}
             </p>
           )}
           <p>
-            <i className="text-secondary">year:</i> {project.year}
+            <i className="font-light">year:</i> {project.year}
           </p>
           {artMetadata.exhibitions && artMetadata.exhibitions.length > 0 && (
             <p>
-              <i className="text-secondary">exhibitions:</i> {artMetadata.exhibitions.join(", ")}
+              <i className="font-light">exhibitions:</i> {artMetadata.exhibitions.join(", ")}
             </p>
           )}
         </div>

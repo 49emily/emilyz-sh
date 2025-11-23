@@ -8,13 +8,13 @@ export default function LettersToMyMom({ links = [] }) {
   return (
     <div className="space-y-6 max-w-4xl w-full py-12 pt-20">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2">Letters to my Mom</h2>
+        <h2 className="text-3xl mb-2 font-heavy">Letters to my Mom</h2>
         <div className="text-lg text-primary">
           <p>
-            <i className="text-secondary">medium:</i> digital prints on canvas
+            <i className="font-light">medium:</i> digital prints on canvas
           </p>
           <p>
-            <i className="text-secondary">year:</i> 2025
+            <i className="font-light">year:</i> 2025
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function LettersToMyMom({ links = [] }) {
 
       <div className="space-y-4">
         <Image
-          src={getBunnyCDNUrl("/projects/letters.jpg")}
+          src={getBunnyCDNUrl("/projects/letters-to-my-mom/letters.jpg")}
           alt="Letters to my Mom"
           width={800}
           height={600}
@@ -59,14 +59,14 @@ export default function LettersToMyMom({ links = [] }) {
         />
         <div className="flex flex-row items-center gap-4 justify-between w-full">
           <Image
-            src={getBunnyCDNUrl("/projects/letter1.jpg")}
+            src={getBunnyCDNUrl("/projects/letters-to-my-mom/letter1.jpg")}
             alt="Letter 1"
             width={400}
             height={600}
             className="w-1/2"
           />
           <Image
-            src={getBunnyCDNUrl("/projects/letter2.jpg")}
+            src={getBunnyCDNUrl("/projects/letters-to-my-mom/letter2.jpg")}
             alt="Letter 2"
             width={400}
             height={600}
