@@ -616,7 +616,7 @@ body::after {
 }
 
 .dark body::after {
-  background-image: url("/studio_ghiblidark3.gif");
+  background-image: url("/studio-ghiblidark5.gif");
 }
 
 /* Add subtle overlay to ensure text readability with theme support */
@@ -635,7 +635,7 @@ body::before {
 
 /* Dark mode overlay */
 .dark body::before {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Link styling with theme support */
