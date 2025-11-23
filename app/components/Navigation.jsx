@@ -73,6 +73,19 @@ function Navigation() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  //   // Prevent body scroll when mobile menu is open
+  //   useEffect(() => {
+  //     if (isMobileMenuOpen) {
+  //       document.body.style.overflow = "hidden";
+  //     } else {
+  //       document.body.style.overflow = "unset";
+  //     }
+
+  //     return () => {
+  //       document.body.style.overflow = "unset";
+  //     };
+  //   }, [isMobileMenuOpen]);
+
   // Close mobile menu when clicking outside or on navigation link
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -130,7 +143,7 @@ function Navigation() {
 
       {/* Mobile Navigation Overlay - Always present for blur preload */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 mobile-nav-container transition-all duration-200 ${
+        className={`lg:hidden fixed inset-0 z-40 mobile-nav-container transition-all duration-200 min-h-screen ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
         style={{
@@ -141,9 +154,10 @@ function Navigation() {
         onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className={`absolute top-0 left-0 w-80 max-w-[85vw] h-full bg-white/80 dark:bg-black/80 backdrop-blur-md border-r border-white/20 dark:border-white/10 transform transition-transform duration-250 ease-out ${
+          className={`absolute top-0 left-0 w-80 max-w-[85vw] min-h-screen bg-white/80 dark:bg-black/80 backdrop-blur-md border-r border-white/20 dark:border-white/10 transform transition-transform duration-250 ease-out overflow-y-auto ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="p-6 pt-20">
             <nav>
