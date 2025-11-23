@@ -431,7 +431,7 @@ export const projects = [
     },
   },
   {
-    title: "McNamara's Legacy",
+    title: `McNamara's Legacy`,
     slug: "mcnamaras-legacy",
     year: "2021",
     completionDate: "07/11/2021",

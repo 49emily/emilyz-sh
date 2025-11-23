@@ -164,7 +164,7 @@ function MobileNavigation() {
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {navItems.map((item) => (
                   <div key={item.path} className="relative">
                     <Link

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { projects } from "../data/projects";
 import ProjectLink from "../components/ProjectLink";
+import { ChevronRight } from "lucide-react";
 
 export default function Archive() {
   // Sort projects by completion date (most recent first)
@@ -45,11 +46,11 @@ export default function Archive() {
                       ))}
                     </div>
                   )}
-                  {/* {project.slug && (
+                  {project.slug && (
                     <span className="text-xs text-secondary">
                       <ChevronRight className="w-4 h-4" />
                     </span>
-                  )} */}
+                  )}
                 </div>
               </div>
             );
