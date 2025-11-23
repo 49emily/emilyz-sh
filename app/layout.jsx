@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata = {
   title: {
     default: "emily sihan zhang",
-    template: "%s | emily sihan zhang",
+    template: "emily sihan zhang > %s",
   },
   description:
     "Emily Sihan Zhang is an engineer, artist, and creative technologist based in New York City.",
