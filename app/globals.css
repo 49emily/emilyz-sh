@@ -639,7 +639,7 @@ body::before {
 
 /* Dark mode overlay */
 .dark body::before {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(25, 25, 25, 0.7);
 }
 
 /* Link styling with theme support */
