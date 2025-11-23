@@ -24,33 +24,40 @@ export default function Archive() {
           {sortedProjects.map((project, index) => {
             const projectPath = project.slug ? `/work/${project.slug}` : null;
             const content = (
-              <div className="flex items-center justify-between py-4 border-b border-border px-2">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-4">
-                    <span className="text-sm text-secondary font-light min-w-[60px]">
-                      {project.year}
-                    </span>
-                    <span className="text-primary font-light truncate">{project.title}</span>
-                    {project.tags && project.tags.length > 0 && (
-                      <span className="text-xs text-secondary font-semilight hidden sm:inline">
-                        {project.tags.join(", ")}
+              <div className="py-4 border-b border-border px-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0 sm:gap-4">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-4 flex-1 min-w-0">
+                      <span className="text-sm text-secondary font-light min-w-[40px] sm:min-w-[60px]">
+                        {project.year}
+                      </span>
+                      <span className="text-primary font-light truncate">{project.title}</span>
+                      {project.tags && project.tags.length > 0 && (
+                        <span className="text-xs font-semilight hidden sm:inline">
+                          {project.tags.join(", ")}
+                        </span>
+                      )}
+                    </div>
+                    {project.slug && (
+                      <span className="text-xs text-secondary flex-shrink-0 sm:hidden">
+                        <ChevronRight className="w-4 h-4" />
                       </span>
                     )}
                   </div>
-                </div>
-                <div className="flex items-center gap-4 ml-4">
-                  {project.links && project.links.length > 0 && (
-                    <div className="flex items-center gap-3">
-                      {project.links.map((link, linkIndex) => (
-                        <ProjectLink key={linkIndex} link={link} linkIndex={linkIndex} />
-                      ))}
-                    </div>
-                  )}
-                  {project.slug && (
-                    <span className="text-xs text-secondary">
-                      <ChevronRight className="w-4 h-4" />
-                    </span>
-                  )}
+                  <div className="flex items-center gap-4 sm:flex-shrink-0 mt-2 sm:mt-0">
+                    {project.links && project.links.length > 0 && (
+                      <div className="flex items-center gap-3 flex-wrap pl-[56px] sm:pl-0">
+                        {project.links.map((link, linkIndex) => (
+                          <ProjectLink key={linkIndex} link={link} linkIndex={linkIndex} />
+                        ))}
+                      </div>
+                    )}
+                    {project.slug && (
+                      <span className="text-xs text-secondary flex-shrink-0 hidden sm:block">
+                        <ChevronRight className="w-4 h-4" />
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             );
