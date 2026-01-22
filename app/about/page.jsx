@@ -117,7 +117,7 @@ export default function About() {
 
   return (
     <div
-      className="flex items-center font-semilight justify-center min-h-screen pt-20 lg:pt-0"
+      className="flex items-center font-semilight justify-center min-h-screen pt-0"
       ref={homeRef}
     >
       <div className="max-w-2xl relative">
