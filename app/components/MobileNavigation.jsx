@@ -36,7 +36,7 @@ function MobileNavigation() {
   }, [isMobileMenuOpen]);
 
   const navItems = [
-    { path: "/code", label: "code" },
+    { path: "/", label: "code" },
     { path: "/visual-art", label: "painting" },
     { path: "/installation", label: "installation" },
     { path: "/archive", label: "archive" },

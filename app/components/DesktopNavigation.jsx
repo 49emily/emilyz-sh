@@ -10,7 +10,7 @@ function DesktopNavigation() {
   const router = useRouter();
 
   const navItems = [
-    { path: "/code", label: "code" },
+    { path: "/", label: "code" },
     { path: "/visual-art", label: "painting" },
     { path: "/installation", label: "installation" },
     { path: "/archive", label: "archive" },
@@ -22,7 +22,7 @@ function DesktopNavigation() {
       <div className="flex flex-col items-center gap-4">
         <Image
           src="/profile3.jpg"
-          onClick={() => router.push("/code")}
+          onClick={() => router.push("/")}
           alt="Profile"
           width={300}
           height={300}

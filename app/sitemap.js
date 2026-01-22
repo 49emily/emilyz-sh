@@ -8,14 +8,8 @@ export default function sitemap() {
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/code`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 1,
     },
     {
       url: `${baseUrl}/visual-art`,
