@@ -29,7 +29,7 @@ function LocationDistance() {
   // Typing animation effect
   useEffect(() => {
     if (distance !== null) {
-      const fullText = `you are ${distance.toLocaleString()} miles away from zsh`;
+      const fullText = `you are ${distance.toLocaleString()} mi away from zsh`;
       setIsTyping(true);
       setTypedText("");
 
