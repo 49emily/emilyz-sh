@@ -18,8 +18,8 @@ export default function Code() {
     <div className="space-y-12 pt-20 pb-24">
       {/* Projects Section */}
       <section>
-        <h2 className="text-3xl mb-12">
-          <i className="text-primary font-heavy">software, interfaces, AI</i>
+        <h2 className="text-xl mb-12 text-primary font-light">
+          software, interfaces, AI
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 items-start">
           {sortedProjects.map((project, index) => (

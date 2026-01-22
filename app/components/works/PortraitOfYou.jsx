@@ -7,7 +7,7 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
   return (
     <div className="space-y-6 max-w-4xl mb-20  py-12 pt-20">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 font-heavy">what do you dream about?</h2>
+        <h2 className="text-3xl mb-2 font-heavy">Portrait of You</h2>
         <div className="text-lg text-primary">
           <p>
             <i className="font-light">medium:</i> real-time, multimedia interactive generation
@@ -31,23 +31,16 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
       </div>
 
       <p className="text-lg text-primary ">
-        <i>what do you dream about?</i> is an interactive media installation that asks viewers in
-        machine-generated voice questions like <i>&quot;what do you eat for breakfast?&quot;</i>,{" "}
-        <i>&quot;where did you first fall in love?&quot;</i>,{" "}
-        <i>&quot;what do you dream about?&quot;</i>. Reversing the familiar role of prompting an LLM
-        for our needs, we answer at the behest of the machine, and then it generates in real-time
-        its interpretation of our answer on a giant 100&quot; projection. This generator is
-        conditioned on the camera pointing at the viewer – so audiences begin moving their bodies,
-        turning into strawberries, buildings, and cats. This is done using ChatGPT-augmented prompts
-        and Stream Diffusion, a fast implementation of img2img diffusion that runs at multiple
-        frames per second, but not without jarring hallucinations (if you answer that you dream of
-        running your own business, you will suddenly be looking back at yourself as a man). The
-        machine here feels large, and the viewer small. I brought my setup all over campus, and
-        watched students rock side to side, cover the camera, use props, to condition machine
-        imagination.{" "}
+        <i>Portrait of You</i> is a series of generative living artworks that evolve with digital
+        behavior inspired by Oscar Wilde's <i>The Picture of Dorian Gray</i>. Each portrait
+        undergoes a transformation using a generative AI model at every increment of its owner's
+        unproductive screen time, capturing the gradual erosion of identity in the age of
+        distraction. The portraits will reset weekly at midnight EST on Sunday, giving each person a
+        new chance at redefining themselves in an ongoing public installation of self-surveillance.
       </p>
       <p className="text-lg text-primary ">
-        The live installation was run on a Runpod RTX 2000 Ada GPU.
+        This installation, and its extension for friends of the artists, ran for 11 weeks from
+        September 21st to December 7th, 2025.
       </p>
 
       <div className="space-y-8">

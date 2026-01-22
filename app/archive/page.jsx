@@ -16,8 +16,7 @@ export default function Archive() {
   return (
     <div className="space-y-12 py-12 pt-20">
       <div className="flex flex-col gap-4 mb-10">
-        <div className="text-3xl font-heavy italic">archive</div>
-        <div className="text-sm">everything i make</div>
+        <div className="text-lg font-light">everything i make</div>
       </div>
       <section>
         <div className="space-y-0">
