@@ -15,7 +15,7 @@ export default function Installation() {
       {/* Installation Grid */}
       <section>
         <h2 className="text-xl mb-12">
-          <span className="font-light">installation, sculpture, site-specificity</span>
+          <span className="font-heavy">installation, sculpture, site-specificity</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 items-start">
           {sortedProjects.map((project, index) => (

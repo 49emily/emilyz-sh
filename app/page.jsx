@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="space-y-12 pt-20 pb-24">
       <section>
-        <h2 className="text-xl mb-12 text-primary font-light">
+        <h2 className="text-xl mb-12 text-primary font-heavy">
           software, interfaces, AI
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 items-start">

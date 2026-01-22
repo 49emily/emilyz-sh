@@ -15,7 +15,7 @@ export default function VisualArt() {
       {/* Visual Art Grid */}
       <section>
         <h2 className="text-xl mb-12">
-          <span className="font-light">painting, drawing, video</span>
+          <span className="font-heavy">painting, drawing, video</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 items-start">
           {sortedProjects.map((project, index) => (
