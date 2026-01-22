@@ -32,8 +32,8 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
 
       <p className="text-lg text-primary ">
         <i>Portrait of You</i> is a series of generative living artworks that evolve with digital
-        behavior inspired by Oscar Wilde's <i>The Picture of Dorian Gray</i>. Each portrait
-        undergoes a transformation using a generative AI model at every increment of its owner's
+        behavior inspired by Oscar Wilde&apos;s <i>The Picture of Dorian Gray</i>. Each portrait
+        undergoes a transformation using a generative AI model at every increment of its owner&apos;s
         unproductive screen time, capturing the gradual erosion of identity in the age of
         distraction. The portraits will reset weekly at midnight EST on Sunday, giving each person a
         new chance at redefining themselves in an ongoing public installation of self-surveillance.

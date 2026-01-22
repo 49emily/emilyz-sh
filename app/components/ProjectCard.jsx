@@ -38,7 +38,7 @@ export default function ProjectCard({ project }) {
       {/* Content */}
       <div className="py-6 px-4 flex-grow flex flex-col">
         <div className="mb-4">
-          <h3 className="text-lg mb-1 font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
+          <h3 className="text-xl mb-1 font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
             <span>{project.title}</span>
             {project.slug && (
               <ChevronRight className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
