@@ -121,7 +121,7 @@ export default function About() {
       ref={homeRef}
     >
       <div className="max-w-2xl relative">
-        <div className="text-lg lg:text-xl text-primary">
+        <div className="text-base lg:text-lg text-primary">
           <p className="mb-6">
             Welcome! My name is{" "}
             <span

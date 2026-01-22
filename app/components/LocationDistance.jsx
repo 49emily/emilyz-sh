@@ -83,7 +83,7 @@ function LocationDistance() {
           </p>
         </div>
       )}
-      {locationError && <p className="text-md text-muted italic">location unknown</p>}
+      {locationError && <p className="text-sm text-muted italic">location unknown</p>}
     </div>
   );
 }

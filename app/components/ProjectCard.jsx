@@ -29,14 +29,14 @@ export default function ProjectCard({ project }) {
           <div className="w-full h-full flex items-center justify-center">
             <div className="text-center text-muted">
               <div className="text-2xl mb-2">📱</div>
-              <div className="text-md">{project.status}</div>
+              <div className="text-sm lg:text-base">{project.status}</div>
             </div>
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="py-6 px-4 flex-grow flex flex-col">
+      <div className="pt-6 lg:py-6 lg:px-4 flex-grow flex flex-col">
         <div className="mb-4">
           <h3 className="text-xl mb-1 font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
             <span>{project.title}</span>
@@ -44,7 +44,7 @@ export default function ProjectCard({ project }) {
               <ChevronRight className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
             )}
           </h3>
-          <span className="text-md font-semilight">
+          <span className="text-sm lg:text-base font-semilight">
             {project.artMetadata
               ? `${project.artMetadata?.size ? project.artMetadata?.size + " • " : ""} ${
                   project.artMetadata?.medium
@@ -59,7 +59,7 @@ export default function ProjectCard({ project }) {
             {project.artMetadata.exhibitions.map((exhibition, idx) => (
               <span
                 key={idx}
-                className="inline-flex items-center px-2 py-1 border text-primary font-semilight text-sm rounded-full"
+                className="inline-flex items-center px-2 py-1 border text-primary font-semilight text-xs lg:text-sm rounded-full"
               >
                 {exhibition}
               </span>

@@ -19,7 +19,7 @@ export const projects = [
     component: null,
     image: cdnPath("/projects/journaling-ink/drawjournal.jpg"),
     status:
-      "draw with handwriting and text from your journal entries. opencv.js and custom fabric.js brushes.",
+      "draw with handwriting and text from your journal entries.",
     links: [
       { label: "Live Site", url: "https://journaling.ink", icon: "external" },
       { label: "GitHub", url: "https://github.com/49emily/journal-draw", icon: "github" },
