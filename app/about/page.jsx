@@ -239,8 +239,8 @@ export default function About() {
           </p>
           <p>
             If my work resonates with you, feel free to reach out anytime at{" "}
-            <ExternalLink href="mailto:emily49@stanford.edu">
-              emily49 at stanford dot edu
+            <ExternalLink href="mailto:emilysihanzhang@gmail.com">
+              emilysihanzhang@gmail.com
             </ExternalLink>
             .
           </p>
