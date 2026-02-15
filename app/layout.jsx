@@ -9,14 +9,14 @@ export const metadata = {
     template: "emily sihan zhang > %s",
   },
   description:
-    "Emily Sihan Zhang is an engineer, artist, and creative technologist based in New York City.",
+    "Emily Sihan Zhang is an engineer and artist based between Stanford and NYC. She is currently working on software and storytelling at A24 Films.",
   keywords: [
     "Emily Zhang",
     "stanford",
     "colorado",
-    "creative technologist",
     "artist",
     "engineer",
+    "startups",
     "nyc",
     "A24",
     "film",
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: "emily sihan zhang",
     title: "emily sihan zhang",
     description:
-      "Emily Sihan Zhang is an engineer, artist, and creative technologist based in New York City.",
+      "Emily Sihan Zhang is an engineer and artist based between Stanford and NYC. She is currently working on software and storytelling at A24 Films.",
     images: [
       {
         url: "/profile3.jpg",
@@ -43,7 +43,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "emily sihan zhang",
-    description: "Engineer, artist, and creative technologist based in Brooklyn, NY.",
+    description:
+      "Engineer and artist based between Stanford and NYC. She is currently working on software and storytelling at A24 Films.",
     images: ["/profile3.jpg"],
   },
   icons: {

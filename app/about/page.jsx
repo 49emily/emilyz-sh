@@ -9,11 +9,13 @@ export const dynamic = "force-dynamic";
 export default function About() {
   // Topics for dice roll
   const topics = [
-    "machine understandings of love",
-    "the business of great stories",
-    "T1 at worlds",
+    // "machine understandings of love",
+
+    // "T1 at worlds",
     "interfaces that scale",
-    "mental health",
+    "AI safety",
+    "the business of great storytelling",
+    // "mental health",
     "creative agency in the age of AI",
     "love as a form of labor",
   ];
@@ -41,7 +43,12 @@ export default function About() {
   // Handle clicking outside of images to hide them on mobile
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMobile && currentImage && homeRef.current && !event.target.closest(".image-trigger")) {
+      if (
+        isMobile &&
+        currentImage &&
+        homeRef.current &&
+        !event.target.closest(".image-trigger")
+      ) {
         hideImage(currentImage);
         setCurrentImage(null);
       }
@@ -70,7 +77,8 @@ export default function About() {
     }
 
     // Pick a random index from available ones
-    const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+    const randomIndex =
+      availableIndices[Math.floor(Math.random() * availableIndices.length)];
 
     // Update state
     setCurrentTopicIndex(randomIndex);
@@ -128,28 +136,47 @@ export default function About() {
               className="link cursor-pointer"
               onClick={handleNameInteraction}
               onMouseEnter={!isMobile ? () => setName("张思涵") : undefined}
-              onMouseLeave={!isMobile ? () => setName("Emily Zhang") : undefined}
+              onMouseLeave={
+                !isMobile ? () => setName("Emily Zhang") : undefined
+              }
             >
               {name}
             </span>
             .
           </p>
           <p className="mb-6">
-            I&apos;m an engineer, artist, and creative technologist born in{" "}
+            I&apos;m an engineer and artist born in{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("nanjing")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("nanjing", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("nanjing", false) : undefined}
+              onMouseEnter={
+                !isMobile
+                  ? () => handleImageInteraction("nanjing", true)
+                  : undefined
+              }
+              onMouseLeave={
+                !isMobile
+                  ? () => handleImageInteraction("nanjing", false)
+                  : undefined
+              }
             >
               Nanjing, China
             </span>
-            , currently based in New York City and working on software and storytelling at{" "}
+            , currently based in New York City and working on software and
+            storytelling at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("a24")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("a24", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("a24", false) : undefined}
+              onMouseEnter={
+                !isMobile
+                  ? () => handleImageInteraction("a24", true)
+                  : undefined
+              }
+              onMouseLeave={
+                !isMobile
+                  ? () => handleImageInteraction("a24", false)
+                  : undefined
+              }
             >
               A24 Films
             </span>
@@ -157,8 +184,16 @@ export default function About() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("stanford", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("stanford", false) : undefined}
+              onMouseEnter={
+                !isMobile
+                  ? () => handleImageInteraction("stanford", true)
+                  : undefined
+              }
+              onMouseLeave={
+                !isMobile
+                  ? () => handleImageInteraction("stanford", false)
+                  : undefined
+              }
             >
               Stanford University
             </span>{" "}
@@ -166,16 +201,23 @@ export default function About() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("sf")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("sf", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("sf", false) : undefined}
+              onMouseEnter={
+                !isMobile ? () => handleImageInteraction("sf", true) : undefined
+              }
+              onMouseLeave={
+                !isMobile
+                  ? () => handleImageInteraction("sf", false)
+                  : undefined
+              }
             >
               San Francisco
             </span>
             .
           </p>
           <p className="mb-6">
-            I care deeply about generative interfaces, tools for thought and creativity, and
-            programming as an art form. I want to create beautiful things that I am proud of.
+            I care deeply about tools for knowledge work, generative interfaces,
+            and safe and effective AI deployment. My main priority is to create
+            software that is beneficial to humanity.
           </p>
           <p className="mb-6">
             I&apos;ve recently been working on and thinking about{" "}
