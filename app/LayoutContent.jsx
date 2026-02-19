@@ -44,7 +44,7 @@ export default function LayoutContent({ children }) {
       <GlobalImageOverlay />
       <ThemeToggle />
       <div className="mx-auto px-4 lg:px-12">
-        <div className="lg:grid lg:grid-cols-7 min-h-screen">
+        <div className="lg:grid lg:grid-cols-7 lg:min-h-screen">
           {/* Left Sidebar - Hidden on Mobile */}
           <aside className="hidden lg:block lg:col-span-2">
             <div
