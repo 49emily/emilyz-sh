@@ -115,7 +115,7 @@ export default function Home() {
 
   return (
     <div
-      className="flex items-center font-semilight justify-center pt-20 pb-8 lg:pt-0 lg:pb-0 lg:min-h-screen"
+      className="flex items-center font-semilight justify-center pt-20 pb-16 lg:pt-0 lg:pb-0 lg:min-h-screen"
       ref={homeRef}
     >
       <div className="max-w-2xl relative">
