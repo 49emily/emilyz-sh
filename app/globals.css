@@ -661,7 +661,7 @@ body::before {
 }
 
 /* Smooth scrollbar styling with theme support */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 6px;
 }
 
@@ -683,7 +683,7 @@ body::before {
 
 ::-webkit-scrollbar-thumb:hover {
   opacity: 0.5;
-}
+} */
 
 /* Remove focus outlines */
 *:focus {
@@ -774,12 +774,12 @@ body::before {
   background: rgba(220, 220, 222, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(220, 220, 222, 0.5);
+  /* border: 1px solid rgba(220, 220, 222, 0.5); */
 }
 
 .dark .glass {
   background: rgba(83, 83, 83, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 .glass:hover {

@@ -61,17 +61,17 @@ function MobileNavigation() {
       >
         <div className="w-5 h-5 flex flex-col justify-center items-center space-y-1">
           <span
-            className={`block w-4 h-0.5 bg-primary transition-all duration-300 ${
+            className={`block w-4 h-0.5 bg-secondary transition-all duration-300 ${
               isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
             }`}
           ></span>
           <span
-            className={`block w-4 h-0.5 bg-primary transition-all duration-300 ${
+            className={`block w-4 h-0.5 bg-secondary transition-all duration-300 ${
               isMobileMenuOpen ? "opacity-0" : "opacity-100"
             }`}
           ></span>
           <span
-            className={`block w-4 h-0.5 bg-primary transition-all duration-300 ${
+            className={`block w-4 h-0.5 bg-secondary transition-all duration-300 ${
               isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
             }`}
           ></span>

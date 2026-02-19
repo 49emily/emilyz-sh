@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import ExternalLink from "./components/ExternalLink";
 import { showImage, hideImage } from "./utils";
+import useIsMobile from "./hooks/useIsMobile";
 
 export const dynamic = "force-dynamic";
 
@@ -24,21 +25,10 @@ export default function Home() {
   const [usedTopicIndices, setUsedTopicIndices] = useState(new Set([0])); // Track used topics, start with index 0
   const [showDice, setShowDice] = useState(false);
   const [name, setName] = useState("Emily Zhang");
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [isNameChinese, setIsNameChinese] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   const homeRef = useRef(null);
-
-  // Detect if device supports touch (mobile/tablet)
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   // Handle clicking outside of images to hide them on mobile
   useEffect(() => {
@@ -125,7 +115,7 @@ export default function Home() {
 
   return (
     <div
-      className="flex items-center font-semilight justify-center min-h-screen pt-0"
+      className="flex items-center font-semilight justify-center pt-20 pb-24 lg:pt-0 lg:pb-0 lg:min-h-screen"
       ref={homeRef}
     >
       <div className="max-w-2xl relative">
