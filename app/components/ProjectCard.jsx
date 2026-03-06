@@ -44,28 +44,31 @@ export default function ProjectCard({ project }) {
               <ChevronRight className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
             )}
           </h3>
-          <span className="text-sm lg:text-base font-semilight">
+          <span className="text-xs lg:text-sm font-semilight">
             {project.artMetadata
-              ? `${project.artMetadata?.size ? project.artMetadata?.size + " • " : ""} ${
-                  project.artMetadata?.medium
-                } • ${project.year}`
+              ? `${
+                  project.artMetadata?.size
+                    ? project.artMetadata?.size + " • "
+                    : ""
+                } ${project.artMetadata?.medium} • ${project.year}`
               : `${project.status} • ${project.year}`}
           </span>
         </div>
 
         {/* Exhibition Tags */}
-        {project.artMetadata?.exhibitions && project.artMetadata.exhibitions.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {project.artMetadata.exhibitions.map((exhibition, idx) => (
-              <span
-                key={idx}
-                className="inline-flex items-center px-2 py-1 border text-primary font-semilight text-xs lg:text-sm rounded-full"
-              >
-                {exhibition}
-              </span>
-            ))}
-          </div>
-        )}
+        {project.artMetadata?.exhibitions &&
+          project.artMetadata.exhibitions.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {project.artMetadata.exhibitions.map((exhibition, idx) => (
+                <span
+                  key={idx}
+                  className="inline-flex items-center px-2 py-1 border text-primary font-semilight text-xs lg:text-sm rounded-full"
+                >
+                  {exhibition}
+                </span>
+              ))}
+            </div>
+          )}
 
         {/* External Links */}
         {project.links && (
@@ -94,10 +97,15 @@ export default function ProjectCard({ project }) {
   }
 
   return project.slug ? (
-    <Link href={projectPath} className="group block transition-all duration-200 ease-out">
+    <Link
+      href={projectPath}
+      className="group block transition-all duration-200 ease-out"
+    >
       {ProjectCardContent}
     </Link>
   ) : (
-    <div className="group block transition-all duration-200 ease-out">{ProjectCardContent}</div>
+    <div className="group block transition-all duration-200 ease-out">
+      {ProjectCardContent}
+    </div>
   );
 }
