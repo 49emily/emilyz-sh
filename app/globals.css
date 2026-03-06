@@ -9,7 +9,7 @@
   --color-secondary: #46494d;
   --color-accent: #fb38fb;
   --color-muted: #9298a2;
-  --color-highlight: #e1e1e1;
+  --color-highlight: #cfcfcf;
 
   --color-background: #ffffff;
 
@@ -28,7 +28,7 @@
     --color-secondary: #d1d5db;
     --color-accent: #ff96ff;
     --color-muted: #888f9e;
-    --color-highlight: #52555a;
+    --color-highlight: #5d5d5d;
     --color-background: #191919;
   }
 }
@@ -45,70 +45,80 @@
 /* Signifier font declarations */
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Regular-BF663d8462c4c0b.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Regular-BF663d8462c4c0b.otf")
+    format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-RegularItalic-BF663d8462d189e.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-RegularItalic-BF663d8462d189e.otf")
+    format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Light-BF663d8462b5549.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Light-BF663d8462b5549.otf")
+    format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-LightItalic-BF663d8462b3681.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-LightItalic-BF663d8462b3681.otf")
+    format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Medium-BF663d8462c7c04.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Medium-BF663d8462c7c04.otf")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-MediumItalic-BF663d846296820.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-MediumItalic-BF663d846296820.otf")
+    format("opentype");
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Bold-BF663d84626293d.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Bold-BF663d84626293d.otf")
+    format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-BoldItalic-BF663d84627c436.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-BoldItalic-BF663d84627c436.otf")
+    format("opentype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Black-BF663d8461d0303.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Black-BF663d8461d0303.otf")
+    format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-BlackItalic-BF663d8461e2e0e.otf") format("opentype");
+  src: url("/fonts/signifier/TestSignifier-BlackItalic-BF663d8461e2e0e.otf")
+    format("opentype");
   font-weight: 900;
   font-style: italic;
 }
@@ -124,7 +134,8 @@
 
 @font-face {
   font-family: "Editorial New";
-  src: url("/fonts/editorialnew/PPEditorialNew-ItalicVariable.woff2") format("woff2");
+  src: url("/fonts/editorialnew/PPEditorialNew-ItalicVariable.woff2")
+    format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -141,7 +152,8 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Thin-Italic-Trial.otf") format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Thin-Italic-Trial.otf")
+    format("opentype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -157,7 +169,8 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Light-Italic-Trial.otf") format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Light-Italic-Trial.otf")
+    format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -189,7 +202,8 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Medium-Italic-Trial.otf") format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Medium-Italic-Trial.otf")
+    format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -205,7 +219,8 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Semibold-Italic-Trial.otf") format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Semibold-Italic-Trial.otf")
+    format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -221,7 +236,8 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Bold-Italic-Trial.otf") format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Bold-Italic-Trial.otf")
+    format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -237,7 +253,8 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Heavy-Italic-Trial.otf") format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Heavy-Italic-Trial.otf")
+    format("opentype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -787,7 +804,7 @@ body::before {
 }
 
 .project-link {
-  background: rgba(220, 220, 222, 0.1);
+  background: rgba(220, 220, 222, 0.6);
   position: relative;
   isolation: isolate;
   will-change: backdrop-filter;
@@ -803,7 +820,7 @@ body::before {
 }
 
 .dark .project-link {
-  background: rgba(83, 83, 83, 0.1);
+  background: rgba(83, 83, 83, 0.6);
   @supports not (backdrop-filter: blur(10px)) {
     background: rgba(83, 83, 83, 0.3);
   }
@@ -811,6 +828,14 @@ body::before {
 
 .project-link:hover {
   background: var(--color-highlight);
+}
+
+.project-link.hover-none:hover {
+  background: rgba(220, 220, 222, 0.6);
+}
+
+.dark .project-link.hover-none:hover {
+  background: rgba(83, 83, 83, 0.6);
 }
 
 /* Hover effects */
@@ -826,7 +851,7 @@ body::before {
 /* Navigation link font weight reduction on hover and active */
 .nav-link {
   transition: font-weight 0.2s ease;
-  font-weight: 420;
+  font-weight: 430;
 }
 
 .nav-link:hover,

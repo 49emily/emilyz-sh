@@ -62,7 +62,7 @@ export default function ProjectCard({ project }) {
               {project.artMetadata.exhibitions.map((exhibition, idx) => (
                 <span
                   key={idx}
-                  className="inline-flex items-center px-2 py-1 border text-primary font-semilight text-xs lg:text-sm rounded-full"
+                  className="inline-flex items-center px-2 py-1 text-primary font-semilight project-link hover-none text-xs lg:text-sm rounded-full"
                 >
                   {exhibition}
                 </span>

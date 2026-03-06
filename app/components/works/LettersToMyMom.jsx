@@ -9,7 +9,7 @@ export default function LettersToMyMom({ links = [] }) {
     <div className="space-y-6 max-w-4xl w-full py-12 pt-20">
       <div className="mb-6">
         <h2 className="text-3xl mb-2 font-heavy">Letters to my Mom</h2>
-        <div className="text-lg text-primary">
+        <div className="text text-primary">
           <p>
             <i className="font-light">medium:</i> digital prints on canvas
           </p>
@@ -30,7 +30,7 @@ export default function LettersToMyMom({ links = [] }) {
         )}
       </div>
 
-      <p className="text-lg text-primary ">
+      <p className="text-primary ">
         At their home in rural China last year, my grandparents found a small piece of old paper
         tucked away in a book. It was a love letter that my dad wrote my mom in the &apos;90s when
         they were long-distance dating, complete with frayed, folded edges and smudged blue ink.

@@ -8,10 +8,10 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
     <div className="space-y-6 max-w-4xl mb-20  py-12 pt-20">
       <div className="mb-6">
         <h2 className="text-3xl mb-2 font-heavy">what do you dream about?</h2>
-        <div className="text-lg text-primary">
+        <div className="text text-primary">
           <p>
-            <i className="font-light">medium:</i> real-time, multimedia interactive generation
-            (continuous)
+            <i className="font-light">medium:</i> real-time, multimedia
+            interactive generation (continuous)
           </p>
           <p>
             <i className="font-light">year:</i> 2025
@@ -30,23 +30,26 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
         )}
       </div>
 
-      <p className="text-lg text-primary ">
-        <i>what do you dream about?</i> is an interactive media installation that asks viewers in
-        machine-generated voice questions like <i>&quot;what do you eat for breakfast?&quot;</i>,{" "}
+      <p className="text-primary ">
+        <i>what do you dream about?</i> is an interactive media installation
+        that asks viewers in machine-generated voice questions like{" "}
+        <i>&quot;what do you eat for breakfast?&quot;</i>,{" "}
         <i>&quot;where did you first fall in love?&quot;</i>,{" "}
-        <i>&quot;what do you dream about?&quot;</i>. Reversing the familiar role of prompting an LLM
-        for our needs, we answer at the behest of the machine, and then it generates in real-time
-        its interpretation of our answer on a giant 100&quot; projection. This generator is
-        conditioned on the camera pointing at the viewer – so audiences begin moving their bodies,
-        turning into strawberries, buildings, and cats. This is done using ChatGPT-augmented prompts
-        and Stream Diffusion, a fast implementation of img2img diffusion that runs at multiple
-        frames per second, but not without jarring hallucinations (if you answer that you dream of
-        running your own business, you will suddenly be looking back at yourself as a man). The
-        machine here feels large, and the viewer small. I brought my setup all over campus, and
-        watched students rock side to side, cover the camera, use props, to condition machine
-        imagination.{" "}
+        <i>&quot;what do you dream about?&quot;</i>. Reversing the familiar role
+        of prompting an LLM for our needs, we answer at the behest of the
+        machine, and then it generates in real-time its interpretation of our
+        answer on a giant 100&quot; projection. This generator is conditioned on
+        the camera pointing at the viewer – so audiences begin moving their
+        bodies, turning into strawberries, buildings, and cats. This is done
+        using ChatGPT-augmented prompts and Stream Diffusion, a fast
+        implementation of img2img diffusion that runs at multiple frames per
+        second, but not without jarring hallucinations (if you answer that you
+        dream of running your own business, you will suddenly be looking back at
+        yourself as a man). The machine here feels large, and the viewer small.
+        I brought my setup all over campus, and watched students rock side to
+        side, cover the camera, use props, to condition machine imagination.{" "}
       </p>
-      <p className="text-lg text-primary ">
+      <p className="text-primary ">
         The live installation was run on a Runpod RTX 2000 Ada GPU.
       </p>
 
@@ -67,7 +70,9 @@ export default function WhatDoYouDreamAbout({ links = [] }) {
             <video
               className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
               controls
-              src={getBunnyCDNUrl("/projects/what-do-you-dream-about/whatdoyoudream.mp4")}
+              src={getBunnyCDNUrl(
+                "/projects/what-do-you-dream-about/whatdoyoudream.mp4"
+              )}
               title="what do you dream about? - Local Video"
             >
               Your browser does not support the video tag.

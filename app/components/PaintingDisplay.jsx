@@ -11,10 +11,12 @@ export default function PaintingDisplay({ project }) {
     <div className="min-h-screen py-12 pt-20">
       <div className="max-w-4xl mx-auto px-4">
         {/* Title */}
-        <h1 className="text-3xl mb-4 text-primary font-heavy">{project.title}</h1>
+        <h1 className="text-3xl mb-4 text-primary font-heavy">
+          {project.title}
+        </h1>
 
         {/* Metadata */}
-        <div className="text-xl mb-8 text-primary space-y-1">
+        <div className=" mb-8 text-primary space-y-1">
           <p>
             <i className="font-light">medium:</i> {artMetadata.medium}
           </p>
@@ -27,15 +29,18 @@ export default function PaintingDisplay({ project }) {
             <i className="font-light">year:</i> {project.year}
           </p>
           {artMetadata.exhibitions && artMetadata.exhibitions.length > 0 && (
-            <p>
-              <i className="font-light">exhibitions:</i> {artMetadata.exhibitions.join(", ")}
-            </p>
+            <div> 
+              <i className="font-light">exhibitions:</i>{" "}
+              <div className="inline-flex flex-wrap gap-2 mt-1">
+                {artMetadata.exhibitions.join(", ")}
+              </div>
+            </div>
           )}
         </div>
 
         {/* Description */}
         {artMetadata.description && (
-          <div className="text-lg max-w-none text-primary">
+          <div className=" max-w-none text-primary">
             {artMetadata.description.split("\n\n").map((paragraph, index) => (
               <p key={index} className="mb-4 leading-relaxed">
                 {paragraph}
@@ -47,17 +52,19 @@ export default function PaintingDisplay({ project }) {
         {/* Images */}
         <div className="space-y-8 mt-12">
           {displayImages.map((imagePath, index) => (
-            <div key={index} className="relative w-full bg-gray-100">
-              <div className="relative w-full" style={{ aspectRatio: "auto", minHeight: "400px" }}>
+            <div key={index} className="relative w-full">
+              <div className="relative w-full">
                 <Image
                   src={imagePath}
-                  alt={`${project.title}${displayImages.length > 1 ? ` - Image ${index + 1}` : ""}`}
+                  alt={`${project.title}${
+                    displayImages.length > 1 ? ` - Image ${index + 1}` : ""
+                  }`}
                   width={1920}
                   height={1440}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain max-h-screen"
                   priority={index === 0}
-                  style={{ backgroundColor: "#f3f4f6" }}
+                  style={{ backgroundColor: "transparent" }}
                 />
               </div>
             </div>

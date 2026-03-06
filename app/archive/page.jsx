@@ -16,7 +16,7 @@ export default function Archive() {
   return (
     <div className="space-y-12 py-12 pt-20">
       <div className="flex flex-col gap-4 mb-6 lg:mb-10">
-        <div className="text-lg font-heavy italic">everything i make</div>
+        <div className="text-xl font-heavy italic">everything i make</div>
       </div>
       <section>
         <div className="space-y-0">
@@ -30,7 +30,9 @@ export default function Archive() {
                       <span className="text-sm text-secondary font-light min-w-[40px] sm:min-w-[60px]">
                         {project.year}
                       </span>
-                      <span className="text-primary font-light truncate">{project.title}</span>
+                      <span className="text-primary font-light truncate">
+                        {project.title}
+                      </span>
                       {project.tags && project.tags.length > 0 && (
                         <span className="text-xs font-semilight hidden sm:inline">
                           {project.tags.join(", ")}
@@ -47,7 +49,11 @@ export default function Archive() {
                     {project.links && project.links.length > 0 && (
                       <div className="flex items-center gap-3 flex-wrap pl-[56px] sm:pl-0">
                         {project.links.map((link, linkIndex) => (
-                          <ProjectLink key={linkIndex} link={link} linkIndex={linkIndex} />
+                          <ProjectLink
+                            key={linkIndex}
+                            link={link}
+                            linkIndex={linkIndex}
+                          />
                         ))}
                       </div>
                     )}
