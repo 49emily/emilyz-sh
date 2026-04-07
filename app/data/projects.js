@@ -418,7 +418,7 @@ export const projects = [
     completionDate: "03/20/2023",
     tags: ["visual-art"],
     image: cdnPath(
-      "/projects/girl-lying-in-pink-flowers/Girl_Lying_in_a_Field_of_Pink_Flowers.jpg"
+      "/projects/girl-lying-in-pink-flowers/Girl_Lying_in_a_Field_of_Pink_Flowers.jpg",
     ),
     status: "Oil and acrylic on canvas",
     artMetadata: {
@@ -725,7 +725,7 @@ export const projects = [
     year: "2025",
     completionDate: "9/19/2025",
     tags: ["visual-art", "installation"],
-    image: cdnPath("/projects/cctv/IMG_9768 2.jpg"),
+    image: cdnPath("/projects/cctv/IMG_2729.jpg"),
     status: "Oil paint on canvas and digital projection",
     artMetadata: {
       medium: "Oil paint on canvas and digital projection",

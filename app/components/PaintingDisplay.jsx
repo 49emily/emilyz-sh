@@ -72,7 +72,7 @@ export default function PaintingDisplay({ project }) {
 
           {artMetadata.video && (
             <div className="relative w-full">
-              <video controls className="w-full h-auto" poster={project.image}>
+              <video controls className="w-full h-auto">
                 <source src={artMetadata.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
