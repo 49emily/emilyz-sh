@@ -16,7 +16,7 @@ export default function ProjectCard({ project }) {
       } transition-all duration-200 flex flex-col`}
     >
       {/* Image */}
-      <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-300 relative overflow-hidden">
+      <div className="aspect-square relative overflow-hidden">
         {project.image ? (
           <Image
             src={project.image}
@@ -47,28 +47,25 @@ export default function ProjectCard({ project }) {
           <span className="text-xs lg:text-sm font-semilight">
             {project.artMetadata
               ? `${
-                  project.artMetadata?.size
-                    ? project.artMetadata?.size + " • "
-                    : ""
+                  project.artMetadata?.size ? project.artMetadata?.size + " • " : ""
                 } ${project.artMetadata?.medium} • ${project.year}`
               : `${project.status} • ${project.year}`}
           </span>
         </div>
 
         {/* Exhibition Tags */}
-        {project.artMetadata?.exhibitions &&
-          project.artMetadata.exhibitions.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {project.artMetadata.exhibitions.map((exhibition, idx) => (
-                <span
-                  key={idx}
-                  className="inline-flex items-center px-2 py-1 text-primary font-semilight project-link hover-none text-xs lg:text-sm rounded-full"
-                >
-                  {exhibition}
-                </span>
-              ))}
-            </div>
-          )}
+        {project.artMetadata?.exhibitions && project.artMetadata.exhibitions.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {project.artMetadata.exhibitions.map((exhibition, idx) => (
+              <span
+                key={idx}
+                className="inline-flex items-center px-2 py-1 text-primary font-semilight project-link hover-none text-xs lg:text-sm rounded-full"
+              >
+                {exhibition}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* External Links */}
         {project.links && (
@@ -97,15 +94,10 @@ export default function ProjectCard({ project }) {
   }
 
   return project.slug ? (
-    <Link
-      href={projectPath}
-      className="group block transition-all duration-200 ease-out"
-    >
+    <Link href={projectPath} className="group block transition-all duration-200 ease-out">
       {ProjectCardContent}
     </Link>
   ) : (
-    <div className="group block transition-all duration-200 ease-out">
-      {ProjectCardContent}
-    </div>
+    <div className="group block transition-all duration-200 ease-out">{ProjectCardContent}</div>
   );
 }
