@@ -11,9 +11,7 @@ export default function PaintingDisplay({ project }) {
     <div className="min-h-screen py-12 pt-20">
       <div className="max-w-4xl mx-auto px-4">
         {/* Title */}
-        <h1 className="text-3xl mb-4 text-primary font-heavy">
-          {project.title}
-        </h1>
+        <h1 className="text-3xl mb-4 text-primary font-heavy">{project.title}</h1>
 
         {/* Metadata */}
         <div className=" mb-8 text-primary space-y-1">
@@ -29,7 +27,7 @@ export default function PaintingDisplay({ project }) {
             <i className="font-light">year:</i> {project.year}
           </p>
           {artMetadata.exhibitions && artMetadata.exhibitions.length > 0 && (
-            <div> 
+            <div>
               <i className="font-light">exhibitions:</i>{" "}
               <div className="inline-flex flex-wrap gap-2 mt-1">
                 {artMetadata.exhibitions.join(", ")}
@@ -42,7 +40,7 @@ export default function PaintingDisplay({ project }) {
         {artMetadata.description && (
           <div className=" max-w-none text-primary">
             {artMetadata.description.split("\n\n").map((paragraph, index) => (
-              <p key={index} className="mb-4 leading-relaxed">
+              <p key={index} className="mb-4">
                 {paragraph}
               </p>
             ))}
@@ -56,9 +54,7 @@ export default function PaintingDisplay({ project }) {
               <div className="relative w-full">
                 <Image
                   src={imagePath}
-                  alt={`${project.title}${
-                    displayImages.length > 1 ? ` - Image ${index + 1}` : ""
-                  }`}
+                  alt={`${project.title}${displayImages.length > 1 ? ` - Image ${index + 1}` : ""}`}
                   width={1920}
                   height={1440}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"

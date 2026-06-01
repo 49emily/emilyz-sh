@@ -7,12 +7,12 @@ import ProjectCard from "./ProjectCard";
 // Items are distributed round-robin by index (item i -> column i % numColumns),
 // so reading across each row follows the original project order.
 export default function MasonryGrid({ projects }) {
-  const [numColumns, setNumColumns] = useState(2);
+  const [numColumns, setNumColumns] = useState(1);
 
   useEffect(() => {
     const updateColumns = () => {
       // matches the lg: breakpoint (1024px) used elsewhere
-      setNumColumns(window.innerWidth >= 1024 ? 3 : 2);
+      setNumColumns(window.innerWidth >= 1024 ? 3 : 1);
     };
 
     updateColumns();

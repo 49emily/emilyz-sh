@@ -39,13 +39,13 @@ export default function ProjectCard({ project }) {
       {/* Content */}
       <div className="pt-6 lg:py-6 lg:px-4 flex-grow flex flex-col">
         <div className="mb-4">
-          <h3 className="text-lg lg:text-xl leading-tight lg:leading-7 mb-1 font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
+          <h3 className="text-lg lg:text-xl mb-1 font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
             <span>{project.title}</span>
             {project.slug && (
               <ChevronRight className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
             )}
           </h3>
-          <span className="text-xs lg:text-sm font-semilight leading-tight lg:leading-5 block">
+          <span className="text-xs lg:text-sm font-semilight">
             {project.artMetadata
               ? `${
                   project.artMetadata?.size ? project.artMetadata?.size + " • " : ""
