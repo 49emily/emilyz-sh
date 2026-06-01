@@ -16,17 +16,18 @@ export default function ProjectCard({ project }) {
       } transition-all duration-200 flex flex-col`}
     >
       {/* Image */}
-      <div className="aspect-square relative overflow-hidden">
+      <div className="relative overflow-hidden">
         {project.image ? (
           <Image
             src={project.image}
             alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            width={0}
+            height={0}
+            className="w-full h-auto transition-transform duration-500"
+            sizes="(max-width: 768px) 50vw, 33vw"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
+          <div className="aspect-square w-full flex items-center justify-center">
             <div className="text-center text-muted">
               <div className="text-2xl mb-2">📱</div>
               <div className="text-sm lg:text-base">{project.status}</div>

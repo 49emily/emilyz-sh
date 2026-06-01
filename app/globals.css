@@ -45,80 +45,70 @@
 /* Signifier font declarations */
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Regular-BF663d8462c4c0b.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Regular-BF663d8462c4c0b.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-RegularItalic-BF663d8462d189e.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-RegularItalic-BF663d8462d189e.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Light-BF663d8462b5549.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Light-BF663d8462b5549.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-LightItalic-BF663d8462b3681.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-LightItalic-BF663d8462b3681.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Medium-BF663d8462c7c04.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Medium-BF663d8462c7c04.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-MediumItalic-BF663d846296820.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-MediumItalic-BF663d846296820.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Bold-BF663d84626293d.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Bold-BF663d84626293d.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-BoldItalic-BF663d84627c436.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-BoldItalic-BF663d84627c436.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-Black-BF663d8461d0303.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-Black-BF663d8461d0303.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Signifier";
-  src: url("/fonts/signifier/TestSignifier-BlackItalic-BF663d8461e2e0e.otf")
-    format("opentype");
+  src: url("/fonts/signifier/TestSignifier-BlackItalic-BF663d8461e2e0e.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
 }
@@ -134,8 +124,7 @@
 
 @font-face {
   font-family: "Editorial New";
-  src: url("/fonts/editorialnew/PPEditorialNew-ItalicVariable.woff2")
-    format("woff2");
+  src: url("/fonts/editorialnew/PPEditorialNew-ItalicVariable.woff2") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -152,8 +141,7 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Thin-Italic-Trial.otf")
-    format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Thin-Italic-Trial.otf") format("opentype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -169,8 +157,7 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Light-Italic-Trial.otf")
-    format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Light-Italic-Trial.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -202,8 +189,7 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Medium-Italic-Trial.otf")
-    format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Medium-Italic-Trial.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -219,8 +205,7 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Semibold-Italic-Trial.otf")
-    format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Semibold-Italic-Trial.otf") format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -236,8 +221,7 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Bold-Italic-Trial.otf")
-    format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Bold-Italic-Trial.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -253,8 +237,7 @@
 
 @font-face {
   font-family: "DaVinci";
-  src: url("/fonts/davinci/TRJNDaVinci-Heavy-Italic-Trial.otf")
-    format("opentype");
+  src: url("/fonts/davinci/TRJNDaVinci-Heavy-Italic-Trial.otf") format("opentype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -840,7 +823,9 @@ body::before {
 
 /* Hover effects */
 .hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .hover-lift:hover {

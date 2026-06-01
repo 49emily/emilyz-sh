@@ -1,7 +1,7 @@
 "use client";
 
 import { getProjectsByTag } from "../data/projects";
-import ProjectCard from "../components/ProjectCard";
+import MasonryGrid from "../components/MasonryGrid";
 
 export default function Installation() {
   // Get installation projects and sort by completion date (most recent first)
@@ -17,11 +17,7 @@ export default function Installation() {
         <h2 className="text-xl mb-8 lg:mb-12">
           <span className="italic font-heavy">installation, sculpture, site-specificity</span>
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 lg:gap-x-8 gap-y-8 lg:gap-y-12 items-start">
-          {sortedProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
+        <MasonryGrid projects={sortedProjects} />
       </section>
     </div>
   );

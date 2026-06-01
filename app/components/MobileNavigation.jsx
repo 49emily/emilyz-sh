@@ -170,7 +170,7 @@ function MobileNavigation() {
                     <Link
                       href={item.path}
                       onClick={handleNavClick}
-                      className={`nav-link block text-2xl transition-colors duration-200 hover:text-primary ${
+                      className={`nav-link block text-2xl tracking-tight transition-colors duration-200 hover:text-primary ${
                         pathname === item.path ? "italic active" : ""
                       }`}
                     >

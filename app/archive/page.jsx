@@ -26,15 +26,13 @@ export default function Archive() {
               <div className="py-4 border-b border-border px-2">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0 sm:gap-4">
                   <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-4 flex-1 min-w-0">
+                    <div className="flex items-center gap-8 flex-1 min-w-0">
                       <span className="text-sm text-secondary font-light min-w-[40px] sm:min-w-[60px]">
                         {project.year}
                       </span>
-                      <span className="text-primary font-light truncate">
-                        {project.title}
-                      </span>
+                      <span className="text-primary font-semiheavy truncate">{project.title}</span>
                       {project.tags && project.tags.length > 0 && (
-                        <span className="text-xs font-semilight hidden sm:inline">
+                        <span className="text-xs font-light hidden sm:inline">
                           {project.tags.join(", ")}
                         </span>
                       )}
@@ -49,11 +47,7 @@ export default function Archive() {
                     {project.links && project.links.length > 0 && (
                       <div className="flex items-center gap-3 flex-wrap pl-[56px] sm:pl-0">
                         {project.links.map((link, linkIndex) => (
-                          <ProjectLink
-                            key={linkIndex}
-                            link={link}
-                            linkIndex={linkIndex}
-                          />
+                          <ProjectLink key={linkIndex} link={link} linkIndex={linkIndex} />
                         ))}
                       </div>
                     )}
@@ -71,7 +65,7 @@ export default function Archive() {
               <Link
                 key={index}
                 href={projectPath}
-                className="block hover:bg-muted/20 transition-colors"
+                className="block hover:bg-muted/15 transition-colors"
               >
                 {content}
               </Link>

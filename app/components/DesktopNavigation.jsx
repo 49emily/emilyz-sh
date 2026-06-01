@@ -90,7 +90,7 @@ function DesktopNavigation() {
           <div key={item.path} className="relative">
             <Link
               href={item.path}
-              className={`nav-link block text-[1.75rem] transition-colors duration-200 hover:italic ${
+              className={`nav-link block text-[1.75rem] tracking-tight transition-colors duration-200 hover:italic ${
                 pathname === item.path ? "italic active" : ""
               }`}
             >

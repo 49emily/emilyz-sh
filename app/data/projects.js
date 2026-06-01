@@ -53,8 +53,7 @@ export const projects = [
     tags: ["code"],
     component: "letters-to-my-mom",
     image: cdnPath("/projects/letters-to-my-mom/letters.jpg"),
-    status:
-      "series of generative prints based on a love letter my dad wrote my mom in the 90s",
+    status: "series of generative prints based on a love letter my dad wrote my mom in the 90s",
     links: [
       {
         label: "Github",
@@ -70,7 +69,7 @@ export const projects = [
     completionDate: "06/05/2025",
     tags: ["code"],
     component: "emily-diffusion",
-    image: cdnPath("/projects/emily-diffusion/diffusionme.png"),
+    image: cdnPath("/projects/emily-diffusion/diffusionme.jpg"),
     status: "training a generative model on my own art",
     links: [
       {
@@ -117,8 +116,7 @@ export const projects = [
     tags: ["code"],
     component: null,
     image: cdnPath("/projects/prl/pearlios.jpeg"),
-    status:
-      "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
+    status: "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
     links: [
       {
         label: "DM for Testflight",
@@ -174,8 +172,7 @@ export const projects = [
     tags: ["code", "installation"],
     component: null,
     image: cdnPath("/projects/portrait-of-you/portraitof.png"),
-    status:
-      "generative, living works that erode with brainrot digital consumption in real time",
+    status: "generative, living works that erode with brainrot digital consumption in real time",
     links: [
       {
         label: "Live Site",
@@ -213,9 +210,7 @@ export const projects = [
     year: "2021",
     completionDate: "08/12/2021",
     tags: ["visual-art"],
-    image: cdnPath(
-      "/projects/all-i-see-in-the-mirror/7_All_I_See_in_the_Mirror_is_You.jpg"
-    ),
+    image: cdnPath("/projects/all-i-see-in-the-mirror/7_All_I_See_in_the_Mirror_is_You.jpg"),
     status: "Colored pencil and white gel pen on paper",
     artMetadata: {
       medium: "Colored pencil and white gel pen on paper",
@@ -624,9 +619,7 @@ export const projects = [
     year: "2024",
     completionDate: "06/01/2024",
     tags: ["visual-art"],
-    image: cdnPath(
-      "/projects/still-life-heart/da647884-4b72-478b-b68d-84e48e1d476b.png"
-    ),
+    image: cdnPath("/projects/still-life-heart/da647884-4b72-478b-b68d-84e48e1d476b.png"),
     status: "Oil on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -705,11 +698,9 @@ export const projects = [
     completionDate: "12/15/2024",
     tags: ["installation"],
     image: cdnPath("/projects/gacha/IMG_0356.png"),
-    status:
-      "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
+    status: "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
     artMetadata: {
-      medium:
-        "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
+      medium: "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
       tags: ["Sculpture"],
       description: null,
       images: [
@@ -731,10 +722,7 @@ export const projects = [
       medium: "Oil paint on canvas and digital projection",
       tags: ["Installation"],
       size: '16" x 20"',
-      images: [
-        cdnPath("/projects/cctv/IMG_9768 2.jpg"),
-        cdnPath("/projects/cctv/IMG_9769 3.jpg"),
-      ],
+      images: [cdnPath("/projects/cctv/IMG_9768 2.jpg"), cdnPath("/projects/cctv/IMG_9769 3.jpg")],
       video: cdnPath("/projects/cctv/cctv.mov"),
       description: null,
     },
@@ -761,11 +749,9 @@ export const projects = [
     completionDate: "9/18/2025",
     tags: ["installation"],
     image: cdnPath("/projects/last-night/lastnight.jpg"),
-    status:
-      "a show in an intimate, transient space (my summer apartment in SF)",
+    status: "a show in an intimate, transient space (my summer apartment in SF)",
     artMetadata: {
-      medium:
-        "a show in an intimate, transient space (my summer apartment in sf)",
+      medium: "a show in an intimate, transient space (my summer apartment in sf)",
       images: [cdnPath("/projects/last-night/lastnight.jpg")],
       tags: ["Installation"],
       description: null,
@@ -785,7 +771,5 @@ export const getProjectBySlug = (slug) => {
 
 // Helper function to get projects by tag
 export const getProjectsByTag = (tag) => {
-  return projects.filter(
-    (project) => project.tags && project.tags.includes(tag)
-  );
+  return projects.filter((project) => project.tags && project.tags.includes(tag));
 };
