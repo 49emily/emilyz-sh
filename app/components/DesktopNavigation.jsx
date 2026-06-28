@@ -3,7 +3,6 @@
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import LocationDistance from "./LocationDistance";
 
 function DesktopNavigation() {
   const pathname = usePathname();
@@ -99,8 +98,6 @@ function DesktopNavigation() {
           </div>
         ))}
       </div>
-
-      <LocationDistance />
     </nav>
   );
 }

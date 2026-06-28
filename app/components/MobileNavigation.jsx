@@ -4,7 +4,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import LocationDistance from "./LocationDistance";
 
 function MobileNavigation() {
   const pathname = usePathname();
@@ -179,8 +178,6 @@ function MobileNavigation() {
                   </div>
                 ))}
               </div>
-
-              <LocationDistance />
             </nav>
           </div>
         </div>

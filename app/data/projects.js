@@ -35,7 +35,8 @@ export const projects = [
     completionDate: "06/15/2025",
     tags: ["code", "installation"],
     component: "what-do-you-dream-about",
-    image: cdnPath("/projects/what-do-you-dream-about/whatdoyoudream.png"),
+    video: cdnPath("/projects/what-do-you-dream-about/whatdoyoudreamclip.mov"),
+    // image: cdnPath("/projects/what-do-you-dream-about/whatdoyoudream.png"),
     status: "interactive real-time diffusion installation",
     links: [
       {
@@ -108,23 +109,23 @@ export const projects = [
       { label: "Discord", url: "https://discord.gg/prl", icon: "discord" },
     ],
   },
-  {
-    title: "prl iOS",
-    slug: null,
-    year: "2025",
-    completionDate: "03/15/2025",
-    tags: ["code"],
-    component: null,
-    image: cdnPath("/projects/prl/pearlios.jpeg"),
-    status: "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
-    links: [
-      {
-        label: "DM for Testflight",
-        url: "https://x.com/writewithprl",
-        icon: "twitter",
-      },
-    ],
-  },
+  // {
+  //   title: "prl iOS",
+  //   slug: null,
+  //   year: "2025",
+  //   completionDate: "03/15/2025",
+  //   tags: ["code"],
+  //   component: null,
+  //   image: cdnPath("/projects/prl/pearlios.jpeg"),
+  //   status: "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
+  //   links: [
+  //     {
+  //       label: "DM for Testflight",
+  //       url: "https://x.com/writewithprl",
+  //       icon: "twitter",
+  //     },
+  //   ],
+  // },
   {
     title: "Tangent",
     slug: null,
@@ -171,7 +172,8 @@ export const projects = [
     completionDate: "11/01/2025",
     tags: ["code", "installation"],
     component: null,
-    image: cdnPath("/projects/portrait-of-you/portraitof.png"),
+    // image: cdnPath("/projects/portrait-of-you/portraitof.png"),
+    video: cdnPath("/projects/portrait-of-you/emilyweek5.mp4"),
     status: "generative, living works that erode with brainrot digital consumption in real time",
     links: [
       {
@@ -186,6 +188,66 @@ export const projects = [
       },
     ],
   },
+  {
+    title: "Search Art With Art",
+    slug: null,
+    year: "2026",
+    completionDate: "04/18/2026",
+    tags: ["code"],
+    component: null,
+    video: cdnPath("/projects/search-art-with-art/sawa2.mp4"),
+    status: "browsing the MoMA collection with embeddings",
+    links: [
+      {
+        label: "Live Site",
+        url: "https://searchartwith.art",
+        icon: "external",
+      },
+      {
+        label: "Tweet",
+        url: "https://x.com/emilyzsh/status/2045515782587556036",
+        icon: "twitter",
+      },
+    ],
+  },
+  {
+    title: "for my love",
+    slug: null,
+    year: "2026",
+    completionDate: "2/14/2026",
+    tags: ["code"],
+    status: "3D objects as digital vessels for your love",
+    video: cdnPath("/projects/for-my-love/formyloveclip.mp4"),
+    links: [
+      {
+        label: "Live Site",
+        url: "https://formylove.baby",
+        icon: "external",
+      },
+      {
+        label: "Tweet",
+        url: "https://x.com/emilyzsh/status/2022351930505269726",
+        icon: "twitter",
+      },
+    ],
+  },
+  // {
+  //   title: "Crosby Intelligence",
+  //   slug: null,
+  //   year: "2026",
+  //   completionDate: "06/17/2026",
+  //   tags: ["code"],
+  //   component: null,
+  //   status: "",
+  //   video: cdnPath("/projects/crosby-intelligence/crosby-intelligence.mov"),
+  //   links: [
+  //     {
+  //       label: "Live Site",
+  //       url: "https://intelligence.crosby.ai",
+  //       icon: "external",
+  //     },
+  //   ],
+  // },
   // Visual Art
   {
     title: "35 Times I Cried Over a Love That Wasn't Mine",
@@ -716,7 +778,8 @@ export const projects = [
     year: "2025",
     completionDate: "9/19/2025",
     tags: ["visual-art", "installation"],
-    image: cdnPath("/projects/cctv/IMG_2729.jpg"),
+    // image: cdnPath("/projects/cctv/IMG_2729.jpg"),
+    video: cdnPath("/projects/cctv/cctv.mov"),
     status: "Oil paint on canvas and digital projection",
     artMetadata: {
       medium: "Oil paint on canvas and digital projection",

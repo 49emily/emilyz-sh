@@ -23,11 +23,11 @@ export default function Archive() {
           {sortedProjects.map((project, index) => {
             const projectPath = project.slug ? `/work/${project.slug}` : null;
             const content = (
-              <div className="py-4 border-b border-border px-2">
+              <div className="py-2 px-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0 sm:gap-4">
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex items-center gap-8 flex-1 min-w-0">
-                      <span className="text-sm text-secondary font-light min-w-[40px] sm:min-w-[60px]">
+                      <span className="text-sm font-light min-w-[40px] sm:min-w-[60px]">
                         {project.year}
                       </span>
                       <span className="text-primary font-semiheavy truncate">{project.title}</span>
@@ -38,7 +38,7 @@ export default function Archive() {
                       )}
                     </div>
                     {project.slug && (
-                      <span className="text-xs text-secondary flex-shrink-0 sm:hidden">
+                      <span className="text-xs flex-shrink-0 sm:hidden">
                         <ChevronRight className="w-4 h-4" />
                       </span>
                     )}
@@ -52,7 +52,7 @@ export default function Archive() {
                       </div>
                     )}
                     {project.slug && (
-                      <span className="text-xs text-secondary flex-shrink-0 hidden sm:block">
+                      <span className="text-xs flex-shrink-0 hidden sm:block">
                         <ChevronRight className="w-4 h-4" />
                       </span>
                     )}

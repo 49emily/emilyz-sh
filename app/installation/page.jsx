@@ -14,9 +14,9 @@ export default function Installation() {
     <div className="space-y-12 pt-20 pb-24">
       {/* Installation Grid */}
       <section>
-        <h2 className="text-xl mb-8 lg:mb-12">
+        {/* <h2 className="text-xl mb-8 lg:mb-12">
           <span className="italic font-heavy">installation, sculpture, site-specificity</span>
-        </h2>
+        </h2> */}
         <MasonryGrid projects={sortedProjects} />
       </section>
     </div>

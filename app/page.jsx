@@ -33,12 +33,7 @@ export default function Home() {
   // Handle clicking outside of images to hide them on mobile
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        isMobile &&
-        currentImage &&
-        homeRef.current &&
-        !event.target.closest(".image-trigger")
-      ) {
+      if (isMobile && currentImage && homeRef.current && !event.target.closest(".image-trigger")) {
         hideImage(currentImage);
         setCurrentImage(null);
       }
@@ -67,8 +62,7 @@ export default function Home() {
     }
 
     // Pick a random index from available ones
-    const randomIndex =
-      availableIndices[Math.floor(Math.random() * availableIndices.length)];
+    const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
 
     // Update state
     setCurrentTopicIndex(randomIndex);
@@ -115,7 +109,7 @@ export default function Home() {
 
   return (
     <div
-      className="flex items-center font-semilight justify-center pt-20 pb-16 lg:pt-0 lg:pb-0 lg:min-h-screen"
+      className="flex items-center justify-center pt-20 pb-16 lg:pt-0 lg:pb-0 lg:min-h-screen"
       ref={homeRef}
     >
       <div className="max-w-2xl relative">
@@ -126,9 +120,7 @@ export default function Home() {
               className="link cursor-pointer"
               onClick={handleNameInteraction}
               onMouseEnter={!isMobile ? () => setName("张思涵") : undefined}
-              onMouseLeave={
-                !isMobile ? () => setName("Emily Zhang") : undefined
-              }
+              onMouseLeave={!isMobile ? () => setName("Emily Zhang") : undefined}
             >
               {name}
             </span>
@@ -139,34 +131,17 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("nanjing")}
-              onMouseEnter={
-                !isMobile
-                  ? () => handleImageInteraction("nanjing", true)
-                  : undefined
-              }
-              onMouseLeave={
-                !isMobile
-                  ? () => handleImageInteraction("nanjing", false)
-                  : undefined
-              }
+              onMouseEnter={!isMobile ? () => handleImageInteraction("nanjing", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("nanjing", false) : undefined}
             >
               Nanjing, China
             </span>
-            , currently based in New York City and working on software and
-            storytelling at{" "}
+            , currently based in New York City and working on software and storytelling at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("a24")}
-              onMouseEnter={
-                !isMobile
-                  ? () => handleImageInteraction("a24", true)
-                  : undefined
-              }
-              onMouseLeave={
-                !isMobile
-                  ? () => handleImageInteraction("a24", false)
-                  : undefined
-              }
+              onMouseEnter={!isMobile ? () => handleImageInteraction("a24", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("a24", false) : undefined}
             >
               A24 Films
             </span>
@@ -174,16 +149,8 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}
-              onMouseEnter={
-                !isMobile
-                  ? () => handleImageInteraction("stanford", true)
-                  : undefined
-              }
-              onMouseLeave={
-                !isMobile
-                  ? () => handleImageInteraction("stanford", false)
-                  : undefined
-              }
+              onMouseEnter={!isMobile ? () => handleImageInteraction("stanford", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("stanford", false) : undefined}
             >
               Stanford University
             </span>{" "}
@@ -191,23 +158,17 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("sf")}
-              onMouseEnter={
-                !isMobile ? () => handleImageInteraction("sf", true) : undefined
-              }
-              onMouseLeave={
-                !isMobile
-                  ? () => handleImageInteraction("sf", false)
-                  : undefined
-              }
+              onMouseEnter={!isMobile ? () => handleImageInteraction("sf", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("sf", false) : undefined}
             >
               San Francisco
             </span>
             .
           </p>
           <p className="mb-6">
-            I care deeply about tools for knowledge work, generative interfaces,
-            and safe and effective AI deployment. My main priority is to create
-            software that is beneficial to humanity.
+            I care deeply about tools for knowledge work, generative interfaces, and safe and
+            effective AI deployment. My main priority is to create software that is beneficial to
+            humanity.
           </p>
           <p className="mb-6">
             I&apos;ve recently been working on and thinking about{" "}

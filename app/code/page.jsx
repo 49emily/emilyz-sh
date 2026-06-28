@@ -16,9 +16,9 @@ export default function Code() {
   return (
     <div className="space-y-12 pt-20 pb-24">
       <section>
-        <h2 className="italic text-xl mb-8 lg:mb-12 text-primary font-heavy">
+        {/* <h2 className="italic text-xl mb-8 lg:mb-12 text-primary font-heavy">
           software, interfaces, AI
-        </h2>
+        </h2> */}
         <MasonryGrid projects={sortedProjects} />
       </section>
     </div>
