@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import VisitorCount from "./VisitorCount";
 
 function MobileNavigation() {
   const pathname = usePathname();
@@ -178,6 +179,8 @@ function MobileNavigation() {
                   </div>
                 ))}
               </div>
+
+              <VisitorCount />
             </nav>
           </div>
         </div>

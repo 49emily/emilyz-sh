@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import ThemeToggle from "./components/ThemeToggle";
 import GlobalImageOverlay from "./components/GlobalImageOverlay";
+import Footer from "./components/Footer";
 
 export default function LayoutContent({ children }) {
   const [appLoaded, setAppLoaded] = useState(false);
@@ -63,11 +64,12 @@ export default function LayoutContent({ children }) {
 
           {/* Main Content */}
           <main
-            className={`lg:col-span-5 px-1 lg:px-4 transition-all duration-700 delay-400 ease-out ${
+            className={`lg:col-span-5 px-1 lg:px-4 flex flex-col min-h-screen transition-all duration-700 delay-400 ease-out ${
               appLoaded ? "opacity-100 transform" : "opacity-0 transform translate-x-4"
             }`}
           >
             {children}
+            {/* <Footer /> */}
           </main>
         </div>
       </div>

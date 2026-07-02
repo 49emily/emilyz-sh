@@ -836,7 +836,7 @@ body::before {
 /* Navigation link font weight reduction on hover and active */
 .nav-link {
   transition: font-weight 0.2s ease;
-  font-weight: 430;
+  font-weight: 400;
 }
 
 .nav-link:hover,

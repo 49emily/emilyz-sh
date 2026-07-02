@@ -8,22 +8,6 @@ import useIsMobile from "./hooks/useIsMobile";
 export const dynamic = "force-dynamic";
 
 export default function Home() {
-  // Topics for dice roll
-  const topics = [
-    // "machine understandings of love",
-
-    // "T1 at worlds",
-    "interfaces that scale",
-    "AI safety",
-    "the business of great storytelling",
-    // "mental health",
-    "creative agency in the age of AI",
-    "love as a form of labor",
-  ];
-
-  const [currentTopicIndex, setCurrentTopicIndex] = useState(0);
-  const [usedTopicIndices, setUsedTopicIndices] = useState(new Set([0])); // Track used topics, start with index 0
-  const [showDice, setShowDice] = useState(false);
   const [name, setName] = useState("Emily Zhang");
   const isMobile = useIsMobile();
   const [isNameChinese, setIsNameChinese] = useState(false);
@@ -44,30 +28,6 @@ export default function Home() {
       return () => document.removeEventListener("click", handleClickOutside);
     }
   }, [isMobile, currentImage]);
-
-  const rollDice = () => {
-    let currentUsedIndices = usedTopicIndices;
-
-    // If all topics have been used, start a new cycle
-    if (currentUsedIndices.size >= topics.length) {
-      currentUsedIndices = new Set();
-    }
-
-    // Get available indices (not yet used in current cycle)
-    const availableIndices = [];
-    for (let i = 0; i < topics.length; i++) {
-      if (!currentUsedIndices.has(i)) {
-        availableIndices.push(i);
-      }
-    }
-
-    // Pick a random index from available ones
-    const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
-
-    // Update state
-    setCurrentTopicIndex(randomIndex);
-    setUsedTopicIndices(new Set([...currentUsedIndices, randomIndex]));
-  };
 
   const handleNameInteraction = () => {
     if (isMobile) {
@@ -101,18 +61,12 @@ export default function Home() {
     }
   };
 
-  const handleDiceInteraction = (isEnter = true) => {
-    if (!isMobile) {
-      setShowDice(isEnter);
-    }
-  };
-
   return (
     <div
       className="flex items-center justify-center pt-20 pb-16 lg:pt-0 lg:pb-0 lg:min-h-screen"
       ref={homeRef}
     >
-      <div className="max-w-2xl relative">
+      <div className="max-w-3xl relative">
         <div className="text-base lg:text-lg text-primary">
           <p className="mb-6">
             Welcome! My name is{" "}
@@ -135,17 +89,10 @@ export default function Home() {
               onMouseLeave={!isMobile ? () => handleImageInteraction("nanjing", false) : undefined}
             >
               Nanjing, China
-            </span>
-            , currently based in New York City and working on software and storytelling at{" "}
-            <span
-              className="link cursor-pointer image-trigger"
-              onClick={() => handleImageInteraction("a24")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("a24", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("a24", false) : undefined}
-            >
-              A24 Films
-            </span>
-            . I was previously at{" "}
+            </span>{" "}
+            and currently based in New York City. I work on next generation legal experiences and
+            agents at <ExternalLink href="https://www.crosby.ai">Crosby</ExternalLink>. Previously,
+            I spent time at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}
@@ -153,8 +100,8 @@ export default function Home() {
               onMouseLeave={!isMobile ? () => handleImageInteraction("stanford", false) : undefined}
             >
               Stanford University
-            </span>{" "}
-            and in{" "}
+            </span>
+            , in{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("sf")}
@@ -163,29 +110,30 @@ export default function Home() {
             >
               San Francisco
             </span>
-            .
+            , and at a couple incredible organizations.
           </p>
           <p className="mb-6">
-            I care deeply about tools for knowledge work, generative interfaces, and safe and
-            effective AI deployment. My main priority is to create software that is beneficial to
-            humanity.
+            I care deeply about tools for knowledge work and creative expression, as well as safe
+            and effective AI deployment. My main priority is to create software that is beneficial
+            to humanity.
           </p>
           <p className="mb-6">
             I&apos;ve recently been working on and thinking about{" "}
-            <span
-              className="link cursor-pointer"
-              onMouseEnter={() => handleDiceInteraction(true)}
-              onMouseLeave={() => handleDiceInteraction(false)}
-              onClick={rollDice}
-              title="Click to explore other topics I'm working on"
-            >
-              {topics[currentTopicIndex]}
-              {(showDice || isMobile) && (
-                <span className="text-lg hover:scale-110 transition-transform inline-block ml-1">
-                  🎲
-                </span>
-              )}
-            </span>
+            <a href="#" className="link">
+              interfaces that scale
+            </a>
+            ,{" "}
+            <a href="#" className="link">
+              creative agency in the age of AI
+            </a>
+            ,{" "}
+            <a href="#" className="link">
+              agents in non-verifiable domains
+            </a>
+            , and{" "}
+            <a href="#" className="link">
+              love as a form of labor
+            </a>
             .
           </p>
           <p>
