@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import ThemeToggle from "./components/ThemeToggle";
 import GlobalImageOverlay from "./components/GlobalImageOverlay";
-import Footer from "./components/Footer";
 
 export default function LayoutContent({ children }) {
   const [appLoaded, setAppLoaded] = useState(false);

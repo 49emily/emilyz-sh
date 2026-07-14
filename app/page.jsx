@@ -90,9 +90,9 @@ export default function Home() {
             >
               Nanjing, China
             </span>{" "}
-            and currently based in New York City. I work on next generation legal experiences and
-            agents at <ExternalLink href="https://www.crosby.ai">Crosby</ExternalLink>. Previously,
-            I spent time at{" "}
+            and currently based in New York City. I work on applied agents and next-generation legal
+            experiences at <ExternalLink href="https://www.crosby.ai">Crosby</ExternalLink>.
+            Previously, I spent time on a few early teams and at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}
@@ -101,16 +101,7 @@ export default function Home() {
             >
               Stanford University
             </span>
-            , in{" "}
-            <span
-              className="link cursor-pointer image-trigger"
-              onClick={() => handleImageInteraction("sf")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("sf", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("sf", false) : undefined}
-            >
-              San Francisco
-            </span>
-            , and at a couple incredible organizations.
+            .
           </p>
           <p className="mb-6">
             I care deeply about tools for knowledge work and creative expression, as well as safe
@@ -119,21 +110,21 @@ export default function Home() {
           </p>
           <p className="mb-6">
             I&apos;ve recently been working on and thinking about{" "}
-            <a href="#" className="link">
+            {/* <a href="#" className="link">
               interfaces that scale
             </a>
-            ,{" "}
-            <a href="#" className="link">
+            ,{" "} */}
+            <ExternalLink href="https://x.com/emilyzsh/status/2023592817692725582">
               creative agency in the age of AI
-            </a>
+            </ExternalLink>
             ,{" "}
-            <a href="#" className="link">
+            <ExternalLink href="https://intelligence.crosby.ai/">
               agents in non-verifiable domains
-            </a>
+            </ExternalLink>
             , and{" "}
-            <a href="#" className="link">
+            <ExternalLink href="https://www.emilyz.sh/work/letters-to-my-mom">
               love as a form of labor
-            </a>
+            </ExternalLink>
             .
           </p>
           <p>

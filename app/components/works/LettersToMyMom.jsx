@@ -49,14 +49,27 @@ export default function LettersToMyMom({ links = [] }) {
         rigid. From the human past to the machine future, is there always something that is lost?
       </p>
 
-      <div className="space-y-4">
-        <Image
-          src={getBunnyCDNUrl("/projects/letters-to-my-mom/letters.jpg")}
-          alt="Letters to my Mom"
-          width={800}
-          height={600}
-          className="w-[80%] lg:w-1/2 h-auto"
-        />
+      <div className="space-y-8">
+        <div>
+          <Image
+            src={getBunnyCDNUrl("/projects/letters-to-my-mom/loveletter.jpg")}
+            alt="Jian Zhang's letter to Yinghui Gu, 1999"
+            width={800}
+            height={600}
+            className="w-[80%] lg:w-1/2 h-auto"
+          />
+          <p className="text-sm mt-2 italic">Jian Zhang&apos;s letter to Yinghui Gu, 1999</p>
+        </div>
+        <div>
+          <Image
+            src={getBunnyCDNUrl("/projects/letters-to-my-mom/letters.jpg")}
+            alt="Letters to my Mom"
+            width={800}
+            height={600}
+            className="w-[80%] lg:w-1/2 h-auto"
+          />
+          <p className="text-sm mt-2 italic">Letters to my Mom, 2025</p>
+        </div>
         <div className="flex flex-row items-center gap-4 justify-between w-full">
           <Image
             src={getBunnyCDNUrl("/projects/letters-to-my-mom/letter1.jpg")}

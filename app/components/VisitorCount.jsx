@@ -20,7 +20,7 @@ function VisitorCount() {
   }, []);
 
   return (
-    <p className="mt-6 font-mono text-xs text-secondary">
+    <p className="mt-4 max-w-[60vw] font-mono text-sm text-accent break-words">
       welcome visitor #{count !== null ? count.toLocaleString() : "___"}!
     </p>
   );
