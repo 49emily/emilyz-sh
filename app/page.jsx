@@ -91,8 +91,16 @@ export default function Home() {
               Nanjing, China
             </span>{" "}
             and currently based in New York City. I work on applied agents and next-generation legal
-            experiences at <ExternalLink href="https://www.crosby.ai">Crosby</ExternalLink>.
-            Previously, I spent time on a few early teams and at{" "}
+            experiences at{" "}
+            <span
+              className="link cursor-pointer image-trigger"
+              onClick={() => handleImageInteraction("crosby")}
+              onMouseEnter={!isMobile ? () => handleImageInteraction("crosby", true) : undefined}
+              onMouseLeave={!isMobile ? () => handleImageInteraction("crosby", false) : undefined}
+            >
+              Crosby
+            </span>
+            . Previously, I spent time on a few early teams and at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}

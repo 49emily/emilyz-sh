@@ -10,7 +10,7 @@ const redis = new Redis({
 export const dynamic = "force-dynamic";
 
 const COOKIE_NAME = "visitor_id";
-const ONE_YEAR = 60 * 60 * 24 * 365;
+const ONE_DAY = 60 * 60 * 24;
 
 export async function GET() {
   try {
@@ -28,7 +28,7 @@ export async function GET() {
     // New visitor: assign the next number and remember it in a cookie.
     const count = await redis.incr("visitor_count");
     cookieStore.set(COOKIE_NAME, String(count), {
-      maxAge: ONE_YEAR,
+      maxAge: ONE_DAY,
       httpOnly: true,
       sameSite: "lax",
       path: "/",
