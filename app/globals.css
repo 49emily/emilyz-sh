@@ -16,7 +16,7 @@
   /* Font families */
   --font-editorial: "Editorial New", serif;
   --font-signifier: "Signifier", serif;
-  --font-tid: "Tid-Book", monospace;
+  --font-mono: var(--font-space-mono), monospace;
   --font-davinci: "DaVinci", serif;
   --font-exposure: "Exposure", serif;
 }
@@ -31,15 +31,6 @@
     --color-highlight: #5d5d5d;
     --color-background: #191919;
   }
-}
-
-/* Tid-book font declaration */
-@font-face {
-  font-family: "Tid-Book";
-  src: url("/fonts/tid-book/Tid-Book.woff2") format("woff2");
-  font-weight: 420;
-  font-style: normal;
-  font-display: swap;
 }
 
 /* Signifier font declarations */
@@ -647,12 +638,10 @@ body::before {
   text-decoration: underline;
   text-decoration-color: var(--color-accent);
   text-underline-offset: 2px;
-  transition: all 0.2s ease;
   color: var(--color-accent);
   text-decoration: underline dotted;
   text-decoration-thickness: 1px;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .link:hover {
@@ -836,7 +825,7 @@ body::before {
 /* Navigation link font weight reduction on hover and active */
 .nav-link {
   transition: font-weight 0.2s ease;
-  font-weight: 430;
+  font-weight: 400;
 }
 
 .nav-link:hover,

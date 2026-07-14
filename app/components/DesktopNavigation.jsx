@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import VisitorCount from "./VisitorCount";
 
 function DesktopNavigation() {
   const pathname = usePathname();
@@ -53,7 +54,7 @@ function DesktopNavigation() {
           </a>
 
           <a
-            href="mailto:emily49@stanford.edu"
+            href="mailto:emilysihanzhang@gmail.com"
             className="transition-colors duration-200 hover:opacity-80 text-accent"
           >
             <svg
@@ -98,6 +99,8 @@ function DesktopNavigation() {
           </div>
         ))}
       </div>
+
+      <VisitorCount />
     </nav>
   );
 }

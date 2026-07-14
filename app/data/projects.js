@@ -35,7 +35,7 @@ export const projects = [
     completionDate: "06/15/2025",
     tags: ["code", "installation"],
     component: "what-do-you-dream-about",
-    video: cdnPath("/projects/what-do-you-dream-about/whatdoyoudreamclip.mov"),
+    video: cdnPath("/projects/what-do-you-dream-about/whatdoyoudreamlowest.mp4"),
     // image: cdnPath("/projects/what-do-you-dream-about/whatdoyoudream.png"),
     status: "interactive real-time diffusion installation",
     links: [

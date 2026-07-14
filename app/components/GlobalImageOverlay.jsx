@@ -9,6 +9,7 @@ export default function GlobalImageOverlay() {
   const [showStanfordImage, setShowStanfordImage] = useState(false);
   const [showScaleImage, setShowScaleImage] = useState(false);
   const [showA24Image, setShowA24Image] = useState(false);
+  const [showCrosbyImage, setShowCrosbyImage] = useState(false);
 
   useEffect(() => {
     const handleShowImage = (e) => {
@@ -28,6 +29,9 @@ export default function GlobalImageOverlay() {
           break;
         case "a24":
           setShowA24Image(show);
+          break;
+        case "crosby":
+          setShowCrosbyImage(show);
           break;
         default:
           break;
@@ -116,6 +120,22 @@ export default function GlobalImageOverlay() {
               fill
               sizes="80vw"
               className="object-contain opacity-95"
+              style={{ filter: "drop-shadow(0 25px 50px -12px rgba(0, 0, 0, 0.25))" }}
+              priority
+            />
+          </div>
+        </div>
+      )}
+
+      {showCrosbyImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+          <div className="relative w-[80vw] h-[80vh]">
+            <Image
+              src="/crosby.JPG"
+              alt="Crosby"
+              fill
+              sizes="80vw"
+              className="object-contain opacity-90"
               style={{ filter: "drop-shadow(0 25px 50px -12px rgba(0, 0, 0, 0.25))" }}
               priority
             />
