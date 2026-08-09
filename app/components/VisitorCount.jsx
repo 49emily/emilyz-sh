@@ -4,9 +4,11 @@ import { useState, useEffect, useRef } from "react";
 
 function VisitorCount() {
   const [count, setCount] = useState(null);
+  // Guards against StrictMode's deliberate double-invoke in development, which
+  // would otherwise increment the counter twice on every dev page load.
   const hasFetched = useRef(false);
 
-  // Fetch + increment the visitor count once per page load.
+  // Only one navigation is mounted at a time, so this runs once per page load.
   useEffect(() => {
     if (hasFetched.current) return;
     hasFetched.current = true;

@@ -2,11 +2,11 @@
 
 import { ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { useState } from "react";
-import useIsMobile from "../hooks/useIsMobile";
+import useIsTouchDevice from "../hooks/useIsTouchDevice";
 
 const ExternalLink = ({ href, children, className = "link", showIcon = true }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const isMobile = useIsMobile();
+  const isTouchDevice = useIsTouchDevice();
 
   return (
     <a
@@ -18,7 +18,7 @@ const ExternalLink = ({ href, children, className = "link", showIcon = true }) =
       onMouseLeave={() => setIsHovered(false)}
     >
       {children}
-      {showIcon && (isMobile || isHovered) && <ExternalLinkIcon className="ml-1 w-4 h-4 inline" />}
+      {showIcon && (isTouchDevice || isHovered) && <ExternalLinkIcon className="ml-1 w-4 h-4 inline" />}
     </a>
   );
 };
