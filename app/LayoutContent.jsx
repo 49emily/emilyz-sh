@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Navigation from "./components/Navigation";
+import DesktopNavigation from "./components/DesktopNavigation";
+import MobileNavigation from "./components/MobileNavigation";
 import ThemeToggle from "./components/ThemeToggle";
 import GlobalImageOverlay from "./components/GlobalImageOverlay";
 
@@ -52,13 +53,13 @@ export default function LayoutContent({ children }) {
                 appLoaded ? "opacity-100" : "-translate-x-4 opacity-0"
               }`}
             >
-              <Navigation />
+              <DesktopNavigation />
             </div>
           </aside>
 
           {/* Mobile Navigation */}
           <div className="lg:hidden">
-            <Navigation />
+            <MobileNavigation />
           </div>
 
           {/* Main Content */}

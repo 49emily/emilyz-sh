@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 
-// LayoutContent renders <Navigation /> twice (mobile overlay + desktop sidebar),
-// and each one renders both MobileNavigation and DesktopNavigation, so four
-// VisitorCount instances mount on every page load — the hidden ones are only
-// hidden by CSS. Each mount used to fire its own /api/visitors request, and on a
-// first visit none of them had the cookie yet, so the counter incremented once
-// per mount instead of once per visitor.
+// This renders in both MobileNavigation and DesktopNavigation, so two instances
+// mount on every page load — only one is ever visible, but the other is hidden
+// by CSS rather than unmounted, so it still runs its effects. Each mount used to
+// fire its own /api/visitors request, and on a first visit neither had the
+// cookie yet, so the counter incremented once per mount instead of once per
+// visitor.
 //
 // Sharing a single module-level promise means one request per page load no
 // matter how many instances mount, and every instance displays the same number.
