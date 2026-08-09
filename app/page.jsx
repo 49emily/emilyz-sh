@@ -3,35 +3,35 @@
 import { useState, useRef, useEffect } from "react";
 import ExternalLink from "./components/ExternalLink";
 import { showImage, hideImage } from "./utils";
-import useIsMobile from "./hooks/useIsMobile";
+import useIsTouchDevice from "./hooks/useIsTouchDevice";
 
 export const dynamic = "force-dynamic";
 
 export default function Home() {
   const [name, setName] = useState("Emily Zhang");
-  const isMobile = useIsMobile();
+  const isTouchDevice = useIsTouchDevice();
   const [isNameChinese, setIsNameChinese] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   const homeRef = useRef(null);
 
-  // Handle clicking outside of images to hide them on mobile
+  // Handle tapping outside of images to hide them on touch devices
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMobile && currentImage && homeRef.current && !event.target.closest(".image-trigger")) {
+      if (isTouchDevice && currentImage && homeRef.current && !event.target.closest(".image-trigger")) {
         hideImage(currentImage);
         setCurrentImage(null);
       }
     };
 
-    if (isMobile) {
+    if (isTouchDevice) {
       document.addEventListener("click", handleClickOutside);
       return () => document.removeEventListener("click", handleClickOutside);
     }
-  }, [isMobile, currentImage]);
+  }, [isTouchDevice, currentImage]);
 
   const handleNameInteraction = () => {
-    if (isMobile) {
-      // Toggle name on click for mobile
+    if (isTouchDevice) {
+      // Toggle name on tap for touch devices
       const newState = !isNameChinese;
       setIsNameChinese(newState);
       setName(newState ? "张思涵" : "Emily Zhang");
@@ -39,8 +39,8 @@ export default function Home() {
   };
 
   const handleImageInteraction = (imageName, isEnter = true) => {
-    if (isMobile) {
-      // Click to show, click outside to hide for mobile
+    if (isTouchDevice) {
+      // Tap to show, tap outside to hide for touch devices
       if (currentImage === imageName) {
         hideImage(imageName);
         setCurrentImage(null);
@@ -52,7 +52,7 @@ export default function Home() {
         setCurrentImage(imageName);
       }
     } else {
-      // Hover behavior for desktop
+      // Hover behavior where a pointer is available
       if (isEnter) {
         showImage(imageName);
       } else {
@@ -73,8 +73,8 @@ export default function Home() {
             <span
               className="link cursor-pointer"
               onClick={handleNameInteraction}
-              onMouseEnter={!isMobile ? () => setName("张思涵") : undefined}
-              onMouseLeave={!isMobile ? () => setName("Emily Zhang") : undefined}
+              onMouseEnter={!isTouchDevice ? () => setName("张思涵") : undefined}
+              onMouseLeave={!isTouchDevice ? () => setName("Emily Zhang") : undefined}
             >
               {name}
             </span>
@@ -85,8 +85,8 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("nanjing")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("nanjing", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("nanjing", false) : undefined}
+              onMouseEnter={!isTouchDevice ? () => handleImageInteraction("nanjing", true) : undefined}
+              onMouseLeave={!isTouchDevice ? () => handleImageInteraction("nanjing", false) : undefined}
             >
               Nanjing, China
             </span>{" "}
@@ -95,8 +95,8 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("crosby")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("crosby", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("crosby", false) : undefined}
+              onMouseEnter={!isTouchDevice ? () => handleImageInteraction("crosby", true) : undefined}
+              onMouseLeave={!isTouchDevice ? () => handleImageInteraction("crosby", false) : undefined}
             >
               Crosby
             </span>
@@ -104,8 +104,8 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}
-              onMouseEnter={!isMobile ? () => handleImageInteraction("stanford", true) : undefined}
-              onMouseLeave={!isMobile ? () => handleImageInteraction("stanford", false) : undefined}
+              onMouseEnter={!isTouchDevice ? () => handleImageInteraction("stanford", true) : undefined}
+              onMouseLeave={!isTouchDevice ? () => handleImageInteraction("stanford", false) : undefined}
             >
               Stanford University
             </span>
