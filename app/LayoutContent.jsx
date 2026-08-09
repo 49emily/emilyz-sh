@@ -5,11 +5,13 @@ import DesktopNavigation from "./components/DesktopNavigation";
 import MobileNavigation from "./components/MobileNavigation";
 import ThemeToggle from "./components/ThemeToggle";
 import GlobalImageOverlay from "./components/GlobalImageOverlay";
+import useIsDesktop from "./hooks/useIsDesktop";
 
 export default function LayoutContent({ children }) {
   const [appLoaded, setAppLoaded] = useState(false);
   const [navImageLoaded, setNavImageLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const isDesktop = useIsDesktop();
 
   useEffect(() => {
     setMounted(true);
@@ -46,21 +48,21 @@ export default function LayoutContent({ children }) {
       <ThemeToggle />
       <div className="mx-auto px-4 lg:px-12">
         <div className="lg:grid lg:grid-cols-7 lg:min-h-screen">
-          {/* Left Sidebar - Hidden on Mobile */}
-          <aside className="hidden lg:block lg:col-span-2">
-            <div
-              className={`fixed top-0 h-screen left-0 w-[28.571%] flex justify-center items-center transition-all duration-700 delay-200 ease-out ${
-                appLoaded ? "opacity-100" : "-translate-x-4 opacity-0"
-              }`}
-            >
-              <DesktopNavigation />
-            </div>
-          </aside>
-
-          {/* Mobile Navigation */}
-          <div className="lg:hidden">
+          {/* Only the navigation for the current breakpoint is mounted. Hiding the
+              other one with CSS would leave it running its effects and fetches. */}
+          {isDesktop ? (
+            <aside className="lg:col-span-2">
+              <div
+                className={`fixed top-0 h-screen left-0 w-[28.571%] flex justify-center items-center transition-all duration-700 delay-200 ease-out ${
+                  appLoaded ? "opacity-100" : "-translate-x-4 opacity-0"
+                }`}
+              >
+                <DesktopNavigation />
+              </div>
+            </aside>
+          ) : (
             <MobileNavigation />
-          </div>
+          )}
 
           {/* Main Content */}
           <main
