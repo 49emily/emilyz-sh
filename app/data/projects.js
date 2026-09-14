@@ -846,7 +846,7 @@ export const projects = [
     },
   },
   {
-    title: "Diffusion, RAID 9",
+    title: "RAID 9",
     year: "2026",
     completionDate: "09/09/2026",
     tags: ["talk"],

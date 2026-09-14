@@ -107,8 +107,16 @@ export default function Home() {
             >
               Nanjing, China
             </span>{" "}
-            and currently based in New York City. I work on hard problems across
-            engineering / product / marketing / recruiting at{" "}
+            and currently based in New York City. I enjoy building tools for
+            knowledge work and creative expression, as well as making beautiful
+            things and exploring interiority using old and new media.{" "}
+          </p>{" "}
+          <p className="mb-6">
+            I currently work on hard problems across{" "}
+            <ExternalLink href="https://en.wiktionary.org/wiki/multihyphenate">
+              engineering / product / marketing / recruiting
+            </ExternalLink>{" "}
+            at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("crosby")}
@@ -145,11 +153,6 @@ export default function Home() {
             .
           </p>
           <p className="mb-6">
-            I care deeply about tools for knowledge work and creative
-            expression, as well as safe and effective AI deployment. My main
-            priority is to create software that is beneficial to humanity.
-          </p>
-          <p className="mb-6">
             I&apos;ve recently been working on and thinking about{" "}
             {/* <a href="#" className="link">
               interfaces that scale
@@ -162,11 +165,11 @@ export default function Home() {
             <ExternalLink href="https://intelligence.crosby.ai/">
               agents in non-verifiable domains
             </ExternalLink>
-            , and{" "}
+            ,{" "}
             <ExternalLink href="https://www.emilyz.sh/work/letters-to-my-mom">
               love as a form of labor
             </ExternalLink>
-            .
+            , and the stories that will matter for our future.
           </p>
           <p>
             If my work resonates with you, feel free to reach out anytime at{" "}
