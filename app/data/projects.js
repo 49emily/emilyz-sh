@@ -884,12 +884,6 @@ export const projects = [
     completionDate: "10/04/2025",
     tags: ["talk"],
     archiveOnly: true,
-    links: [
-      {
-        label: "Event",
-        url: "https://x.com/html_tina/status/1980351221283295644",
-      },
-    ],
   },
 ];
 
