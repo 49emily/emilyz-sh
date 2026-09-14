@@ -49,7 +49,7 @@ export default function Archive() {
                   </div>
                   <div className="flex items-center gap-4 sm:flex-shrink-0 mt-2 sm:mt-0">
                     {project.links && project.links.length > 0 && (
-                      <div className="flex items-center gap-3 flex-wrap pl-[56px] sm:pl-0">
+                      <div className="flex items-center gap-3 flex-wrap pl-[72px] sm:pl-0">
                         {project.links.map((link, linkIndex) => (
                           <ProjectLink
                             key={linkIndex}
