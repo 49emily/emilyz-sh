@@ -6,7 +6,9 @@ const ProjectLink = ({ link, linkIndex, compact = false }) => {
       target="_blank"
       rel="noopener noreferrer"
       className={`font-semilight inline-flex items-center project-link rounded-full transition-colors ${
-        compact ? "px-2 py-0.5 text-xs" : "px-2 py-1 text-xs lg:text-sm"
+        compact
+          ? "px-2 py-0.5 text-xs lg:text-sm"
+          : "px-2 py-1 text-xs lg:text-sm"
       }`}
       onClick={(e) => e.stopPropagation()}
     >
