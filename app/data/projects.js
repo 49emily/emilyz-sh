@@ -10,6 +10,16 @@ const cdnPath = (path) => {
 };
 
 export const projects = [
+  // Archive-only entries (such as talks) can omit slug, component, media, and
+  // links. `archiveOnly` keeps them out of the project card views even when
+  // they share tags with those views.
+  // {
+  //   title: "Talk title",
+  //   year: "2026",
+  //   completionDate: "09/13/2026",
+  //   tags: ["talk", "code"],
+  //   archiveOnly: true,
+  // },
   {
     title: "journaling.ink",
     slug: null,
@@ -35,7 +45,9 @@ export const projects = [
     completionDate: "06/15/2025",
     tags: ["code", "installation"],
     component: "what-do-you-dream-about",
-    video: cdnPath("/projects/what-do-you-dream-about/whatdoyoudreamlowest.mp4"),
+    video: cdnPath(
+      "/projects/what-do-you-dream-about/whatdoyoudreamlowest.mp4",
+    ),
     // image: cdnPath("/projects/what-do-you-dream-about/whatdoyoudream.png"),
     status: "interactive real-time diffusion installation",
     links: [
@@ -54,7 +66,8 @@ export const projects = [
     tags: ["code"],
     component: "letters-to-my-mom",
     image: cdnPath("/projects/letters-to-my-mom/letters.jpg"),
-    status: "series of generative prints based on a love letter my dad wrote my mom in the 90s",
+    status:
+      "series of generative prints based on a love letter my dad wrote my mom in the 90s",
     links: [
       {
         label: "Github",
@@ -169,12 +182,13 @@ export const projects = [
     title: "Portrait of You",
     slug: null,
     year: "2025",
-    completionDate: "11/01/2025",
+    completionDate: "10/02/2025",
     tags: ["code", "installation"],
     component: null,
     // image: cdnPath("/projects/portrait-of-you/portraitof.png"),
     video: cdnPath("/projects/portrait-of-you/emilyweek5.mp4"),
-    status: "generative, living works that erode with brainrot digital consumption in real time",
+    status:
+      "generative, living works that erode with brainrot digital consumption in real time",
     links: [
       {
         label: "Live Site",
@@ -272,7 +286,9 @@ export const projects = [
     year: "2021",
     completionDate: "08/12/2021",
     tags: ["visual-art"],
-    image: cdnPath("/projects/all-i-see-in-the-mirror/7_All_I_See_in_the_Mirror_is_You.jpg"),
+    image: cdnPath(
+      "/projects/all-i-see-in-the-mirror/7_All_I_See_in_the_Mirror_is_You.jpg",
+    ),
     status: "Colored pencil and white gel pen on paper",
     artMetadata: {
       medium: "Colored pencil and white gel pen on paper",
@@ -681,7 +697,9 @@ export const projects = [
     year: "2024",
     completionDate: "06/01/2024",
     tags: ["visual-art"],
-    image: cdnPath("/projects/still-life-heart/da647884-4b72-478b-b68d-84e48e1d476b.png"),
+    image: cdnPath(
+      "/projects/still-life-heart/da647884-4b72-478b-b68d-84e48e1d476b.png",
+    ),
     status: "Oil on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -760,9 +778,11 @@ export const projects = [
     completionDate: "12/15/2024",
     tags: ["installation"],
     image: cdnPath("/projects/gacha/IMG_0356.png"),
-    status: "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
+    status:
+      "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
     artMetadata: {
-      medium: "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
+      medium:
+        "Wooden sculpture with hi-chews, white rabbit candy, and choco pies",
       tags: ["Sculpture"],
       description: null,
       images: [
@@ -785,7 +805,10 @@ export const projects = [
       medium: "Oil paint on canvas and digital projection",
       tags: ["Installation"],
       size: '16" x 20"',
-      images: [cdnPath("/projects/cctv/IMG_9768 2.jpg"), cdnPath("/projects/cctv/IMG_9769 3.jpg")],
+      images: [
+        cdnPath("/projects/cctv/IMG_9768 2.jpg"),
+        cdnPath("/projects/cctv/IMG_9769 3.jpg"),
+      ],
       video: cdnPath("/projects/cctv/cctv.mov"),
       description: null,
     },
@@ -812,13 +835,61 @@ export const projects = [
     completionDate: "9/18/2025",
     tags: ["installation"],
     image: cdnPath("/projects/last-night/lastnight.jpg"),
-    status: "a show in an intimate, transient space (my summer apartment in SF)",
+    status:
+      "a show in an intimate, transient space (my summer apartment in SF)",
     artMetadata: {
-      medium: "a show in an intimate, transient space (my summer apartment in sf)",
+      medium:
+        "a show in an intimate, transient space (my summer apartment in sf)",
       images: [cdnPath("/projects/last-night/lastnight.jpg")],
       tags: ["Installation"],
       description: null,
     },
+  },
+  {
+    title: "Diffusion, RAID 9",
+    year: "2026",
+    completionDate: "09/09/2026",
+    tags: ["talk"],
+    archiveOnly: true,
+    links: [
+      {
+        label: "Event",
+        url: "https://raid.nyc/",
+      },
+    ],
+  },
+  {
+    title: "Portrait of You, Wordhack @ Wonderville",
+    year: "2025",
+    completionDate: "10/16/2025",
+    tags: ["talk"],
+    archiveOnly: true,
+  },
+  {
+    title: "Interfaces & Art",
+    year: "2025",
+    completionDate: "10/23/2025",
+    tags: ["talk"],
+    archiveOnly: true,
+    links: [
+      {
+        label: "Event",
+        url: "https://x.com/html_tina/status/1980351221283295644",
+      },
+    ],
+  },
+  {
+    title: "The Work of Art in the Age of AI, Neo Reunion",
+    year: "2025",
+    completionDate: "10/04/2025",
+    tags: ["talk"],
+    archiveOnly: true,
+    links: [
+      {
+        label: "Event",
+        url: "https://x.com/html_tina/status/1980351221283295644",
+      },
+    ],
   },
 ];
 
@@ -834,5 +905,8 @@ export const getProjectBySlug = (slug) => {
 
 // Helper function to get projects by tag
 export const getProjectsByTag = (tag) => {
-  return projects.filter((project) => project.tags && project.tags.includes(tag));
+  return projects.filter(
+    (project) =>
+      !project.archiveOnly && project.tags && project.tags.includes(tag),
+  );
 };

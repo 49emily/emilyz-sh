@@ -51,33 +51,36 @@ export default function ProjectCard({ project }) {
       </div>
 
       {/* Content */}
-      <div className="pt-6 lg:py-6 lg:px-4 flex-grow flex flex-col">
-        <div className="mb-4">
-          <h3 className="text-lg lg:text-xl mb-1 font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
+      <div className="pt-4 lg:py-4 lg:px-4 flex-grow flex flex-col">
+        <div className="mb-2">
+          <h3 className="font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
             <span>{project.title}</span>
           </h3>
           <span className="text-xs lg:text-sm">
             {project.artMetadata
               ? `${
-                  project.artMetadata?.size ? project.artMetadata?.size + " • " : ""
+                  project.artMetadata?.size
+                    ? project.artMetadata?.size + " • "
+                    : ""
                 } ${project.artMetadata?.medium} • ${project.year}`
               : `${project.status} • ${project.year}`}
           </span>
         </div>
 
         {/* Exhibition Tags */}
-        {project.artMetadata?.exhibitions && project.artMetadata.exhibitions.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {project.artMetadata.exhibitions.map((exhibition, idx) => (
-              <span
-                key={idx}
-                className="inline-flex items-center px-2 py-1 text-primary font-semilight project-link hover-none text-xs lg:text-sm rounded-full"
-              >
-                {exhibition}
-              </span>
-            ))}
-          </div>
-        )}
+        {project.artMetadata?.exhibitions &&
+          project.artMetadata.exhibitions.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {project.artMetadata.exhibitions.map((exhibition, idx) => (
+                <span
+                  key={idx}
+                  className="inline-flex items-center px-2 py-1 text-primary font-semilight project-link hover-none text-xs lg:text-sm rounded-full"
+                >
+                  {exhibition}
+                </span>
+              ))}
+            </div>
+          )}
 
         {/* External Links */}
         {project.links && (
@@ -106,7 +109,10 @@ export default function ProjectCard({ project }) {
 
   if (projectPath) {
     return (
-      <Link href={projectPath} className="group block transition-all duration-200 ease-out">
+      <Link
+        href={projectPath}
+        className="group block transition-all duration-200 ease-out"
+      >
         {ProjectCardContent}
       </Link>
     );
@@ -116,12 +122,18 @@ export default function ProjectCard({ project }) {
     return (
       <div
         className="group block transition-all duration-200 ease-out cursor-pointer"
-        onClick={() => window.open(firstLinkUrl, "_blank", "noopener,noreferrer")}
+        onClick={() =>
+          window.open(firstLinkUrl, "_blank", "noopener,noreferrer")
+        }
       >
         {ProjectCardContent}
       </div>
     );
   }
 
-  return <div className="group block transition-all duration-200 ease-out">{ProjectCardContent}</div>;
+  return (
+    <div className="group block transition-all duration-200 ease-out">
+      {ProjectCardContent}
+    </div>
+  );
 }

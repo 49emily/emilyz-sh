@@ -10,11 +10,11 @@ function DesktopNavigation() {
   const router = useRouter();
 
   const navItems = [
-    { path: "/", label: "about" },
-    { path: "/code", label: "code" },
-    { path: "/visual-art", label: "painting" },
-    { path: "/installation", label: "installation" },
-    { path: "/archive", label: "archive" },
+    { path: "/", label: "About" },
+    { path: "/code", label: "Code" },
+    { path: "/visual-art", label: "Painting" },
+    { path: "/installation", label: "Installation" },
+    { path: "/archive", label: "Archive" },
   ];
 
   return (

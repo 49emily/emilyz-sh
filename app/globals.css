@@ -585,52 +585,40 @@ body {
   overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
 }
 
-/* Fixed background for all devices using pseudo-element */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100lvh; /* Large viewport height - always covers full area including when browser chrome hides */
-  background-image: url("/studio_ghibli7.gif");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  transition: background-image 0.3s ease;
+/* The isolated body keeps the decorative sky behind every page. */
+body {
+  isolation: isolate;
+  background: #ffffff;
 }
 
-/* Dark mode background */
 .dark body {
-  background-color: #1a1a1a; /* fallback color for dark mode */
+  background: #171717;
 }
 
-.dark body::after {
-  background-image: url("/studio-ghiblidark5.gif");
-}
-
-/* Add subtle overlay to ensure text readability with theme support */
-body::before {
-  content: "";
+.cloud-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100lvh; /* Large viewport height - always covers full area including when browser chrome hides */
-  background: rgba(255, 255, 255, 0.5);
-  pointer-events: none;
+  inset: 0;
   z-index: -1;
-  transition: background 0.3s ease;
+  pointer-events: none;
+  overflow: hidden;
+  background: #ffffff;
 }
 
-/* Dark mode overlay */
-.dark body::before {
-  background: rgba(25, 25, 25, 0.7);
+.dark .cloud-background {
+  background: radial-gradient(ellipse at 72% 25%, #383838 0%, #191919 55%, #101010 100%);
+}
+
+.cloud-background canvas {
+  image-rendering: pixelated;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud-background canvas { transition: none; }
 }
 
 /* Link styling with theme support */

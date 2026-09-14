@@ -28,7 +28,10 @@ export default function MasonryGrid({ projects }) {
   return (
     <div className="flex gap-x-4 lg:gap-x-8 items-start">
       {columns.map((column, colIndex) => (
-        <div key={colIndex} className="flex-1 min-w-0 flex flex-col gap-y-8 lg:gap-y-12">
+        <div
+          key={colIndex}
+          className="flex-1 min-w-0 flex flex-col gap-y-8 lg:gap-y-12"
+        >
           {column.map(({ project, index }) => (
             <ProjectCard key={index} project={project} />
           ))}

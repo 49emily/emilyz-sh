@@ -5,6 +5,7 @@ import DesktopNavigation from "./components/DesktopNavigation";
 import MobileNavigation from "./components/MobileNavigation";
 import ThemeToggle from "./components/ThemeToggle";
 import GlobalImageOverlay from "./components/GlobalImageOverlay";
+import CloudBackground from "./components/CloudBackground";
 import useIsMobile from "./hooks/useIsMobile";
 
 export default function LayoutContent({ children }) {
@@ -39,6 +40,8 @@ export default function LayoutContent({ children }) {
   }
 
   return (
+    <>
+    <CloudBackground />
     <div
       className={`min-h-screen transition-all duration-1000 ease-out ${
         appLoaded ? "opacity-100 blur-none" : "opacity-0 blur-sm"
@@ -76,5 +79,6 @@ export default function LayoutContent({ children }) {
         </div>
       </div>
     </div>
+    </>
   );
 }

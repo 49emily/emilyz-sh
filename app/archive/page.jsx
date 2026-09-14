@@ -22,6 +22,8 @@ export default function Archive() {
         <div className="space-y-0">
           {sortedProjects.map((project, index) => {
             const projectPath = project.slug ? `/work/${project.slug}` : null;
+            const firstLinkUrl = project.links?.[0]?.url || null;
+            const isClickable = Boolean(projectPath || firstLinkUrl);
             const content = (
               <div className="py-2 px-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0 sm:gap-4">
@@ -30,14 +32,16 @@ export default function Archive() {
                       <span className="text-sm font-light min-w-[40px] sm:min-w-[60px]">
                         {project.year}
                       </span>
-                      <span className="text-primary font-semiheavy truncate">{project.title}</span>
+                      <span className="text-primary text-sm font-semiheavy truncate">
+                        {project.title}
+                      </span>
                       {project.tags && project.tags.length > 0 && (
                         <span className="text-xs font-light hidden sm:inline">
                           {project.tags.join(", ")}
                         </span>
                       )}
                     </div>
-                    {project.slug && (
+                    {isClickable && (
                       <span className="text-xs flex-shrink-0 sm:hidden">
                         <ChevronRight className="w-4 h-4" />
                       </span>
@@ -47,11 +51,15 @@ export default function Archive() {
                     {project.links && project.links.length > 0 && (
                       <div className="flex items-center gap-3 flex-wrap pl-[56px] sm:pl-0">
                         {project.links.map((link, linkIndex) => (
-                          <ProjectLink key={linkIndex} link={link} linkIndex={linkIndex} />
+                          <ProjectLink
+                            key={linkIndex}
+                            link={link}
+                            linkIndex={linkIndex}
+                          />
                         ))}
                       </div>
                     )}
-                    {project.slug && (
+                    {isClickable && (
                       <span className="text-xs flex-shrink-0 hidden sm:block">
                         <ChevronRight className="w-4 h-4" />
                       </span>
@@ -65,10 +73,30 @@ export default function Archive() {
               <Link
                 key={index}
                 href={projectPath}
-                className="block hover:bg-muted/15 transition-colors"
+                className="block hover:bg-muted/15 focus-visible:bg-muted/15 transition-none"
               >
                 {content}
               </Link>
+            ) : firstLinkUrl ? (
+              <div
+                key={index}
+                role="link"
+                tabIndex={0}
+                className="block cursor-pointer hover:bg-muted/15 focus-visible:bg-muted/15 transition-none"
+                onClick={() =>
+                  window.open(firstLinkUrl, "_blank", "noopener,noreferrer")
+                }
+                onKeyDown={(event) => {
+                  if (
+                    event.key === "Enter" &&
+                    event.target === event.currentTarget
+                  ) {
+                    window.open(firstLinkUrl, "_blank", "noopener,noreferrer");
+                  }
+                }}
+              >
+                {content}
+              </div>
             ) : (
               <div key={index}>{content}</div>
             );

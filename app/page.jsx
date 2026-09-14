@@ -17,7 +17,12 @@ export default function Home() {
   // Handle tapping outside of images to hide them on touch devices
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isTouchDevice && currentImage && homeRef.current && !event.target.closest(".image-trigger")) {
+      if (
+        isTouchDevice &&
+        currentImage &&
+        homeRef.current &&
+        !event.target.closest(".image-trigger")
+      ) {
         hideImage(currentImage);
         setCurrentImage(null);
       }
@@ -67,14 +72,18 @@ export default function Home() {
       ref={homeRef}
     >
       <div className="max-w-3xl relative">
-        <div className="text-base lg:text-lg text-primary">
+        <div className="text-base text-primary">
           <p className="mb-6">
             Welcome! My name is{" "}
             <span
               className="link cursor-pointer"
               onClick={handleNameInteraction}
-              onMouseEnter={!isTouchDevice ? () => setName("张思涵") : undefined}
-              onMouseLeave={!isTouchDevice ? () => setName("Emily Zhang") : undefined}
+              onMouseEnter={
+                !isTouchDevice ? () => setName("张思涵") : undefined
+              }
+              onMouseLeave={
+                !isTouchDevice ? () => setName("Emily Zhang") : undefined
+              }
             >
               {name}
             </span>
@@ -85,18 +94,34 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("nanjing")}
-              onMouseEnter={!isTouchDevice ? () => handleImageInteraction("nanjing", true) : undefined}
-              onMouseLeave={!isTouchDevice ? () => handleImageInteraction("nanjing", false) : undefined}
+              onMouseEnter={
+                !isTouchDevice
+                  ? () => handleImageInteraction("nanjing", true)
+                  : undefined
+              }
+              onMouseLeave={
+                !isTouchDevice
+                  ? () => handleImageInteraction("nanjing", false)
+                  : undefined
+              }
             >
               Nanjing, China
             </span>{" "}
-            and currently based in New York City. I work on applied agents and next-generation legal
-            experiences at{" "}
+            and currently based in New York City. I work on hard problems across
+            engineering / product / marketing / recruiting at{" "}
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("crosby")}
-              onMouseEnter={!isTouchDevice ? () => handleImageInteraction("crosby", true) : undefined}
-              onMouseLeave={!isTouchDevice ? () => handleImageInteraction("crosby", false) : undefined}
+              onMouseEnter={
+                !isTouchDevice
+                  ? () => handleImageInteraction("crosby", true)
+                  : undefined
+              }
+              onMouseLeave={
+                !isTouchDevice
+                  ? () => handleImageInteraction("crosby", false)
+                  : undefined
+              }
             >
               Crosby
             </span>
@@ -104,17 +129,25 @@ export default function Home() {
             <span
               className="link cursor-pointer image-trigger"
               onClick={() => handleImageInteraction("stanford")}
-              onMouseEnter={!isTouchDevice ? () => handleImageInteraction("stanford", true) : undefined}
-              onMouseLeave={!isTouchDevice ? () => handleImageInteraction("stanford", false) : undefined}
+              onMouseEnter={
+                !isTouchDevice
+                  ? () => handleImageInteraction("stanford", true)
+                  : undefined
+              }
+              onMouseLeave={
+                !isTouchDevice
+                  ? () => handleImageInteraction("stanford", false)
+                  : undefined
+              }
             >
               Stanford University
             </span>
             .
           </p>
           <p className="mb-6">
-            I care deeply about tools for knowledge work and creative expression, as well as safe
-            and effective AI deployment. My main priority is to create software that is beneficial
-            to humanity.
+            I care deeply about tools for knowledge work and creative
+            expression, as well as safe and effective AI deployment. My main
+            priority is to create software that is beneficial to humanity.
           </p>
           <p className="mb-6">
             I&apos;ve recently been working on and thinking about{" "}
