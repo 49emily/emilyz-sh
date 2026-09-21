@@ -43,7 +43,9 @@ export default function WorkPageClient() {
   // No page exists for this project
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <p className="text-2xl text-primary">No page available for this project</p>
+      <p className="text-2xl text-primary">
+        No page available for this project
+      </p>
     </div>
   );
 }

@@ -114,7 +114,7 @@ export default function Home() {
           <p className="mb-6">
             I currently work on hard problems across{" "}
             <ExternalLink href="https://en.wiktionary.org/wiki/multihyphenate">
-              engineering / product / marketing / recruiting
+              engineering / product / storytelling
             </ExternalLink>{" "}
             at{" "}
             <span

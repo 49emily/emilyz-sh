@@ -2,7 +2,7 @@ import { getProjectsByTag } from "../data/projects";
 import MasonryGrid from "../components/MasonryGrid";
 
 export const metadata = {
-  title: "code",
+  title: "Code",
 };
 
 export default function Code() {

@@ -1,10 +1,5 @@
 export const metadata = {
-  title: "installation",
-  description: "installation, sculpture, and site-specificity",
-  openGraph: {
-    title: "emily sihan zhang > installation",
-    description: "installation, sculpture, and site-specificity",
-  },
+  title: "Installation",
 };
 
 export default function InstallationLayout({ children }) {

@@ -1,6 +1,5 @@
 export const metadata = {
-  title: "archive",
-  description: "everything i make",
+  title: "Archive",
 };
 
 export default function ArchiveLayout({ children }) {
