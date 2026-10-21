@@ -8,15 +8,12 @@ import { projects, getProjectDestination } from "../data/projects";
 const slides = [
   {
     slug: "youre-doing-it-to-yourself",
-    alt: "A painting of figures in a bamboo steamer, hanging on a cream-colored wall",
   },
   {
     slug: "letters-to-my-mom",
-    alt: "Letters to my Mom, a series of generative calligraphy prints",
   },
   {
     slug: "the-lovers",
-    alt: "The Lovers, an oil painting across two canvases",
   },
   {
     title: "Portrait of You",
@@ -26,6 +23,7 @@ const slides = [
   return {
     ...slide,
     title: project.title,
+    alt: project.artMetadata?.description || project.status || project.title,
     src: project.video || project.carouselImage || project.image,
     type: project.video ? "video" : "image",
     destination: getProjectDestination(project),
@@ -168,7 +166,7 @@ export default function ArtworkCarousel() {
                 playsInline
                 preload="auto"
                 tabIndex={-1}
-                aria-label="Portrait of You, a living generative portrait"
+                aria-label={slide.alt}
                 onLoadedData={(event) => markReady(index, event.currentTarget)}
                 onError={() => markFailed(index)}
               />
