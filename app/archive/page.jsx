@@ -128,6 +128,7 @@ export default function Archive() {
                     <ProjectLink
                       key={link.url}
                       link={link}
+                      compact
                     />
                   ))}
                 </div>
