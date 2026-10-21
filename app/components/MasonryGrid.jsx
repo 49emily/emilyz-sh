@@ -149,7 +149,7 @@ export default function MasonryGrid({ projects }) {
           );
         })}
       </div>
-      <aside className="relative min-[701px]:left-[max(16px,calc((100vw_-_1200px)/2_-_24px))]">
+      <aside className="relative md:left-[max(16px,calc((100vw_-_1200px)/2_-_24px))]">
         <YearScroller years={years} counts={counts} activeYear={activeYear} onSelect={scrollToYear} />
       </aside>
     </div>

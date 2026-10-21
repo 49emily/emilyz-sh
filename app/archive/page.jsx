@@ -71,7 +71,7 @@ export default function Archive() {
               key={project.slug || project.title}
               data-super-hover={isClickable ? "" : undefined}
               data-project-index={index}
-              className={`group/archive relative ${columns} items-start gap-y-2 px-3 py-2 text-sm transition-colors duration-200 max-[700px]:px-0 motion-reduce:transition-none ${
+              className={`group/archive relative ${columns} items-start gap-y-2 px-0 py-2 md:px-3 text-sm transition-colors duration-200 motion-reduce:transition-none ${
                 isClickable
                   ? "text-primary data-[super-hover-active]:bg-gray-100 focus-within:bg-gray-100 motion-reduce:hover:bg-gray-100"
                   : "text-gray-500"

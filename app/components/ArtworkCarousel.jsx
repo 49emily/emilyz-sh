@@ -175,7 +175,7 @@ export default function ArtworkCarousel() {
                 alt={slide.alt}
                 className="size-full object-contain"
                 fill
-                sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1100px) 63.333333vw, (max-width: 1680px) 50vw, 840px"
+                sizes="(min-width: 64rem) min(50vw, 840px), (min-width: 48rem) 63.333333vw, calc(100vw - 32px)"
                 priority={index === 0}
                 loading={index === 0 ? undefined : "eager"}
                 onLoad={(event) => markReady(index, event.currentTarget)}

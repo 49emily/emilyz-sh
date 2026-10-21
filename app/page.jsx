@@ -13,9 +13,9 @@ export default function Home() {
     <>
       <h1 className="sr-only">Emily Sihan Zhang</h1>
       <ArtworkCarousel />
-      <div className="mt-[26px] grid grid-cols-[1fr_1.9fr] gap-7 text-base leading-[1.25] max-[1100px]:grid-cols-[1fr_2.2fr] max-[1100px]:gap-6 max-[700px]:mt-6 max-[700px]:grid-cols-1 max-[700px]:gap-7">
+      <div className="mt-6 grid grid-cols-1 gap-7 text-base leading-tight md:mt-6.5 md:grid-cols-[1fr_2.2fr] md:gap-6 lg:grid-cols-[1fr_1.9fr] lg:gap-7">
         <nav
-          className="flex flex-col items-start gap-5 leading-[1.25] max-[700px]:w-full max-[700px]:flex-row max-[700px]:flex-wrap max-[700px]:justify-between max-[700px]:gap-x-2 max-[700px]:gap-y-3 max-[700px]:text-sm"
+          className="flex w-full flex-wrap items-start justify-between gap-x-2 gap-y-3 text-sm leading-tight md:flex-col md:flex-nowrap md:justify-start md:gap-5 md:text-base"
           aria-label="Social and contact links"
         >
           {socialLinks.map(({ label, href }) => (
@@ -30,7 +30,7 @@ export default function Home() {
             </a>
           ))}
         </nav>
-        <div className="space-y-[26px] font-exposure-medium text-justify max-[700px]:row-start-1 max-[700px]:space-y-[22px] max-[700px]:text-left">
+        <div className="row-start-1 space-y-5.5 font-exposure-medium text-left md:row-auto md:space-y-6.5 md:text-justify">
           <p>
             My name is Emily Sihan Zhang. I am an artist and engineer born in
             Nanjing, China and based in New York City. I am thinking about
