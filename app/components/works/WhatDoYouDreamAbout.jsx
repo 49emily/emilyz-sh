@@ -5,7 +5,7 @@ import { getBunnyCDNUrl } from "../../utils";
 
 export default function WhatDoYouDreamAbout({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl mb-20  py-12 pt-20">
+    <div className="w-full max-w-4xl space-y-6 md:mb-20 md:pb-12">
       <div className="mb-6">
         <h2 className="text-3xl mb-2 font-exposure-bold">what do you dream about?</h2>
         <div className="text text-primary">

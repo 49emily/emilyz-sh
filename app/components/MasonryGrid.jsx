@@ -35,7 +35,7 @@ export default function MasonryGrid({ projects }) {
   const [activeYear, setActiveYear] = useState(years[0]);
 
   useEffect(() => {
-    const breakpoint = window.matchMedia("(min-width: 1024px)");
+    const breakpoint = window.matchMedia("(min-width: 64rem)");
     const updateColumns = () => setNumColumns(breakpoint.matches ? 3 : 1);
     updateColumns();
     breakpoint.addEventListener("change", updateColumns);
@@ -136,9 +136,9 @@ export default function MasonryGrid({ projects }) {
               aria-label={`Projects from ${year}`}
               className="scroll-mt-28"
             >
-              <div className="flex items-start gap-x-8 lg:gap-x-16 xl:gap-x-20">
+              <div className="flex items-start gap-x-16">
                 {columns.map((column, index) => (
-                  <div key={index} className="flex min-w-0 flex-1 flex-col gap-y-14 lg:gap-y-20 xl:gap-y-24">
+                  <div key={index} className="flex min-w-0 flex-1 flex-col gap-y-14 lg:gap-y-20">
                     {column.map((project) => (
                       <ProjectCard key={project.slug || project.title} project={project} />
                     ))}

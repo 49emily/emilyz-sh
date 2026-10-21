@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <h1 className="sr-only">Emily Sihan Zhang</h1>
       <ArtworkCarousel />
-      <div className="mt-6 grid grid-cols-1 gap-7 text-base leading-tight md:mt-6.5 md:grid-cols-[1fr_2.2fr] md:gap-6 lg:grid-cols-[1fr_1.9fr] lg:gap-7">
+      <div className="mt-6 grid grid-cols-1 gap-7 text-base leading-tight md:grid-cols-[1fr_2fr]">
         <nav
           className="flex w-full flex-wrap items-start justify-between gap-x-2 gap-y-3 text-sm leading-tight md:flex-col md:flex-nowrap md:justify-start md:gap-5 md:text-base"
           aria-label="Social and contact links"
@@ -30,7 +30,7 @@ export default function Home() {
             </a>
           ))}
         </nav>
-        <div className="row-start-1 space-y-5.5 font-exposure-medium text-left md:row-auto md:space-y-6.5 md:text-justify">
+        <div className="row-start-1 space-y-6 font-exposure-medium text-left md:row-auto md:text-justify">
           <p>
             My name is Emily Sihan Zhang. I am an artist and engineer born in
             Nanjing, China and based in New York City. I am thinking about

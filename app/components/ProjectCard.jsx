@@ -34,7 +34,7 @@ export default function ProjectCard({ project }) {
             width={0}
             height={0}
             className="w-full h-auto transition-transform duration-500"
-            sizes="(max-width: 768px) 50vw, 33vw"
+            sizes="(min-width: 64rem) 33vw, 100vw"
           />
         ) : (
           <div className="aspect-square w-full flex items-center justify-center">

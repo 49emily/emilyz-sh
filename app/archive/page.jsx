@@ -58,7 +58,7 @@ export default function Archive() {
   }
 
   return (
-    <div className="space-y-12 pt-20">
+    <div>
       <section ref={archiveRef} aria-label="Project archive">
         {sortedProjects.map((project, index) => {
           const destination = getProjectDestination(project);
