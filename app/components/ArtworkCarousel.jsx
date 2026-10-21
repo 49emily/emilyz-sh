@@ -113,7 +113,6 @@ export default function ArtworkCarousel() {
   return (
     <section
       className="relative isolate"
-      aria-label="Selected artwork. Use the left and right arrow keys to change slides."
       aria-roledescription="carousel"
       tabIndex={0}
       onPointerDown={() => setKeyboardFocused(false)}
