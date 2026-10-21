@@ -17,7 +17,7 @@ export const projects = [
   //   title: "Talk title",
   //   year: "2026",
   //   completionDate: "09/13/2026",
-  //   tags: ["talk", "code"],
+  //   tags: ["talk", "software"],
   //   archiveOnly: true,
   // },
   {
@@ -25,10 +25,10 @@ export const projects = [
     slug: null,
     year: "2025",
     completionDate: "07/18/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/journaling-ink/drawjournal.jpg"),
-    status: "draw with handwriting and text from your journal entries.",
+    status: "draw with handwriting and text from your journal entries",
     links: [
       { label: "Live Site", url: "https://journaling.ink", icon: "external" },
       {
@@ -43,7 +43,7 @@ export const projects = [
     slug: "what-do-you-dream-about",
     year: "2025",
     completionDate: "06/15/2025",
-    tags: ["code", "installation"],
+    tags: ["software", "installation"],
     component: "what-do-you-dream-about",
     video: cdnPath(
       "/projects/what-do-you-dream-about/whatdoyoudreamlowest.mp4",
@@ -63,11 +63,11 @@ export const projects = [
     slug: "letters-to-my-mom",
     year: "2025",
     completionDate: "05/10/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: "letters-to-my-mom",
-    image: cdnPath("/projects/letters-to-my-mom/letters.jpg"),
+    image: cdnPath("/projects/letters-to-my-mom/letters_cropped.jpg"),
     status:
-      "series of generative prints based on a love letter my dad wrote my mom in the 90s",
+      "A series of generative prints based on a love letter my dad wrote my mom in the 90s",
     links: [
       {
         label: "Github",
@@ -81,7 +81,7 @@ export const projects = [
     slug: "emily-diffusion",
     year: "2025",
     completionDate: "06/05/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: "emily-diffusion",
     image: cdnPath("/projects/emily-diffusion/diffusionme.jpg"),
     status: "training a generative model on my own art",
@@ -98,7 +98,7 @@ export const projects = [
     slug: null,
     year: "2024-25",
     completionDate: "12/20/2024",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/prl/pearl.png"),
     status: "The journal that reflects with you. Scaled to 2000+ users.",
@@ -127,7 +127,7 @@ export const projects = [
   //   slug: null,
   //   year: "2025",
   //   completionDate: "03/15/2025",
-  //   tags: ["code"],
+  //   tags: ["software"],
   //   component: null,
   //   image: cdnPath("/projects/prl/pearlios.jpeg"),
   //   status: "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
@@ -144,10 +144,10 @@ export const projects = [
     slug: null,
     year: "2025",
     completionDate: "01/08/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/tangent/tangent.png"),
-    status: "An experimental browser that acts as your second brain.",
+    status: "An experimental browser that acts as your second brain",
     links: [
       {
         label: "Demo",
@@ -161,7 +161,7 @@ export const projects = [
     slug: null,
     year: "2024",
     completionDate: "05/15/2024",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/stylescape/stylescape.png"),
     status: "infinitely generated world walkthroughs",
@@ -183,7 +183,7 @@ export const projects = [
     slug: null,
     year: "2025",
     completionDate: "10/02/2025",
-    tags: ["code", "installation"],
+    tags: ["software", "installation"],
     component: null,
     // image: cdnPath("/projects/portrait-of-you/portraitof.png"),
     video: cdnPath("/projects/portrait-of-you/emilyweek5.mp4"),
@@ -207,10 +207,10 @@ export const projects = [
     slug: null,
     year: "2026",
     completionDate: "04/18/2026",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     video: cdnPath("/projects/search-art-with-art/sawa2.mp4"),
-    status: "browsing the MoMA collection with embeddings",
+    status: "Browsing the MoMA collection with embeddings",
     links: [
       {
         label: "Live Site",
@@ -229,7 +229,7 @@ export const projects = [
     slug: null,
     year: "2026",
     completionDate: "2/14/2026",
-    tags: ["code"],
+    tags: ["software"],
     status: "3D objects as digital vessels for your love",
     video: cdnPath("/projects/for-my-love/formyloveclip.mp4"),
     links: [
@@ -250,7 +250,7 @@ export const projects = [
   //   slug: null,
   //   year: "2026",
   //   completionDate: "06/17/2026",
-  //   tags: ["code"],
+  //   tags: ["software"],
   //   component: null,
   //   status: "",
   //   video: cdnPath("/projects/crosby-intelligence/crosby-intelligence.mov"),
@@ -263,6 +263,26 @@ export const projects = [
   //   ],
   // },
   // Visual Art
+  {
+    title: "You're Doing it To Yourself",
+    slug: "youre-doing-it-to-yourself",
+    year: "2026",
+    completionDate: "10/11/2026",
+    tags: ["visual-art"],
+    image: cdnPath("/projects/youre-doing-it-to-yourself/cropped.jpg"),
+    carouselImage: cdnPath("/projects/youre-doing-it-to-yourself/IMG_4616.png"),
+    status: "Oil paint on canvas",
+    artMetadata: {
+      medium: "Oil paint on canvas",
+      size: '30" x 40"',
+      images: [
+        cdnPath("/projects/youre-doing-it-to-yourself/cropped.jpg"),
+        cdnPath("/projects/youre-doing-it-to-yourself/IMG_4616.png"),
+      ],
+      tags: ["Painting"],
+      description: null,
+    },
+  },
   {
     title: "35 Times I Cried Over a Love That Wasn't Mine",
     slug: "35-times-i-cried",
@@ -474,7 +494,7 @@ export const projects = [
     slug: "flowergpt",
     year: "2024",
     completionDate: "10/28/2024",
-    tags: ["visual-art"],
+    tags: ["installation"],
     image: cdnPath("/projects/flowergpt/IMG_541B17B25889-1.jpeg"),
     status: "Video made with sound recorder and iPhone camera",
     artMetadata: {
@@ -819,7 +839,7 @@ export const projects = [
     year: "2025",
     completionDate: "8/15/2025",
     tags: ["visual-art"],
-    image: cdnPath("/projects/the-lovers/thelovers.jpg"),
+    image: cdnPath("/projects/the-lovers/thelovers.png"),
     status: "Oil paint on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -846,8 +866,9 @@ export const projects = [
     },
   },
   {
-    title: "RAID 9",
+    title: "The machine that builds the bufo",
     year: "2026",
+    status: "RAID 9",
     completionDate: "09/09/2026",
     tags: ["talk"],
     archiveOnly: true,
@@ -859,7 +880,8 @@ export const projects = [
     ],
   },
   {
-    title: "Portrait of You, Wordhack @ Wonderville",
+    title: "Portrait of You Presentation",
+    status: "Wordhack @ Wonderville",
     year: "2025",
     completionDate: "10/16/2025",
     tags: ["talk"],
@@ -879,8 +901,9 @@ export const projects = [
     ],
   },
   {
-    title: "The Work of Art in the Age of AI, Neo Reunion",
+    title: "The Work of Art in the Age of AI",
     year: "2025",
+    status: "Neo Reunion",
     completionDate: "10/04/2025",
     tags: ["talk"],
     archiveOnly: true,
@@ -890,6 +913,14 @@ export const projects = [
 // Helper function to get projects with routes (for routing setup)
 export const getProjectRoutes = () => {
   return projects.filter((project) => project.slug && project.component);
+};
+
+// Prefer the internal work page, then the first external link.
+export const getProjectDestination = (project) => {
+  if (project.slug) return { href: `/work/${project.slug}`, external: false };
+  if (project.links?.[0]?.url)
+    return { href: project.links[0].url, external: true };
+  return null;
 };
 
 // Helper function to get project by slug

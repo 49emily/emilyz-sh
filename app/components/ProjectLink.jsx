@@ -5,10 +5,10 @@ const ProjectLink = ({ link, linkIndex, compact = false }) => {
       href={link.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`font-semilight inline-flex items-center project-link rounded-full transition-colors ${
+      className={`inline-flex items-center rounded-none px-1.5 font-exposure-regular bg-black/10 text-primary no-underline transition-colors duration-150 hover:bg-accent hover:text-white focus-visible:bg-accent focus-visible:text-white motion-reduce:transition-none ${
         compact
-          ? "px-2 py-0.5 text-xs lg:text-sm"
-          : "px-2 py-1 text-xs lg:text-sm"
+          ? "py-0.5 text-xs lg:text-sm"
+          : "py-1 text-xs lg:text-sm"
       }`}
       onClick={(e) => e.stopPropagation()}
     >

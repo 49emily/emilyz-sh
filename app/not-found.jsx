@@ -12,7 +12,7 @@ export default function NotFound() {
         <p className="text-lg text-secondary mb-6">
           Sorry, we couldn&apos;t find the page you&apos;re looking for.
         </p>
-        <Link href="/" className="link text-lg">
+        <Link href="/" className="text-accent underline text-lg">
           Go back home
         </Link>
       </div>

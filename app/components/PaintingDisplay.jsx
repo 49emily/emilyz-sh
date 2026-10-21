@@ -9,31 +9,23 @@ export default function PaintingDisplay({ project }) {
 
   return (
     <div className="min-h-screen py-12 pt-20">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-4 max-[700px]:px-0">
         {/* Title */}
-        <h1 className="text-3xl mb-4 text-primary font-heavy">{project.title}</h1>
+        <h1 className="text-3xl mb-4 text-primary font-exposure-bold">{project.title}</h1>
 
         {/* Metadata */}
         <div className=" mb-8 text-primary space-y-1">
           <p>
-            <i className="font-light">medium:</i> {artMetadata.medium}
+            <i className="font-exposure-regular">medium:</i> {artMetadata.medium}
           </p>
           {artMetadata.size && (
             <p>
-              <i className="font-light">size:</i> {artMetadata.size}
+              <i className="font-exposure-regular">size:</i> {artMetadata.size}
             </p>
           )}
           <p>
-            <i className="font-light">year:</i> {project.year}
+            <i className="font-exposure-regular">year:</i> {project.year}
           </p>
-          {artMetadata.exhibitions && artMetadata.exhibitions.length > 0 && (
-            <div>
-              <i className="font-light">exhibitions:</i>{" "}
-              <div className="inline-flex flex-wrap gap-2 mt-1">
-                {artMetadata.exhibitions.join(", ")}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Description */}

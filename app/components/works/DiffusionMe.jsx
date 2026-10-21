@@ -8,16 +8,16 @@ export default function DiffusionMe({ links = [] }) {
   return (
     <div className="space-y-6 max-w-4xl w-full  py-12 pt-20 ">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 font-heavy">emily-diffusion</h2>
+        <h2 className="text-3xl mb-2 font-exposure-bold">emily-diffusion</h2>
         <div className="text text-primary">
-          <i className="font-light">year:</i> 2025
+          <i className="font-exposure-regular">year:</i> 2025
         </div>
 
         {/* Links section */}
         {links.length > 0 && (
           <div className="flex gap-4 mt-3">
             {links.map((link, index) => (
-              <ExternalLink key={index} href={link.url} className="link">
+              <ExternalLink key={index} href={link.url} className="rounded-none px-1.5 py-1 bg-black/10 text-primary no-underline transition-colors duration-150 hover:bg-accent hover:text-white focus-visible:bg-accent focus-visible:text-white motion-reduce:transition-none">
                 {link.label}
               </ExternalLink>
             ))}

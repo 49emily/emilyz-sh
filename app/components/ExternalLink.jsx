@@ -4,13 +4,13 @@ import { ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { useState } from "react";
 import useIsTouchDevice from "../hooks/useIsTouchDevice";
 
-const ExternalLink = ({ href, children, className = "link", showIcon = true }) => {
+const ExternalLink = ({ href, children, className = "text-accent underline", showIcon = true }) => {
   const [isHovered, setIsHovered] = useState(false);
   const isTouchDevice = useIsTouchDevice();
 
   return (
     <a
-      className={className}
+      className={`font-exposure-regular ${className}`}
       href={href}
       target="_blank"
       rel="noopener noreferrer"

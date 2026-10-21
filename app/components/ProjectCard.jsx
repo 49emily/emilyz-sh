@@ -4,20 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import ProjectLink from "./ProjectLink";
+import { getProjectDestination } from "../data/projects";
 
 export default function ProjectCard({ project }) {
   const router = useRouter();
 
-  const projectPath = project.slug ? `/work/${project.slug}` : null;
-  const firstLinkUrl = project.links?.[0]?.url || null;
-  const isClickable = Boolean(projectPath || firstLinkUrl);
-
+  const destination = getProjectDestination(project);
+  const projectPath = destination && !destination.external ? destination.href : null;
+  const firstLinkUrl = destination?.external ? destination.href : null;
   const ProjectCardContent = (
-    <div
-      className={`overflow-hidden border-2 border-transparent ${
-        isClickable ? "hover:border-accent" : ""
-      } transition-all duration-200 flex flex-col`}
-    >
+    <div className="flex flex-col overflow-hidden">
       {/* Image / Video */}
       <div className="relative overflow-hidden">
         {project.video ? (
@@ -53,7 +49,7 @@ export default function ProjectCard({ project }) {
       {/* Content */}
       <div className="pt-4 lg:py-4 lg:px-4 flex-grow flex flex-col">
         <div className="mb-2">
-          <h3 className="font-semiheavy group-hover:text-accent transition-colors text-primary flex items-center justify-between">
+          <h3 className="flex items-center justify-between font-exposure-semibold text-primary">
             <span>{project.title}</span>
           </h3>
           <span className="text-xs lg:text-sm">
@@ -62,25 +58,10 @@ export default function ProjectCard({ project }) {
                   project.artMetadata?.size
                     ? project.artMetadata?.size + " • "
                     : ""
-                } ${project.artMetadata?.medium} • ${project.year}`
-              : `${project.status} • ${project.year}`}
+                } ${project.artMetadata?.medium}`
+              : project.status}
           </span>
         </div>
-
-        {/* Exhibition Tags */}
-        {project.artMetadata?.exhibitions &&
-          project.artMetadata.exhibitions.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {project.artMetadata.exhibitions.map((exhibition, idx) => (
-                <span
-                  key={idx}
-                  className="inline-flex items-center px-2 py-1 text-primary font-semilight project-link hover-none text-xs lg:text-sm rounded-full"
-                >
-                  {exhibition}
-                </span>
-              ))}
-            </div>
-          )}
 
         {/* External Links */}
         {project.links && (
@@ -99,7 +80,7 @@ export default function ProjectCard({ project }) {
   if (projectPath && project.links && project.links.length > 0) {
     return (
       <div
-        className="group block transition-all duration-200 ease-out cursor-pointer"
+        className="group block cursor-pointer transition-opacity duration-200 ease-out hover:opacity-75 motion-reduce:transition-none"
         onClick={() => router.push(projectPath)}
       >
         {ProjectCardContent}
@@ -111,7 +92,7 @@ export default function ProjectCard({ project }) {
     return (
       <Link
         href={projectPath}
-        className="group block transition-all duration-200 ease-out"
+        className="group block transition-opacity duration-200 ease-out hover:opacity-75 motion-reduce:transition-none"
       >
         {ProjectCardContent}
       </Link>
@@ -121,7 +102,7 @@ export default function ProjectCard({ project }) {
   if (firstLinkUrl) {
     return (
       <div
-        className="group block transition-all duration-200 ease-out cursor-pointer"
+        className="group block cursor-pointer transition-opacity duration-200 ease-out hover:opacity-75 motion-reduce:transition-none"
         onClick={() =>
           window.open(firstLinkUrl, "_blank", "noopener,noreferrer")
         }

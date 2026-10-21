@@ -11,11 +11,11 @@ export default function Installation() {
   });
 
   return (
-    <div className="space-y-12 pt-20 pb-24">
+    <div className="space-y-12 pt-20">
       {/* Installation Grid */}
       <section>
         {/* <h2 className="text-xl mb-8 lg:mb-12">
-          <span className="italic font-heavy">installation, sculpture, site-specificity</span>
+          <span className="italic font-exposure-semibold">installation, sculpture, site-specificity</span>
         </h2> */}
         <MasonryGrid projects={sortedProjects} />
       </section>
