@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ExternalLink from "../ExternalLink";
+import ProjectLink from "../ProjectLink";
 import { getBunnyCDNUrl } from "../../utils";
 
 export default function LettersToMyMom({ links = [] }) {
@@ -20,11 +20,9 @@ export default function LettersToMyMom({ links = [] }) {
 
         {/* Links section */}
         {links.length > 0 && (
-          <div className="flex gap-4 mt-3">
-            {links.map((link, index) => (
-              <ExternalLink key={index} href={link.url} className="rounded-none px-1.5 py-1 bg-black/10 text-primary no-underline transition-colors duration-150 hover:bg-accent hover:text-white focus-visible:bg-accent focus-visible:text-white motion-reduce:transition-none">
-                {link.label}
-              </ExternalLink>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {links.map((link) => (
+              <ProjectLink key={link.url} link={link} />
             ))}
           </div>
         )}

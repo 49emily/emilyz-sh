@@ -66,8 +66,8 @@ export default function ProjectCard({ project }) {
         {/* External Links */}
         {project.links && (
           <div className="flex flex-wrap gap-2">
-            {project.links.map((link, linkIndex) => (
-              <ProjectLink key={linkIndex} link={link} linkIndex={linkIndex} />
+            {project.links.map((link) => (
+              <ProjectLink key={link.url} link={link} />
             ))}
           </div>
         )}

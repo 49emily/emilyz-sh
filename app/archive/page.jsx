@@ -124,12 +124,10 @@ export default function Archive() {
               )}
               {project.links?.length > 0 && (
                 <div className="relative z-[2] hidden flex-wrap justify-end gap-2 sm:col-start-4 sm:col-end-5 sm:flex">
-                  {project.links.map((link, index) => (
+                  {project.links.map((link) => (
                     <ProjectLink
                       key={link.url}
                       link={link}
-                      linkIndex={index}
-                      compact
                     />
                   ))}
                 </div>
