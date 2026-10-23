@@ -38,7 +38,7 @@ function MobileNavigation() {
   const navItems = [
     { path: "/", label: "About" },
     { path: "/software", label: "Software" },
-    { path: "/visual-art", label: "Painting" },
+    { path: "/painting", label: "Painting" },
     { path: "/installation", label: "Installation" },
     { path: "/archive", label: "Archive" },
   ];
