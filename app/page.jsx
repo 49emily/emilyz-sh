@@ -5,7 +5,7 @@ const socialLinks = [
   { label: "Email", href: "mailto:emilysihanzhang@gmail.com" },
   { label: "Instagram", href: "https://www.instagram.com/emilysihanzhang/" },
   { label: "Github", href: "https://github.com/49emily" },
-  { label: "Linkedin", href: "https://www.linkedin.com/in/emilyszhang/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/emilyszhang/" },
 ];
 
 export default function Home() {
