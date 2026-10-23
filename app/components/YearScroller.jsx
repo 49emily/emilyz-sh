@@ -49,7 +49,7 @@ export default function YearScroller({ years, counts, activeYear, onSelect }) {
           <span id={`year-count-${year}`} className="sr-only">
             {counts[year]} {counts[year] === 1 ? "work" : "works"}
           </span>
-          <span className="pointer-events-none text-xs leading-none font-exposure-regular whitespace-nowrap text-black transition-[opacity,transform] duration-200 sm:absolute sm:right-[max(100%,4rem)] sm:mr-2 sm:translate-x-1 sm:bg-white sm:px-1 sm:text-base sm:opacity-0 group-hover/year:translate-x-0 group-hover/year:opacity-100 group-focus-visible/year:translate-x-0 group-focus-visible/year:opacity-100 motion-reduce:transition-none">
+          <span className="pointer-events-none text-xs leading-none font-exposure-regular group-aria-[current=date]/year:font-exposure-bold whitespace-nowrap text-black transition-[opacity,transform] duration-200 sm:absolute sm:right-[max(100%,4rem)] sm:mr-2 sm:translate-x-1 sm:bg-white sm:px-1 sm:text-base sm:opacity-0 group-hover/year:translate-x-0 group-hover/year:opacity-100 group-focus-visible/year:translate-x-0 group-focus-visible/year:opacity-100 motion-reduce:transition-none">
             {year}
           </span>
           <span aria-hidden="true" className="hidden w-16 shrink-0 justify-end sm:flex">
