@@ -49,10 +49,10 @@ export default function ProjectCard({ project }) {
       {/* Content */}
       <div className="pt-4 lg:py-4 lg:px-4 flex-grow flex flex-col">
         <div className="mb-2">
-          <h3 className="flex items-center justify-between italic font-exposure-heavy text-primary">
+          <h3 className="flex items-center justify-between font-exposure-semibold text-primary">
             <span>{project.title}</span>
           </h3>
-          <span className="text-xs font-exposure-light lg:text-sm">
+          <span className="text-xs lg:text-sm">
             {project.artMetadata
               ? `${
                   project.artMetadata?.size

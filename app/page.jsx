@@ -24,15 +24,15 @@ export default function Home() {
               href={href}
               target={href.startsWith("mailto:") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="italic font-exposure-regular text-accent no-underline hover:font-exposure-heavy hover:underline"
+              className="font-exposure-semibold text-accent no-underline hover:underline"
             >
               {label}
             </a>
           ))}
         </nav>
-        <div className="row-start-1 space-y-6 font-exposure-regular text-left md:row-auto md:text-justify">
+        <div className="row-start-1 space-y-6 font-exposure-medium text-left md:row-auto md:text-justify">
           <p>
-            My name is <span className="font-exposure-heavy">Emily Sihan Zhang.</span> I am an artist and engineer born in
+            My name is Emily Sihan Zhang. I am an artist and engineer born in
             Nanjing, China and based in New York City. I am thinking about
             creative agency in the age of AI and the stories that will matter
             for our future.
@@ -42,7 +42,7 @@ export default function Home() {
             storytelling at Crosby. I also paint a lot. Previously, I spent time
             on a few early teams and at Stanford University.
           </p>
-          <p className="italic font-exposure-light">If my work resonates with you, please feel free to reach out.</p>
+          <p>If my work resonates with you, please feel free to reach out.</p>
         </div>
       </div>
     </>

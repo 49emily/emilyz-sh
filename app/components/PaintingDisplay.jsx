@@ -11,7 +11,7 @@ export default function PaintingDisplay({ project }) {
     <div className="min-h-screen md:pb-12">
       <div className="max-w-4xl mx-auto px-0 md:px-4">
         {/* Title */}
-        <h1 className="text-3xl mb-4 text-primary italic font-exposure-heavy">{project.title}</h1>
+        <h1 className="text-3xl mb-4 text-primary font-exposure-bold">{project.title}</h1>
 
         {/* Metadata */}
         <div className=" mb-8 text-primary space-y-1">

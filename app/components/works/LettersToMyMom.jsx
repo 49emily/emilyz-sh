@@ -8,7 +8,7 @@ export default function LettersToMyMom({ links = [] }) {
   return (
     <div className="w-full max-w-4xl space-y-6 md:pb-12">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 italic font-exposure-heavy">Letters to my Mom</h2>
+        <h2 className="text-3xl mb-2 font-exposure-bold">Letters to my Mom</h2>
         <div className="text text-primary">
           <p>
             <i className="font-exposure-regular">medium:</i> digital prints on canvas

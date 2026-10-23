@@ -8,7 +8,7 @@ export default function DiffusionMe({ links = [] }) {
   return (
     <div className="w-full max-w-4xl space-y-6 md:pb-12">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 italic font-exposure-heavy">emily-diffusion</h2>
+        <h2 className="text-3xl mb-2 font-exposure-bold">emily-diffusion</h2>
         <div className="text text-primary">
           <i className="font-exposure-regular">year:</i> 2025
         </div>

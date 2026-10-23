@@ -112,11 +112,11 @@ export default function Archive() {
                   className="absolute inset-0 z-[1]"
                 />
               ) : null}
-              <span className="italic font-exposure-light">{project.year}</span>
-              <span className="min-w-0 italic font-exposure-heavy">
+              <span className="font-exposure-regular">{project.year}</span>
+              <span className="min-w-0 font-exposure-semibold">
                 {project.title}
               </span>
-              <span className="hidden text-sm leading-5 font-exposure-light sm:block">
+              <span className="hidden text-sm leading-5 font-exposure-regular sm:block">
                 {project.tags?.join(", ")}
               </span>
               {isClickable && (
