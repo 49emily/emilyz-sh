@@ -26,7 +26,7 @@ export default function YearScroller({ years, counts, activeYear, onSelect }) {
   return (
     <nav
       aria-label="Browse projects by year"
-      className="group/rail sticky top-[calc(50svh_-_var(--year-count)*1.25rem)] sm:top-[calc(50svh_-_var(--year-count)*0.75rem)]"
+      className="group/rail sticky top-[calc(50svh_-_var(--year-count)*1.25rem)] sm:top-[calc(50svh_-_var(--year-count)*0.625rem)]"
       style={{ "--year-count": years.length }}
       onKeyDown={handleKeyDown}
     >
@@ -42,19 +42,19 @@ export default function YearScroller({ years, counts, activeYear, onSelect }) {
           aria-current={year === activeYear ? "date" : undefined}
           tabIndex={year === activeYear ? 0 : -1}
           onClick={() => onSelect(year)}
-          className={`group/year relative flex h-10 w-full items-center justify-end gap-2 bg-transparent transition-colors duration-300 hover:text-black/60 focus-visible:text-black/60 focus-visible:outline-offset-[-2px] sm:h-6 sm:gap-0 motion-reduce:transition-none ${
-            year === activeYear ? "text-black/60" : "text-black/40"
+          className={`group/year relative flex h-10 w-full items-center justify-end gap-2 bg-transparent transition-colors duration-300 hover:text-black/60 focus-visible:text-black/60 focus-visible:outline-offset-[-2px] sm:h-5 sm:gap-0 motion-reduce:transition-none ${
+            year === activeYear ? "text-black/60" : "text-black/25"
           }`}
         >
           <span id={`year-count-${year}`} className="sr-only">
             {counts[year]} {counts[year] === 1 ? "work" : "works"}
           </span>
-          <span className="pointer-events-none text-sm leading-none font-exposure-regular max-sm:group-aria-[current=date]/year:font-exposure-bold whitespace-nowrap text-black transition-[opacity,transform] duration-200 sm:absolute sm:right-[max(100%,4rem)] sm:mr-2 sm:translate-x-1 sm:bg-white sm:px-1 sm:text-lg sm:opacity-0 group-hover/year:translate-x-0 group-hover/year:opacity-100 group-focus-visible/year:translate-x-0 group-focus-visible/year:opacity-100 motion-reduce:transition-none">
+          <span className="pointer-events-none text-sm leading-none font-exposure-regular max-sm:group-aria-[current=date]/year:font-exposure-bold whitespace-nowrap text-black transition-[opacity,transform] duration-200 sm:absolute sm:right-[max(100%,4rem)] sm:mr-2 sm:translate-x-1 sm:bg-white sm:px-1 sm:text-base sm:opacity-0 group-hover/year:translate-x-0 group-hover/year:opacity-100 group-focus-visible/year:translate-x-0 group-focus-visible/year:opacity-100 motion-reduce:transition-none">
             {year}
           </span>
           <span aria-hidden="true" className="hidden w-16 shrink-0 justify-end sm:flex">
             <span
-              className="block h-4 w-4 border border-current bg-transparent transition-[width] duration-300 ease-out sm:group-hover/rail:w-[var(--year-width)] sm:group-has-[:focus-visible]/rail:w-[var(--year-width)] motion-reduce:transition-none"
+              className="block h-3 w-4 border border-current bg-transparent transition-[width] duration-300 ease-out sm:group-hover/rail:w-[var(--year-width)] sm:group-has-[:focus-visible]/rail:w-[var(--year-width)] motion-reduce:transition-none"
               style={{ "--year-width": `${16 + (counts[year] - 1) / Math.max(1, largestCount - 1) * 48}px` }}
             />
           </span>
