@@ -2,10 +2,10 @@ import ArtworkCarousel from "./components/ArtworkCarousel";
 
 const socialLinks = [
   { label: "X", href: "https://x.com/emilyzsh" },
-  { label: "Instagram", href: "https://www.instagram.com/emilysihanzhang/" },
   { label: "Email", href: "mailto:emilysihanzhang@gmail.com" },
-  { label: "Linkedin", href: "https://www.linkedin.com/in/emilyszhang/" },
+  { label: "Instagram", href: "https://www.instagram.com/emilysihanzhang/" },
   { label: "Github", href: "https://github.com/49emily" },
+  { label: "Linkedin", href: "https://www.linkedin.com/in/emilyszhang/" },
 ];
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
           <p>
             Currently, I work on hard problems across engineering, product, and
             storytelling at Crosby. I also paint a lot. Previously, I spent time
-            on a few early teams and at Stanford University.
+            on a few early teams, a film studio, and at Stanford University.
           </p>
           <p>If my work resonates with you, please feel free to reach out.</p>
         </div>

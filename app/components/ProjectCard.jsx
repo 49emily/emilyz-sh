@@ -10,7 +10,8 @@ export default function ProjectCard({ project }) {
   const router = useRouter();
 
   const destination = getProjectDestination(project);
-  const projectPath = destination && !destination.external ? destination.href : null;
+  const projectPath =
+    destination && !destination.external ? destination.href : null;
   const firstLinkUrl = destination?.external ? destination.href : null;
   const ProjectCardContent = (
     <div className="flex flex-col overflow-hidden">
@@ -56,7 +57,7 @@ export default function ProjectCard({ project }) {
             {project.artMetadata
               ? `${
                   project.artMetadata?.size
-                    ? project.artMetadata?.size + " • "
+                    ? project.artMetadata?.size + " | "
                     : ""
                 } ${project.artMetadata?.medium}`
               : project.status}

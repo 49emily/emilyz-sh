@@ -866,9 +866,9 @@ export const projects = [
     },
   },
   {
-    title: "The machine that builds the bufo",
+    title: "Raid 9",
     year: "2026",
-    status: "RAID 9",
+    status: "",
     completionDate: "09/09/2026",
     tags: ["talk"],
     archiveOnly: true,
@@ -880,7 +880,7 @@ export const projects = [
     ],
   },
   {
-    title: "Portrait of You Presentation",
+    title: "Portrait of You @ Wordhack",
     status: "Wordhack @ Wonderville",
     year: "2025",
     completionDate: "10/16/2025",
@@ -907,6 +907,33 @@ export const projects = [
     completionDate: "10/04/2025",
     tags: ["talk"],
     archiveOnly: true,
+  },
+  // {
+  //   title: "The machine that builds the bufo"
+  //   year: "2026",
+  //   status: "Training a LoRA for fast and style-consistent bufo generation",
+  // }
+  {
+    title: "The machine that builds the bufo",
+    slug: null,
+    year: "2026",
+    completionDate: "9/7/2026",
+    tags: ["software"],
+    component: null,
+    video: cdnPath("/projects/bufo/bufo.MOV"),
+    status: "Training a LoRA for fast and style-consistent bufo generation",
+    links: [
+      {
+        label: "Live Site",
+        url: "https://themachinethatbuildsthebufo.com",
+        icon: "external",
+      },
+      {
+        label: "Tweet",
+        url: "https://x.com/emilyzsh/status/2096989792638562681",
+        icon: "twitter",
+      },
+    ],
   },
 ];
 

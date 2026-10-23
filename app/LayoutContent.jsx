@@ -16,9 +16,17 @@ export default function LayoutContent({ children }) {
 
   return (
     <div className="min-h-svh">
-      <a href="#main-content" className="fixed -top-[100px] left-5 z-20 bg-white p-3 focus:top-3">Skip to content</a>
+      <a
+        href="#main-content"
+        className="fixed -top-[100px] left-5 z-20 bg-white p-3 focus:top-3"
+      >
+        Skip to content
+      </a>
       <header className="sticky top-0 z-10 bg-transparent px-4 py-6 md:px-8">
-        <nav className="grid grid-cols-[0.75fr_1fr_0.95fr_1.3fr_0.85fr] items-center justify-between gap-1 md:grid-cols-[repeat(5,minmax(0,6rem))] md:gap-6" aria-label="Main navigation">
+        <nav
+          className="grid grid-cols-[0.75fr_1fr_0.95fr_1.3fr_0.85fr] items-center justify-between gap-1 md:grid-cols-[repeat(5,minmax(0,6rem))] md:gap-6"
+          aria-label="Main navigation"
+        >
           {navigation.map(({ href, label }) => (
             <Link
               key={href}
@@ -33,9 +41,11 @@ export default function LayoutContent({ children }) {
       </header>
       <main
         id="main-content"
-        className={`mx-auto w-[calc(100%_-_2rem)] pb-8 ${pathname === "/"
-          ? "max-w-[840px] md:w-[63.333333%] md:pb-12.5 lg:w-1/2"
-          : "md:w-[min(1200px,calc(100%_-_5rem))] md:pb-15 md:pt-6"}`}
+        className={`mx-auto w-[calc(100%_-_2rem)] pb-8 ${
+          pathname === "/"
+            ? "max-w-[840px] md:w-[63.333333%] md:pb-12.5 lg:w-1/2"
+            : "md:w-[min(1200px,calc(100%_-_5rem))] md:pb-15 md:pt-6"
+        }`}
       >
         {children}
       </main>
