@@ -116,7 +116,7 @@ export default function Archive() {
               <span className="min-w-0 font-exposure-semibold">
                 {project.title}
               </span>
-              <span className="hidden text-sm leading-5 font-exposure-regular sm:block">
+              <span className="hidden text-sm leading-5 font-exposure-regular capitalize sm:block">
                 {project.tags?.join(", ")}
               </span>
               {isClickable && (
