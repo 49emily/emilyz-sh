@@ -6,7 +6,7 @@ const ProjectLink = ({ link, compact = false }) => {
       href={link.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center rounded-none bg-black/10 px-1.5 text-xs font-exposure-regular text-primary no-underline transition-colors duration-150 hover:bg-accent hover:text-white focus-visible:bg-accent focus-visible:text-white motion-reduce:transition-none lg:text-sm ${compact ? "py-0.5" : "py-1"}`}
+      className={`inline-flex items-center rounded-none bg-black/10 px-1.5 text-xs font-exposure-medium text-primary no-underline transition-colors duration-150 hover:bg-accent hover:text-white focus-visible:bg-accent focus-visible:text-white motion-reduce:transition-none lg:text-sm ${compact ? "py-0.5" : "py-1"}`}
       onClick={(e) => e.stopPropagation()}
     >
       {link.icon === "github" ? (
