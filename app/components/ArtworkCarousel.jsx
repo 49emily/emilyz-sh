@@ -146,7 +146,7 @@ export default function ArtworkCarousel() {
           <div
             key={slide.src}
             className={`absolute inset-0 transition-[opacity,filter] duration-[900ms] ease-[ease-in-out] motion-reduce:blur-none motion-reduce:transition-none ${
-              active === index
+              active === index && (ready[index] || failed[index])
                 ? "pointer-events-auto z-[1] opacity-100 blur-none"
                 : "pointer-events-none opacity-0 blur-[20px]"
             }`}
