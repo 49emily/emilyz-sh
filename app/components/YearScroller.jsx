@@ -52,7 +52,7 @@ export default function YearScroller({ years, counts, activeYear, onSelect }) {
           <span className="pointer-events-none text-xs leading-none font-exposure-regular whitespace-nowrap text-black transition-[opacity,transform] duration-200 sm:absolute sm:right-[max(100%,4rem)] sm:mr-2 sm:translate-x-1 sm:bg-white sm:px-1 sm:text-base sm:opacity-0 group-hover/year:translate-x-0 group-hover/year:opacity-100 group-focus-visible/year:translate-x-0 group-focus-visible/year:opacity-100 motion-reduce:transition-none">
             {year}
           </span>
-          <span aria-hidden="true" className="flex w-4 shrink-0 justify-end sm:w-16">
+          <span aria-hidden="true" className="hidden w-16 shrink-0 justify-end sm:flex">
             <span
               className="block h-3 w-4 border border-current bg-transparent transition-[width] duration-300 ease-out sm:group-hover/rail:w-[var(--year-width)] sm:group-has-[:focus-visible]/rail:w-[var(--year-width)] motion-reduce:transition-none"
               style={{ "--year-width": `${16 + (counts[year] - 1) / Math.max(1, largestCount - 1) * 48}px` }}
