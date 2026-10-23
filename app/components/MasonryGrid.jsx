@@ -121,7 +121,7 @@ export default function MasonryGrid({ projects }) {
   if (!groups.length) return null;
 
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_56px] items-stretch gap-x-4 sm:grid-cols-[minmax(0,1fr)_52px] sm:gap-x-8 lg:gap-x-12">
+    <div className="grid grid-cols-[minmax(0,1fr)_2rem] items-stretch gap-x-3 sm:grid-cols-[minmax(0,1fr)_52px] sm:gap-x-8 lg:gap-x-12">
       <div ref={galleryRef} className="min-w-0 space-y-20 lg:space-y-28">
         {groups.map(({ year, projects: entries }) => {
           // Start each year together, then preserve chronological reading order
