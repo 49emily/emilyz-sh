@@ -24,7 +24,7 @@ export default function LayoutContent({ children }) {
               key={href}
               href={href}
               aria-current={pathname === href ? "page" : undefined}
-              className="text-center text-sm leading-tight md:text-base font-exposure-semibold no-underline transition-[font-weight] duration-200 ease-[ease] first:text-left last:text-right hover:font-exposure-heavy aria-[current=page]:font-exposure-heavy motion-reduce:transition-none"
+              className="text-center text-sm leading-tight md:text-base italic font-exposure-light no-underline transition-[font-weight] duration-200 ease-[ease] first:text-left last:text-right hover:font-exposure-heavy aria-[current=page]:font-exposure-heavy motion-reduce:transition-none"
             >
               {label}
             </Link>
