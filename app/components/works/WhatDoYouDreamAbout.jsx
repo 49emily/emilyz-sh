@@ -1,30 +1,28 @@
 "use client";
 
-import ExternalLink from "../ExternalLink";
+import ProjectLink from "../ProjectLink";
 import { getBunnyCDNUrl } from "../../utils";
 
 export default function WhatDoYouDreamAbout({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl mb-20  py-12 pt-20">
+    <div className="w-full max-w-4xl space-y-6 md:mb-20 md:pb-12">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 font-heavy">what do you dream about?</h2>
+        <h2 className="text-3xl mb-2 font-exposure-bold">what do you dream about?</h2>
         <div className="text text-primary">
           <p>
-            <i className="font-light">medium:</i> real-time, multimedia
+            <i className="font-exposure-regular">medium:</i> real-time, multimedia
             interactive generation (continuous)
           </p>
           <p>
-            <i className="font-light">year:</i> 2025
+            <i className="font-exposure-regular">year:</i> 2025
           </p>
         </div>
 
         {/* Links section */}
         {links.length > 0 && (
-          <div className="flex gap-4 mt-3">
-            {links.map((link, index) => (
-              <ExternalLink key={index} href={link.url} className="link">
-                {link.label}
-              </ExternalLink>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {links.map((link) => (
+              <ProjectLink key={link.url} link={link} />
             ))}
           </div>
         )}

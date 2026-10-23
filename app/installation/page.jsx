@@ -10,15 +10,5 @@ export default function Installation() {
     return new Date(b.completionDate) - new Date(a.completionDate);
   });
 
-  return (
-    <div className="space-y-12 pt-20 pb-24">
-      {/* Installation Grid */}
-      <section>
-        {/* <h2 className="text-xl mb-8 lg:mb-12">
-          <span className="italic font-heavy">installation, sculpture, site-specificity</span>
-        </h2> */}
-        <MasonryGrid projects={sortedProjects} />
-      </section>
-    </div>
-  );
+  return <MasonryGrid projects={sortedProjects} />;
 }

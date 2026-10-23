@@ -1,80 +1,44 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import DesktopNavigation from "./components/DesktopNavigation";
-import MobileNavigation from "./components/MobileNavigation";
-import ThemeToggle from "./components/ThemeToggle";
-import GlobalImageOverlay from "./components/GlobalImageOverlay";
-import useIsMobile from "./hooks/useIsMobile";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navigation = [
+  { href: "/", label: "About" },
+  { href: "/software", label: "Software" },
+  { href: "/painting", label: "Painting" },
+  { href: "/installation", label: "Installation" },
+  { href: "/archive", label: "Archive" },
+];
 
 export default function LayoutContent({ children }) {
-  const [appLoaded, setAppLoaded] = useState(false);
-  const [navImageLoaded, setNavImageLoaded] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const isMobile = useIsMobile();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    // Preload the navigation profile image
-    const img = new Image();
-    img.onload = () => {
-      setNavImageLoaded(true);
-    };
-    img.src = "/profile3.jpg";
-  }, []);
-
-  useEffect(() => {
-    // Only set app as loaded after navigation image has loaded
-    if (navImageLoaded) {
-      // Add a small delay for smooth initial load animation
-      setTimeout(() => setAppLoaded(true), 100);
-    }
-  }, [navImageLoaded]);
-
-  if (!mounted) {
-    return <div className="min-h-screen"></div>;
-  }
+  const pathname = usePathname();
 
   return (
-    <div
-      className={`min-h-screen transition-all duration-1000 ease-out ${
-        appLoaded ? "opacity-100 blur-none" : "opacity-0 blur-sm"
-      }`}
-    >
-      <GlobalImageOverlay />
-      <ThemeToggle />
-      <div className="mx-auto px-4 lg:px-12">
-        <div className="lg:grid lg:grid-cols-7 lg:min-h-screen">
-          {/* Only the navigation for the current breakpoint is mounted. Hiding the
-              other one with CSS would leave it running its effects and fetches. */}
-          {isMobile ? (
-            <MobileNavigation />
-          ) : (
-            <aside className="lg:col-span-2">
-              <div
-                className={`fixed top-0 h-screen left-0 w-[28.571%] flex justify-center items-center transition-all duration-700 delay-200 ease-out ${
-                  appLoaded ? "opacity-100" : "-translate-x-4 opacity-0"
-                }`}
-              >
-                <DesktopNavigation />
-              </div>
-            </aside>
-          )}
-
-          {/* Main Content */}
-          <main
-            className={`lg:col-span-5 px-1 lg:px-4 flex flex-col min-h-screen transition-all duration-700 delay-400 ease-out ${
-              appLoaded ? "opacity-100 transform" : "opacity-0 transform translate-x-4"
-            }`}
-          >
-            {children}
-            {/* <Footer /> */}
-          </main>
-        </div>
-      </div>
+    <div className="min-h-svh">
+      <a href="#main-content" className="fixed -top-[100px] left-5 z-20 bg-white p-3 focus:top-3">Skip to content</a>
+      <header className="sticky top-0 z-10 bg-transparent px-4 py-6 md:px-8">
+        <nav className="grid grid-cols-[0.75fr_1fr_0.95fr_1.3fr_0.85fr] items-center justify-between gap-1 md:grid-cols-[repeat(5,minmax(0,6rem))] md:gap-6" aria-label="Main navigation">
+          {navigation.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              aria-current={pathname === href ? "page" : undefined}
+              className="text-center text-sm leading-tight md:text-base font-exposure-semibold no-underline transition-[font-weight] duration-200 ease-[ease] first:text-left last:text-right hover:font-exposure-heavy aria-[current=page]:font-exposure-heavy motion-reduce:transition-none"
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+      </header>
+      <main
+        id="main-content"
+        className={`mx-auto w-[calc(100%_-_2rem)] pb-8 ${pathname === "/"
+          ? "max-w-[840px] md:w-[63.333333%] md:pb-12.5 lg:w-1/2"
+          : "md:w-[min(1200px,calc(100%_-_5rem))] md:pb-15 md:pt-6"}`}
+      >
+        {children}
+      </main>
     </div>
   );
 }

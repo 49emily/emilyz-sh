@@ -1,25 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import ExternalLink from "../ExternalLink";
+import ProjectLink from "../ProjectLink";
 import { getBunnyCDNUrl } from "../../utils";
 
 export default function DiffusionMe({ links = [] }) {
   return (
-    <div className="space-y-6 max-w-4xl w-full  py-12 pt-20 ">
+    <div className="w-full max-w-4xl space-y-6 md:pb-12">
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 font-heavy">emily-diffusion</h2>
+        <h2 className="text-3xl mb-2 font-exposure-bold">emily-diffusion</h2>
         <div className="text text-primary">
-          <i className="font-light">year:</i> 2025
+          <i className="font-exposure-regular">year:</i> 2025
         </div>
 
         {/* Links section */}
         {links.length > 0 && (
-          <div className="flex gap-4 mt-3">
-            {links.map((link, index) => (
-              <ExternalLink key={index} href={link.url} className="link">
-                {link.label}
-              </ExternalLink>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {links.map((link) => (
+              <ProjectLink key={link.url} link={link} />
             ))}
           </div>
         )}
@@ -44,8 +42,8 @@ export default function DiffusionMe({ links = [] }) {
           and labels were generated using a chain of custom GPT-4o prompts. Here
           is an example of one of my works, and its label:
         </p>
-        <div className="flex flex-col md:flex-row items-center gap-4 md:justify-between w-full">
-          <div className="w-full md:w-1/2">
+        <div className="grid items-center gap-4 md:grid-cols-2">
+          <div className="w-full">
             <Image
               src={getBunnyCDNUrl("/projects/emily-diffusion/Don_t Stare.png")}
               alt="DiffusionMe"
@@ -54,7 +52,7 @@ export default function DiffusionMe({ links = [] }) {
               className="w-full"
             />
           </div>
-          <p className="text-primary  w-full md:w-1/2">
+          <p className="text-primary  w-full">
             <i>
               in the style of zsh-oil, 1girl, leaning on railing, oval face
               smooth tan skin, subtle asym mouth eyes, medium forehead, dark

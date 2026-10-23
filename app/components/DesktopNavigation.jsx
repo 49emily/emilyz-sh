@@ -11,8 +11,8 @@ function DesktopNavigation() {
 
   const navItems = [
     { path: "/", label: "About" },
-    { path: "/code", label: "Code" },
-    { path: "/visual-art", label: "Painting" },
+    { path: "/software", label: "Software" },
+    { path: "/painting", label: "Painting" },
     { path: "/installation", label: "Installation" },
     { path: "/archive", label: "Archive" },
   ];

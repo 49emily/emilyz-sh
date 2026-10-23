@@ -17,7 +17,7 @@ export const projects = [
   //   title: "Talk title",
   //   year: "2026",
   //   completionDate: "09/13/2026",
-  //   tags: ["talk", "code"],
+  //   tags: ["talk", "software"],
   //   archiveOnly: true,
   // },
   {
@@ -25,10 +25,10 @@ export const projects = [
     slug: null,
     year: "2025",
     completionDate: "07/18/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/journaling-ink/drawjournal.jpg"),
-    status: "draw with handwriting and text from your journal entries.",
+    status: "draw with handwriting and text from your journal entries",
     links: [
       { label: "Live Site", url: "https://journaling.ink", icon: "external" },
       {
@@ -43,7 +43,7 @@ export const projects = [
     slug: "what-do-you-dream-about",
     year: "2025",
     completionDate: "06/15/2025",
-    tags: ["code", "installation"],
+    tags: ["software", "installation"],
     component: "what-do-you-dream-about",
     video: cdnPath(
       "/projects/what-do-you-dream-about/whatdoyoudreamlowest.mp4",
@@ -63,11 +63,11 @@ export const projects = [
     slug: "letters-to-my-mom",
     year: "2025",
     completionDate: "05/10/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: "letters-to-my-mom",
-    image: cdnPath("/projects/letters-to-my-mom/letters.jpg"),
+    image: cdnPath("/projects/letters-to-my-mom/letters_cropped.jpg"),
     status:
-      "series of generative prints based on a love letter my dad wrote my mom in the 90s",
+      "A series of generative prints based on a love letter my dad wrote my mom in the 90s",
     links: [
       {
         label: "Github",
@@ -81,7 +81,7 @@ export const projects = [
     slug: "emily-diffusion",
     year: "2025",
     completionDate: "06/05/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: "emily-diffusion",
     image: cdnPath("/projects/emily-diffusion/diffusionme.jpg"),
     status: "training a generative model on my own art",
@@ -98,7 +98,7 @@ export const projects = [
     slug: null,
     year: "2024-25",
     completionDate: "12/20/2024",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/prl/pearl.png"),
     status: "The journal that reflects with you. Scaled to 2000+ users.",
@@ -127,7 +127,7 @@ export const projects = [
   //   slug: null,
   //   year: "2025",
   //   completionDate: "03/15/2025",
-  //   tags: ["code"],
+  //   tags: ["software"],
   //   component: null,
   //   image: cdnPath("/projects/prl/pearlios.jpeg"),
   //   status: "Mobile companion to writewithprl.com, coming soon to the iOS App Store.",
@@ -144,10 +144,10 @@ export const projects = [
     slug: null,
     year: "2025",
     completionDate: "01/08/2025",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/tangent/tangent.png"),
-    status: "An experimental browser that acts as your second brain.",
+    status: "An experimental browser that acts as your second brain",
     links: [
       {
         label: "Demo",
@@ -161,7 +161,7 @@ export const projects = [
     slug: null,
     year: "2024",
     completionDate: "05/15/2024",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     image: cdnPath("/projects/stylescape/stylescape.png"),
     status: "infinitely generated world walkthroughs",
@@ -183,7 +183,7 @@ export const projects = [
     slug: null,
     year: "2025",
     completionDate: "10/02/2025",
-    tags: ["code", "installation"],
+    tags: ["software", "installation"],
     component: null,
     // image: cdnPath("/projects/portrait-of-you/portraitof.png"),
     video: cdnPath("/projects/portrait-of-you/emilyweek5.mp4"),
@@ -207,10 +207,10 @@ export const projects = [
     slug: null,
     year: "2026",
     completionDate: "04/18/2026",
-    tags: ["code"],
+    tags: ["software"],
     component: null,
     video: cdnPath("/projects/search-art-with-art/sawa2.mp4"),
-    status: "browsing the MoMA collection with embeddings",
+    status: "Browsing the MoMA collection with embeddings",
     links: [
       {
         label: "Live Site",
@@ -229,7 +229,7 @@ export const projects = [
     slug: null,
     year: "2026",
     completionDate: "2/14/2026",
-    tags: ["code"],
+    tags: ["software"],
     status: "3D objects as digital vessels for your love",
     video: cdnPath("/projects/for-my-love/formyloveclip.mp4"),
     links: [
@@ -250,7 +250,7 @@ export const projects = [
   //   slug: null,
   //   year: "2026",
   //   completionDate: "06/17/2026",
-  //   tags: ["code"],
+  //   tags: ["software"],
   //   component: null,
   //   status: "",
   //   video: cdnPath("/projects/crosby-intelligence/crosby-intelligence.mov"),
@@ -264,11 +264,31 @@ export const projects = [
   // },
   // Visual Art
   {
+    title: "You're Doing it To Yourself",
+    slug: "youre-doing-it-to-yourself",
+    year: "2026",
+    completionDate: "10/11/2026",
+    tags: ["painting"],
+    image: cdnPath("/projects/youre-doing-it-to-yourself/cropped.jpg"),
+    carouselImage: cdnPath("/projects/youre-doing-it-to-yourself/IMG_4616.png"),
+    status: "Oil paint on canvas",
+    artMetadata: {
+      medium: "Oil paint on canvas",
+      size: '30" x 40"',
+      images: [
+        cdnPath("/projects/youre-doing-it-to-yourself/cropped.jpg"),
+        cdnPath("/projects/youre-doing-it-to-yourself/IMG_4616.png"),
+      ],
+      tags: ["Painting"],
+      description: null,
+    },
+  },
+  {
     title: "35 Times I Cried Over a Love That Wasn't Mine",
     slug: "35-times-i-cried",
     year: "2024",
     completionDate: "12/15/2024",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/35-times-i-cried/IMG_9934.jpg"),
     status: "Watercolor on Xuan paper",
     artMetadata: {
@@ -285,7 +305,7 @@ export const projects = [
     slug: "all-i-see-in-the-mirror",
     year: "2021",
     completionDate: "08/12/2021",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath(
       "/projects/all-i-see-in-the-mirror/7_All_I_See_in_the_Mirror_is_You.jpg",
     ),
@@ -303,7 +323,7 @@ export const projects = [
     slug: "apocalyptic-woman",
     year: "2022",
     completionDate: "12/01/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/apocalyptic-woman/Apocalyptic_Woman.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
@@ -318,7 +338,7 @@ export const projects = [
     slug: "bloom",
     year: "2022",
     completionDate: "03/01/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/bloom/4_BLOOM.jpg"),
     status: "Procreate on iPad",
     artMetadata: {
@@ -332,7 +352,7 @@ export const projects = [
     slug: "bonnaroo",
     year: "2023",
     completionDate: "02/01/2023",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/bonnaroo/IMG_2245.png"),
     status: "Acrylic on canvas",
     artMetadata: {
@@ -348,7 +368,7 @@ export const projects = [
     slug: "caged",
     year: "2022",
     completionDate: "05/01/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/caged/14_caged.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
@@ -363,7 +383,7 @@ export const projects = [
     slug: "covergirl",
     year: "2022",
     completionDate: "04/01/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/covergirl/11_Covergirl.jpg"),
     status: "Watercolor and white gel pen on panel",
     artMetadata: {
@@ -378,7 +398,7 @@ export const projects = [
     slug: "dissociation",
     year: "2025",
     completionDate: "04/01/2025",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/dissociation/DSC00626 4.jpg"),
     status: "Oil on canvas",
     artMetadata: {
@@ -395,7 +415,7 @@ export const projects = [
     slug: "dont-stare",
     year: "2023",
     completionDate: "03/01/2023",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/dont-stare/Don_t_Stare.jpg"),
     status: "Oil on canvas",
     artMetadata: {
@@ -412,7 +432,7 @@ export const projects = [
     slug: "dreams",
     year: "2021",
     completionDate: "01/01/2021",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/dreams/15_dreams.jpg"),
     status: "Procreate on iPad",
     artMetadata: {
@@ -427,7 +447,7 @@ export const projects = [
     slug: "drown",
     year: "2022",
     completionDate: "06/23/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/drown/8_DROWN.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
@@ -442,7 +462,7 @@ export const projects = [
     slug: "drunk",
     year: "2023",
     completionDate: "03/10/2023",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/drunk/DRUNK.jpg"),
     status: "Oil and acrylic on canvas",
     artMetadata: {
@@ -459,7 +479,7 @@ export const projects = [
     slug: "fatigue",
     year: "2025",
     completionDate: "03/15/2025",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/fatigue/DSC00623.jpg"),
     status: "Oil on canvas",
     artMetadata: {
@@ -474,7 +494,7 @@ export const projects = [
     slug: "flowergpt",
     year: "2024",
     completionDate: "10/28/2024",
-    tags: ["visual-art"],
+    tags: ["installation"],
     image: cdnPath("/projects/flowergpt/IMG_541B17B25889-1.jpeg"),
     status: "Video made with sound recorder and iPhone camera",
     artMetadata: {
@@ -489,7 +509,7 @@ export const projects = [
     slug: "girl-lying-in-pink-flowers",
     year: "2023",
     completionDate: "03/20/2023",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath(
       "/projects/girl-lying-in-pink-flowers/Girl_Lying_in_a_Field_of_Pink_Flowers.jpg",
     ),
@@ -506,7 +526,7 @@ export const projects = [
     slug: "light-as-a-feather",
     year: "2024",
     completionDate: "05/30/2024",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/light-as-a-feather/IMG_3377_2.png"),
     status: "Graphite pencil on paper",
     artMetadata: {
@@ -521,7 +541,7 @@ export const projects = [
     slug: "lotus",
     year: "2021",
     completionDate: "09/18/2021",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/lotus/3_Lotus.jpg"),
     status: "Micron pen on paper",
     artMetadata: {
@@ -537,7 +557,7 @@ export const projects = [
     slug: "lying-in-the-sun",
     year: "2023",
     completionDate: "01/01/2023",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/lying-in-the-sun/IMG_6541.png"),
     status: "Acrylic on canvas",
     artMetadata: {
@@ -552,7 +572,7 @@ export const projects = [
     slug: "mcnamaras-legacy",
     year: "2021",
     completionDate: "07/11/2021",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/mcnamaras-legacy/12_McNamara_s_Legacy.jpg"),
     status: "Colored pencil, graphite, white gel pen on paper",
     artMetadata: {
@@ -567,7 +587,7 @@ export const projects = [
     slug: "meritocracy",
     year: "2022",
     completionDate: "05/21/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/meritocracy/13_meritocracy_.jpg"),
     status: "Watercolor, colored pencil, gel pen on Arches paper",
     artMetadata: {
@@ -582,7 +602,7 @@ export const projects = [
     slug: "nursery",
     year: "2020",
     completionDate: "11/01/2020",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/nursery/nursery.jpg"),
     status: "Procreate on iPad",
     artMetadata: {
@@ -597,7 +617,7 @@ export const projects = [
     slug: "red-fire-blue-flower",
     year: "2023",
     completionDate: "11/30/2023",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/red-fire-blue-flower/IMG_4217.jpg"),
     status: "Monotype and graphite pencil",
     artMetadata: {
@@ -617,7 +637,7 @@ export const projects = [
     slug: "rise",
     year: "2022",
     completionDate: "05/02/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/rise/9_RISE.jpg"),
     status: "Watercolor on panel",
     artMetadata: {
@@ -632,7 +652,7 @@ export const projects = [
     slug: "rumination",
     year: "2022",
     completionDate: "03/10/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/rumination/10_RUMINATION.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
@@ -648,7 +668,7 @@ export const projects = [
     slug: "scorch",
     year: "2021",
     completionDate: "12/17/2021",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/scorch/6_SCORCH.jpg"),
     status: "Colored pencil on paper",
     artMetadata: {
@@ -664,7 +684,7 @@ export const projects = [
     slug: "split",
     year: "2021",
     completionDate: "10/25/2021",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/split/5_Split.jpg"),
     status: "Colored pencil on paper",
     artMetadata: {
@@ -680,7 +700,7 @@ export const projects = [
     slug: "stay-still",
     year: "2021",
     completionDate: "10/13/2021",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/stay-still/1_Stay_Still.jpg"),
     status: "Graphite and colored pencil on paper",
     artMetadata: {
@@ -696,7 +716,7 @@ export const projects = [
     slug: "still-life-heart",
     year: "2024",
     completionDate: "06/01/2024",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath(
       "/projects/still-life-heart/da647884-4b72-478b-b68d-84e48e1d476b.png",
     ),
@@ -714,7 +734,7 @@ export const projects = [
     slug: "symmetry",
     year: "2020",
     completionDate: "11/01/2020",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/symmetry/Symmetry.jpg"),
     status: "Colored pencil and white gel pen on paper",
     artMetadata: {
@@ -729,7 +749,7 @@ export const projects = [
     slug: "tear-me-apart",
     year: "2022",
     completionDate: "03/28/2022",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/tear-me-apart/2_Tear_Me_Apart.jpg"),
     status: "Watercolor on Arches paper",
     artMetadata: {
@@ -744,7 +764,7 @@ export const projects = [
     slug: "love-letter",
     year: "2025",
     completionDate: "04/01/2025",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/love-letter/DSC00608 2.jpg"),
     status: "Oil on canvas",
     artMetadata: {
@@ -761,7 +781,7 @@ export const projects = [
     slug: "braised-pork-belly",
     year: "2024",
     completionDate: "04/01/2024",
-    tags: ["visual-art"],
+    tags: ["painting"],
     image: cdnPath("/projects/braised-pork-belly/braised-pork-belly.jpg"),
     status: "Oil and acrylic on canvas",
     artMetadata: {
@@ -797,7 +817,7 @@ export const projects = [
     slug: "cctv",
     year: "2025",
     completionDate: "9/19/2025",
-    tags: ["visual-art", "installation"],
+    tags: ["painting", "installation"],
     // image: cdnPath("/projects/cctv/IMG_2729.jpg"),
     video: cdnPath("/projects/cctv/cctv.mov"),
     status: "Oil paint on canvas and digital projection",
@@ -818,8 +838,8 @@ export const projects = [
     slug: "the-lovers",
     year: "2025",
     completionDate: "8/15/2025",
-    tags: ["visual-art"],
-    image: cdnPath("/projects/the-lovers/thelovers.jpg"),
+    tags: ["painting"],
+    image: cdnPath("/projects/the-lovers/thelovers.png"),
     status: "Oil paint on canvas",
     artMetadata: {
       medium: "Oil on canvas",
@@ -846,8 +866,9 @@ export const projects = [
     },
   },
   {
-    title: "RAID 9",
+    title: "The machine that builds the bufo",
     year: "2026",
+    status: "RAID 9",
     completionDate: "09/09/2026",
     tags: ["talk"],
     archiveOnly: true,
@@ -859,7 +880,8 @@ export const projects = [
     ],
   },
   {
-    title: "Portrait of You, Wordhack @ Wonderville",
+    title: "Portrait of You Presentation",
+    status: "Wordhack @ Wonderville",
     year: "2025",
     completionDate: "10/16/2025",
     tags: ["talk"],
@@ -879,8 +901,9 @@ export const projects = [
     ],
   },
   {
-    title: "The Work of Art in the Age of AI, Neo Reunion",
+    title: "The Work of Art in the Age of AI",
     year: "2025",
+    status: "Neo Reunion",
     completionDate: "10/04/2025",
     tags: ["talk"],
     archiveOnly: true,
@@ -890,6 +913,14 @@ export const projects = [
 // Helper function to get projects with routes (for routing setup)
 export const getProjectRoutes = () => {
   return projects.filter((project) => project.slug && project.component);
+};
+
+// Prefer the internal work page, then the first external link.
+export const getProjectDestination = (project) => {
+  if (project.slug) return { href: `/work/${project.slug}`, external: false };
+  if (project.links?.[0]?.url)
+    return { href: project.links[0].url, external: true };
+  return null;
 };
 
 // Helper function to get project by slug
