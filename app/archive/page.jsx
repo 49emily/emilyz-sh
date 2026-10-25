@@ -13,7 +13,7 @@ const sortedProjects = [...projects].sort(
   (a, b) => new Date(b.completionDate) - new Date(a.completionDate),
 );
 const columns =
-  "grid grid-cols-[3rem_minmax(0,1fr)_1rem] gap-x-3 sm:grid-cols-[4rem_minmax(0,1fr)_9rem_minmax(0,12rem)] sm:gap-x-8 xl:grid-cols-[4rem_minmax(0,1fr)_9rem_minmax(0,16rem)] 2xl:grid-cols-[4rem_minmax(0,1fr)_9rem_minmax(0,20rem)]";
+  "grid grid-cols-[3rem_minmax(0,1fr)_1rem] gap-x-3 sm:grid-cols-[4rem_minmax(0,1fr)_minmax(0,12rem)] sm:gap-x-8 lg:grid-cols-[4rem_minmax(0,1fr)_minmax(0,1.3fr)_10rem]";
 
 export default function Archive() {
   const [preview, setPreview] = useState(null);
@@ -116,15 +116,24 @@ export default function Archive() {
               <span className="min-w-0 font-exposure-semibold">
                 {project.title}
               </span>
-              <span className="hidden text-sm leading-5 font-exposure-regular capitalize sm:block">
-                {project.tags?.join(", ")}
-              </span>
-              {isClickable && (
-                <ArrowUpRight aria-hidden="true" className="pointer-events-none mt-0.5 size-4 sm:hidden" strokeWidth={1.5} />
+              {project.status && (
+                <span className="col-start-2 row-start-2 min-w-0 font-exposure-regular lg:col-start-3 lg:row-start-1">
+                  {project.status}
+                </span>
               )}
-              {project.links?.length > 0 && (
-                <div className="relative z-[2] hidden flex-wrap justify-end gap-2 sm:col-start-4 sm:col-end-5 sm:flex">
-                  {project.links.map((link) => (
+              {isClickable && (
+                <ArrowUpRight aria-hidden="true" className="pointer-events-none col-start-3 row-start-1 mt-0.5 size-4 sm:hidden" strokeWidth={1.5} />
+              )}
+              {(projectPath || project.links?.length > 0) && (
+                <div className="relative z-[2] hidden flex-wrap justify-end gap-2 sm:col-start-3 sm:row-start-1 sm:flex lg:col-start-4">
+                  {projectPath && (
+                    <ProjectLink
+                      link={{ url: projectPath, label: "View" }}
+                      internal
+                      compact
+                    />
+                  )}
+                  {project.links?.map((link) => (
                     <ProjectLink
                       key={link.url}
                       link={link}

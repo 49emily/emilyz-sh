@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import ProjectLink from "./ProjectLink";
@@ -64,10 +63,16 @@ export default function ProjectCard({ project }) {
           </span>
         </div>
 
-        {/* External Links */}
-        {project.links && (
+        {/* Project page first, followed by external links. */}
+        {(projectPath || project.links?.length > 0) && (
           <div className="flex flex-wrap gap-2">
-            {project.links.map((link) => (
+            {projectPath && (
+              <ProjectLink
+                link={{ url: projectPath, label: "View" }}
+                internal
+              />
+            )}
+            {project.links?.map((link) => (
               <ProjectLink key={link.url} link={link} />
             ))}
           </div>
@@ -76,9 +81,9 @@ export default function ProjectCard({ project }) {
     </div>
   );
 
-  // Projects with internal pages and external links use onClick to avoid nested <a> tags.
+  // Cards contain their own links, so the clickable wrapper must not be an anchor.
   // Projects without a page open their first external link in a new tab.
-  if (projectPath && project.links && project.links.length > 0) {
+  if (projectPath) {
     return (
       <div
         className="group block cursor-pointer transition-opacity duration-200 ease-out hover:opacity-75 motion-reduce:transition-none"
@@ -86,17 +91,6 @@ export default function ProjectCard({ project }) {
       >
         {ProjectCardContent}
       </div>
-    );
-  }
-
-  if (projectPath) {
-    return (
-      <Link
-        href={projectPath}
-        className="group block transition-opacity duration-200 ease-out hover:opacity-75 motion-reduce:transition-none"
-      >
-        {ProjectCardContent}
-      </Link>
     );
   }
 

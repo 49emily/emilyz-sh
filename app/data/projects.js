@@ -868,7 +868,7 @@ export const projects = [
   {
     title: "Raid 9",
     year: "2026",
-    status: "",
+    status: "Talk on current projects",
     completionDate: "09/09/2026",
     tags: ["talk"],
     archiveOnly: true,
@@ -880,8 +880,8 @@ export const projects = [
     ],
   },
   {
-    title: "Portrait of You @ Wordhack",
-    status: "Wordhack @ Wonderville",
+    title: "Portrait of You",
+    status: "Talk at Wordhack @ Wonderville",
     year: "2025",
     completionDate: "10/16/2025",
     tags: ["talk"],
@@ -889,6 +889,7 @@ export const projects = [
   },
   {
     title: "Interfaces & Art",
+    status: "Talk on creative practice",
     year: "2025",
     completionDate: "10/23/2025",
     tags: ["talk"],
@@ -903,7 +904,7 @@ export const projects = [
   {
     title: "The Work of Art in the Age of AI",
     year: "2025",
-    status: "Neo Reunion",
+    status: "Talk at technology conference of 300+ leaders",
     completionDate: "10/04/2025",
     tags: ["talk"],
     archiveOnly: true,

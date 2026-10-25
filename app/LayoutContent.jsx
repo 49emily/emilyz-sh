@@ -22,7 +22,7 @@ export default function LayoutContent({ children }) {
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-10 bg-transparent px-4 py-6 md:px-8">
+      <header className="sticky top-0 z-10 bg-transparent px-4 py-4 md:px-8">
         <nav
           className="grid grid-cols-[0.75fr_1fr_0.95fr_1.3fr_0.85fr] items-center justify-between gap-1 md:grid-cols-[repeat(5,minmax(0,6rem))] md:gap-6"
           aria-label="Main navigation"
